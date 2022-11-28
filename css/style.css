@@ -134,7 +134,7 @@ body {
     line-height: 36px;
 }
 
-.goods {
+.goods, .unavailable-goods {
     margin-top: 28px;
     width: 64.5%;
 }
@@ -171,7 +171,7 @@ body {
     content: url('../icons/Check.svg');
 }
 
-.choose {
+.choose, .unavailable{
     display: flex;
     align-items: center;
     width: 100%;
@@ -194,7 +194,7 @@ body {
     margin-left: auto;
 }
 
-.good {
+.good, .unavailable-good{
     display: flex;
     align-items: flex-start;
     min-height: 105px;
@@ -221,7 +221,7 @@ body {
 }
 
 .good-caption {
-    max-width: 275px;
+    max-width: 290px;
     line-height: 24px;
 }
 
@@ -329,7 +329,28 @@ body {
     margin-left: 16px;
 }
 
-.good:not(:nth-child(2)) {
-    padding-top: 25px;
+.good:not(:nth-child(2)), .unavailable-good:not(:nth-child(2)){
+    padding-top: 40px;
 }
+
+.selected {
+    filter: invert(44%) sepia(60%) saturate(4414%) hue-rotate(348deg) brightness(98%) contrast(96%);
+}
+
+.unavailable {
+    font-weight: 600;
+}
+
+.unavailable-image-block {
+    width: 72px;
+}
+
+.unavailable-image {
+    filter: grayscale(100%);
+}
+
+.unavailable-goods {
+    color: #9797AF;
+}
+
 /* aside */

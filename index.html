@@ -38,6 +38,7 @@
 
       <!-- main -->
       <main class="main">
+        <!-- card-page -->
         <div class="card-page">
           <h1 class="card-header">Корзина</h1>
           <div class="goods">
@@ -105,7 +106,7 @@
               </div>
               <div class="good-options">
                 <div class="good-count">
-                  <div class="good-count-minus disabled">-</div>
+                  <div class="good-count-minus">-</div>
                   <input type="text" value="200" class="good-count-input" />
                   <div class="good-count-plus">+</div>
                 </div>
@@ -129,7 +130,8 @@
               </div>
               <div class="good-text">
                 <div class="good-caption">
-                  Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, <br> Faber-Castell
+                  Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные,
+                  Faber-Castell
                 </div>
                 <div class="good-footer">
                   <div class="good-warehouse">Коледино WB</div>
@@ -138,14 +140,14 @@
               </div>
               <div class="good-options">
                 <div class="good-count">
-                  <div class="good-count-minus disabled">-</div>
+                  <div class="good-count-minus">-</div>
                   <input type="text" value="2" class="good-count-input" />
-                  <div class="good-count-plus">+</div>
+                  <div class="good-count-plus disabled">+</div>
                 </div>
                 <div class="good-remains">Осталось 2 шт.</div>
                 <div class="good-icons">
                   <div class="good-favorite"><img src="./icons/Favourite.svg" alt="#" /></div>
-                  <div class="good-delete"><img src="./icons/Delete.svg" alt="#" /></div>
+                  <div class="good-delete selected"><img src="./icons/Delete.svg" alt="#" /></div>
                 </div>
               </div>
               <div class="good-price">
@@ -154,7 +156,93 @@
               </div>
             </div>
           </div>
-          <div class="absence"></div>
+
+          <!-- unavailable -->
+          <div class="unavailable-goods">
+            <div class="unavailable">
+              <div class="unavailable-header">Отсутствуют · 3 товара</div>
+              <div class="triangle"></div>
+            </div>
+
+            <!-- first-item -->
+            <div class="unavailable-good">
+                <div class="good-image-block unavailable-image-block">
+                  <img src="./img/photo-1.jpg" alt="Футболка" class="good-image unavailable-image" />
+                </div>
+                <div class="good-text">
+                  <div class="good-caption">
+                    Футболка UZcotton мужская
+                  </div>
+                  <div class="good-characteristics">
+                    <div class="good-color">Цвет: белый</div>
+                    <div class="good-size">Размер: 56</div>
+                  </div>
+                  <div class="good-footer">
+                    <div class="good-warehouse"></div>
+                    <div class="good-provider"></span></div>
+                  </div>
+                </div>
+                <div class="good-options">
+                  <div class="good-icons">
+                    <div class="good-favorite"><img src="./icons/Favourite.svg" alt="#" /></div>
+                    <div class="good-delete"><img src="./icons/Delete.svg" alt="#" /></div>
+                  </div>
+                </div>
+                <div class="good-price">
+                </div>
+              </div>
+                         <!-- second-item -->
+            <div class="unavailable-good">
+                <div class="good-image-block unavailable-image-block">
+                  <img src="./img/photo-2.jpg" alt="Футболка" class="good-image unavailable-image" />
+                </div>
+                <div class="good-text">
+                  <div class="good-caption">
+                    Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe
+                  </div>
+                  <div class="good-characteristics">
+                    <div class="good-color">Цвет: прозрачный</div>
+                  </div>
+                  <div class="good-footer">
+                    <div class="good-warehouse"></div>
+                    <div class="good-provider"></span></div>
+                  </div>
+                </div>
+                <div class="good-options">
+                  <div class="good-icons">
+                    <div class="good-favorite"><img src="./icons/Favourite.svg" alt="#" /></div>
+                    <div class="good-delete"><img src="./icons/Delete.svg" alt="#" /></div>
+                  </div>
+                </div>
+                <div class="good-price">
+                </div>
+              </div>
+  
+              <!-- third-item -->
+              <div class="unavailable-good">
+                <div class="good-image-block unavailable-image-block">
+                  <img src="./img/photo-3.jpg" alt="Футболка" class="good-image unavailable-image" />
+                </div>
+                <div class="good-text">
+                  <div class="good-caption">
+                    Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные,
+                    Faber-Castell
+                  </div>
+                  <div class="good-footer">
+                    <div class="good-warehouse"></div>
+                    <div class="good-provider"></div>
+                  </div>
+                </div>
+                <div class="good-options">
+                  <div class="good-icons">
+                    <div class="good-favorite"><img src="./icons/Favourite.svg" alt="#" /></div>
+                    <div class="good-delete"><img src="./icons/Delete.svg" alt="#" /></div>
+                  </div>
+                </div>
+                <div class="good-price">
+                </div>
+              </div>
+          </div>
           <div class="card delivery"></div>
           <div class="card payment"></div>
           <div class="card receiver"></div>
