@@ -11,8 +11,9 @@
   </head>
   <body>
     <div class="container">
+      <!-- header -->
       <header class="header">
-        <div class="main-logo">
+        <div class="header-main">
           <div class="burger-menu">
             <div class="burger-menu-block">
               <div class="burger-menu-bar"></div>
@@ -24,10 +25,145 @@
         </div>
         <div class="search"><input type="text" placeholder="Я ищу..." class="search-bar" /></div>
         <div class="icons">
-          <div class="profile"><img src="./icons/Profile.svg" />Профиль</div>
-          <div class="cart"><img src="./icons/Cart.svg" class="cart-image" />Корзина</div>
+          <div class="profile">
+            <img src="./icons/Profile.svg" class="profile-image" />
+            <div>Профиль</div>
+          </div>
+          <div class="cart">
+            <img src="./icons/Cart.svg" class="cart-image" />
+            <div>Корзина</div>
+          </div>
         </div>
       </header>
+
+      <!-- main -->
+      <main class="main">
+        <div class="card-page">
+          <h1 class="card-header">Корзина</h1>
+          <div class="goods">
+            <div class="choose">
+              <input type="checkbox" class="hidden" id="choose-all" />
+              <label for="choose-all" class="choose-custom-checkbox"></label>
+              <div class="choose-text">Выбрать все</div>
+              <div class="triangle"></div>
+            </div>
+
+            <!-- first-item -->
+            <div class="good">
+              <div class="good-image-block">
+                <input type="checkbox" class="hidden" id="choose-first" />
+                <label for="choose-first" class="choose-custom-checkbox good-checkbox"></label>
+                <img src="./img/photo-1.jpg" alt="Футболка" class="good-image" />
+              </div>
+              <div class="good-text">
+                <div class="good-caption">Футболка UZcotton мужская</div>
+                <div class="good-characteristics">
+                  <div class="good-color">Цвет: белый</div>
+                  <div class="good-size">Размер: 56</div>
+                </div>
+                <div class="good-footer">
+                  <div class="good-warehouse">Коледино WB</div>
+                  <div class="good-provider">ООО Вайлдберриз <span class="good-info">&#9432;</span></div>
+                </div>
+              </div>
+              <div class="good-options">
+                <div class="good-count">
+                  <div class="good-count-minus disabled">-</div>
+                  <input type="text" value="1" class="good-count-input" />
+                  <div class="good-count-plus">+</div>
+                </div>
+                <div class="good-remains">Осталось 2 шт.</div>
+                <div class="good-icons">
+                  <div class="good-favorite"><img src="./icons/Favourite.svg" alt="#" /></div>
+                  <div class="good-delete"><img src="./icons/Delete.svg" alt="#" /></div>
+                </div>
+              </div>
+              <div class="good-price">
+                <h3 class="good-total-price">522 <span class="good-currency-price">сом</span></h3>
+                <span class="good-previous-price">1051 сом</span>
+              </div>
+            </div>
+
+            <!-- second-item -->
+            <div class="good">
+              <div class="good-image-block">
+                <input type="checkbox" class="hidden" id="choose-second" />
+                <label for="choose-second" class="choose-custom-checkbox good-checkbox"></label>
+                <img src="./img/photo-2.jpg" alt="Футболка" class="good-image" />
+              </div>
+              <div class="good-text">
+                <div class="good-caption">
+                  Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe
+                </div>
+                <div class="good-characteristics">
+                  <div class="good-color">Цвет: прозрачный</div>
+                </div>
+                <div class="good-footer">
+                  <div class="good-warehouse">Коледино WB</div>
+                  <div class="good-provider">ООО Мегапрофстиль <span class="good-info">&#9432;</span></div>
+                </div>
+              </div>
+              <div class="good-options">
+                <div class="good-count">
+                  <div class="good-count-minus disabled">-</div>
+                  <input type="text" value="200" class="good-count-input" />
+                  <div class="good-count-plus">+</div>
+                </div>
+                <div class="good-icons">
+                  <div class="good-favorite"><img src="./icons/Favourite.svg" alt="#" /></div>
+                  <div class="good-delete"><img src="./icons/Delete.svg" alt="#" /></div>
+                </div>
+              </div>
+              <div class="good-price">
+                <h3 class="good-total-price">2100047 <span class="good-currency-price">сом</span></h3>
+                <span class="good-previous-price">2300047 сом</span>
+              </div>
+            </div>
+
+            <!-- third-item -->
+            <div class="good">
+              <div class="good-image-block">
+                <input type="checkbox" class="hidden" id="choose-third" />
+                <label for="choose-third" class="choose-custom-checkbox good-checkbox"></label>
+                <img src="./img/photo-3.jpg" alt="Футболка" class="good-image" />
+              </div>
+              <div class="good-text">
+                <div class="good-caption">
+                  Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, <br> Faber-Castell
+                </div>
+                <div class="good-footer">
+                  <div class="good-warehouse">Коледино WB</div>
+                  <div class="good-provider">ООО Вайлдберриз <span class="good-info">&#9432;</span></div>
+                </div>
+              </div>
+              <div class="good-options">
+                <div class="good-count">
+                  <div class="good-count-minus disabled">-</div>
+                  <input type="text" value="2" class="good-count-input" />
+                  <div class="good-count-plus">+</div>
+                </div>
+                <div class="good-remains">Осталось 2 шт.</div>
+                <div class="good-icons">
+                  <div class="good-favorite"><img src="./icons/Favourite.svg" alt="#" /></div>
+                  <div class="good-delete"><img src="./icons/Delete.svg" alt="#" /></div>
+                </div>
+              </div>
+              <div class="good-price">
+                <h3 class="good-total-price">494 <span class="good-currency-price">сом</span></h3>
+                <span class="good-previous-price">950 сом</span>
+              </div>
+            </div>
+          </div>
+          <div class="absence"></div>
+          <div class="card delivery"></div>
+          <div class="card payment"></div>
+          <div class="card receiver"></div>
+        </div>
+      </main>
+
+      <aside class="aside"></aside>
+
+      <footer></footer>
     </div>
   </body>
 </html>
