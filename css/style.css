@@ -24,6 +24,14 @@ body {
     display: none;
 }
 
+.main .good-count.good-count-mobile,
+.main .good-remains.good-remains-mobile,
+.header .search-mobile.search,
+.good-mobile-footer,
+.good-text-mobile{
+    display: none;
+}
+
 .disabled {
     color: rgba(0, 0, 0, 0.2);
 }
@@ -277,6 +285,7 @@ input[type="number"]:focus {
     width: 106px;
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
 .good-image {
@@ -570,6 +579,7 @@ input[type="number"]:focus {
 }
 
 /* aside */
+
 .aside {
     width: 31%;
     margin-top: 8px;
@@ -713,54 +723,175 @@ input[type="number"]:focus {
 }
 
 @media only screen and (min-width: 280px) and (max-width: 1024px) {
-    header .icons {
+
+    /* header  */
+
+    .header {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .header .icons {
         display: none;
     }
 
-    header .search-bar {
+    .header .search-bar {
         display: none;
     }
 
-    header .burger-menu {
+    .header .burger-menu {
         border: none;
+        width: 28px;
     }
-    
-    header .burger-menu-block {
+
+    .header .burger-menu-block {
         width: 22px;
         height: 18px;
     }
 
-    header .burger-menu-bar{
+    .header .burger-menu-bar {
         height: 2px;
         width: 22px;
     }
 
-    header .logo {
+    .header .logo {
         width: 100%;
-        font-size: 26px;
+        margin-left: 0;
+        margin-right: 28px;
+        font-size: 22px;
         text-align: center;
         font-weight: 600;
     }
 
-    header .header-main { 
+    .header .header-main {
         width: 100%;
     }
 
-    header .search {
-        position: absolute;
+    .header .search {
+        display: none;
     }
 
-    header .search::after {
-        top: calc(50% - 12px);
-        left: calc(100% - 100px);
+    .header .search-mobile.search {
+        display: block;
+        width: 0;
+        position: relative;
+        margin-left: 0;
+        position: relative;
+    }
+
+    .header .search-mobile::after {
+        right: 0px;
+        opacity: 1;
+        top: calc(50% - 9px);
+    }
+
+    /* main */
+
+    .main .good-count {
+        display: none;
+    }
+
+    .main .good-remains {
+        display: none;
+    }
+
+    .main .good-size {
+        display: none;
+    }
+
+    .main .good-provider {
+        display: none;
+    }
+    
+    .main .good-price {
+        display: none;
+    }
+
+    .main .good-text {
+        display: none;
+    }
+
+    .main .good-icons {
+        display: none;
     }
 
     .main {
         display: block;
     }
-    
+
     .main .card-page {
         width: 100%;
+    }
+
+    .main .good {
+        display: block;
+    }
+
+    .main .good-mobile-footer {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .main .good-checkbox {
+        position: absolute;
+        top: 4px;
+        left: 4px;
+    }
+
+    .main .good-image {
+        width: 80px;
+    }
+    
+    .main .good-image-block {
+        justify-content: flex-start;
+        width: auto;
+    }
+
+    .main .good-count {
+        margin-top: 12px;
+        padding: 4px 10px;
+        width: 80px;
+    }
+
+    .main .good-text.good-text-mobile {
+        display: block;
+        width: 192px;
+    }
+
+    .main .good-price.good-price-mobile {
+        width: 192px;
+    }
+
+    .main .good-count.good-count-mobile {
+        display: flex;
+    }
+
+    .main .good-remains.good-remains-mobile {
+        display: flex;
+    }
+    
+    .main .good-price.good-price-mobile {
+        display: block;
+        text-align: left;
+        height: auto;
+    }
+    
+    .main .good-caption.good-caption-mobile {
+        font-size: 14px;
+    }
+
+    .main .good-total-price.good-total-price-mobile {
+        display: inline;
+    }
+
+    .main .good-previous-price.good-previous-price-mobile {
+        margin-left: 0;;
+    }
+
+    .main .good-icons-mobile {
+        display: flex;
     }
 
     .aside {
