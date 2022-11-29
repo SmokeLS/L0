@@ -117,24 +117,25 @@ body {
 }
 
 /* main */
-
+/* goods */
 .main {
     background: #F6F6FA;
     width: 100%;
-    border-radius: 24px 24px 0px 0px;
+    border-radius: 24px;
     min-height: 550px;
     padding-left: 24px;
     padding-top: 14px;
+    padding-bottom: 50px;
 }
 
-.card-header {
+.card-header-main{
     font-style: normal;
     font-weight: 700;
     font-size: 28px;
     line-height: 36px;
 }
 
-.goods, .unavailable-goods {
+.goods, .unavailable-goods, .card  {
     margin-top: 28px;
     width: 64.5%;
 }
@@ -309,7 +310,6 @@ body {
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
-    margin-bottom: 0;
 }
 
 .good-currency-price {
@@ -353,4 +353,177 @@ body {
     color: #9797AF;
 }
 
+/* delivery  */
+
+.card {
+    background: #fff;
+    padding: 16px 24px;
+    border-radius: 16px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-header-text {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.card-button {
+    color: #CB11AB;
+    background: #fff;
+    border: none; 
+    font-weight: 700;
+}
+
+.delivery-option {
+    display: flex;
+    margin-top: 16px;
+}
+
+.delivery-caption {
+    font-weight: 600;
+    width: 22%;
+}
+
+.delivery-info {
+    display: flex;
+}
+
+.delivery-about {
+    display: flex;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.delivery-star {
+    color: #FF970D;
+}
+
+.delivery-time {
+    margin-left: 8px;
+}
+
+.delivery-images-block {
+    display: flex;
+    
+}
+
+.delivery-image-block {
+    width: 40px;
+}
+
+.delivery-image {
+    width: 100%;
+}
+
+.delivery-rejection {
+    margin-top: 28px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+}
+
+.delivery-price-rejection {
+    color: #0CB477;
+    margin-left: 5px;
+}
+
+.delivery-rejection-check {
+    margin-right: 5px;
+}
+
+/* paycard */
+
+.paycard {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    font-weight: 400;
+}
+
+.paycard-info {
+    margin-left: 8px;
+}
+
+.paycard-date {
+    margin-left: 12px;
+}
+
+.payment-info {
+    margin-top: 8px;
+    font-weight: 400px;
+    font-size: 13px;
+    color: #9797AF;
+}
+
+/* receiver */
+
+.receiver-form-block {
+    max-width: 700px;
+}
+
+.input-form-receiver {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    width: 100%;
+    padding-bottom: 5px;
+}
+
+.input-form-receiver:not(:first-child),.tin-input-form-block  {
+    margin-left: 24px;
+}
+
+.name-surname-block {
+    margin-top: 34px;
+    width: 100%;
+    display: flex;
+}
+
+.email-tel-tin-block {
+    display: flex;
+    margin-top: 37px;
+}
+
+.tin-input-form-block {
+    width: 100%;
+    margin-bottom: -20px;
+}
+
+.tin-purpose {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.receiver {
+    padding-bottom: 45px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type='number'],
+input[type="number"]:hover,
+input[type="number"]:focus {
+    appearance: none;
+    -moz-appearance: textfield;
+}
+
 /* aside */
+.card-page {}
+/* footer */
+
+.footer {
+    width: 100%;
+    height: 64px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
