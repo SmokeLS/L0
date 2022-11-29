@@ -1,3 +1,5 @@
+/* general */
+
 * {
     box-sizing: border-box;
 }
@@ -11,6 +13,70 @@ body {
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
+}
+
+.hidden {
+    display: none;
+}
+
+.disabled {
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.notification {
+    background: #F55123;
+    position: absolute;
+    padding-left: 4px;
+    padding-right: 4px;
+    height: 14px;
+    line-height: 14px;
+    top: -5px;
+    border-radius: 8px;
+    right: 0;
+    font-weight: 700;
+    font-size: 10px;
+    color: #fff;
+}
+
+.choose-custom-checkbox {
+    width: 22px;
+    height: 22px;
+    border-radius: 7px;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    display: block;
+    position: relative;
+}
+
+.hidden:checked+.choose-custom-checkbox {
+    background: #CB11AB;
+    color: white;
+    border: none;
+}
+
+.hidden:checked+.choose-custom-checkbox::before {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    top: 0;
+    left: 0;
+    content: url('../icons/Check.svg');
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input[type='number'],
+input[type="number"]:hover,
+input[type="number"]:focus {
+    appearance: none;
+    -moz-appearance: textfield;
 }
 
 /* header */
@@ -69,6 +135,20 @@ body {
     margin-left: 32px;
     max-width: 970px;
     width: 100%;
+    position: relative;
+}
+
+.search::after{
+    position: absolute;
+    top: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 22px;
+    opacity: 0.4;
+    width: 24px;
+    height: 24px;
+    content: url('../icons/Search.svg');
 }
 
 .search-bar {
@@ -80,6 +160,7 @@ body {
     border: none;
     background: rgba(255, 255, 255, 0.2);
 }
+
 
 .search-bar::placeholder {
     font-style: normal;
@@ -110,6 +191,7 @@ body {
 
 .cart {
     margin-left: 36px;
+    position: relative;
 }
 
 .cart-image {
@@ -145,38 +227,6 @@ body {
 .goods, .unavailable-goods, .card  {
     margin-top: 28px;
     width: 100%;
-}
-
-.hidden {
-    display: none;
-}
-
-.choose-custom-checkbox {
-    width: 22px;
-    height: 22px;
-    border-radius: 7px;
-    background: white;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    display: block;
-    position: relative;
-}
-
-.hidden:checked+.choose-custom-checkbox {
-    background: #CB11AB;
-    color: white;
-    border: none;
-}
-
-.hidden:checked+.choose-custom-checkbox::before {
-    position: absolute;
-    width: 22px;
-    height: 22px;
-    position: flex;
-    justify-content: center;
-    text-align: center;
-    top: 0;
-    left: 0;
-    content: url('../icons/Check.svg');
 }
 
 .choose, .unavailable{
@@ -284,10 +334,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.disabled {
-    color: rgba(0, 0, 0, 0.2);
 }
 
 .good-remains {
@@ -420,6 +466,7 @@ body {
 
 .delivery-image-block {
     width: 40px;
+    position: relative;
 }
 
 .delivery-image {
@@ -436,6 +483,7 @@ body {
 .delivery-price-rejection {
     color: #0CB477;
     margin-left: 5px;
+    border-bottom: 1px dashed rgba(12, 180, 119, 0.2);
 }
 
 .delivery-rejection-check {
@@ -509,18 +557,6 @@ body {
     padding-bottom: 45px;
 }
 
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-}
-
-input[type='number'],
-input[type="number"]:hover,
-input[type="number"]:focus {
-    appearance: none;
-    -moz-appearance: textfield;
-}
-
 /* aside */
 .aside {
     width: 31%; 
@@ -557,6 +593,10 @@ input[type="number"]:focus {
     margin-top: 4px;
 }
 
+.aside-delivery-date-text {
+    border-bottom: 1px dashed rgba(203, 17, 171, 0.2);
+}
+
 .aside-info-block {
     background: #F6F6FA;
     margin-top: 16px;
@@ -566,6 +606,7 @@ input[type="number"]:focus {
 
 .aside-price-rejection {
     color: #0CB477;
+    border-bottom: 1px dashed rgba(12, 180, 119, 0.2);
 }
 
 .aside-paycard {
@@ -576,7 +617,6 @@ input[type="number"]:focus {
 .aside-payment-block {
     display: flex;
     flex-direction: column;
-    font-size: 13px;
     margin-top: 12px;
 }
 
@@ -587,10 +627,12 @@ input[type="number"]:focus {
 
 .aside-payment-text {
     margin-left: 8px;
+    font-size: 13px;
 }
 
 .aside-payment-info {
     margin-top: 8px;
+    font-size: 13px;
 }
 
 .aside-button {
@@ -628,7 +670,7 @@ input[type="number"]:focus {
     position: absolute;
     width: 16px;
     height: 16px;
-    position: flex;
+    display: flex;
     justify-content: center;
     text-align: center;
     top: 0;
@@ -639,8 +681,12 @@ input[type="number"]:focus {
 .aside-footer {
     font-size: 13px;
     display: flex;
-    align-items:center;
     margin-top: 8px;
+}
+
+.aside-agreement-href {
+    color: #000;
+    text-decoration-color: rgba(0, 0, 0, 0.1);
 }
 
 /* footer */
