@@ -254,6 +254,10 @@ input[type="number"]:focus {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.unavailable-header {
+    color: #000;
+}
+
 .choose-text {
     margin-left: 11px;
 }
@@ -379,9 +383,10 @@ input[type="number"]:focus {
 
 .good-total-price {
     margin-top: 4px;
+    margin-left: 6px;
     font-style: normal;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .good-currency-price {
