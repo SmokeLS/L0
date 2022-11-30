@@ -4,11 +4,6 @@
     box-sizing: border-box;
 }
 
-/* body, html {
-    overflow-x: hidden;
-    max-width: 100%;
-} */
-
 body {
     background: #6725A8;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -28,7 +23,10 @@ body {
 .main .good-remains.good-remains-mobile,
 .header .search-mobile.search,
 .good-mobile-footer,
-.good-text-mobile{
+.good-text-mobile,
+.good-size-mobile,
+.good-checkbox-mobile,
+.tabbar-mobile {
     display: none;
 }
 
@@ -45,7 +43,7 @@ body {
     line-height: 14px;
     top: -5px;
     border-radius: 8px;
-    right: 0;
+    right: -5px;
     font-weight: 700;
     font-size: 10px;
     color: #fff;
@@ -57,7 +55,6 @@ body {
     border-radius: 7px;
     background: white;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    display: block;
     position: relative;
 }
 
@@ -227,6 +224,10 @@ input[type="number"]:focus {
     align-items: flex-start;
 }
 
+.unavailable-good .good-image-block {
+    width: auto;
+}
+
 .card-header-main {
     font-style: normal;
     font-weight: 700;
@@ -281,7 +282,8 @@ input[type="number"]:focus {
     padding-top: 8px;
 }
 
-.good-checkbox {
+.good-checkbox,
+.good-checkbox-mobile {
     align-self: center;
 }
 
@@ -421,6 +423,7 @@ input[type="number"]:focus {
 
 .unavailable-image-block {
     width: 72px;
+    position: relative;
 }
 
 .unavailable-image {
@@ -486,7 +489,7 @@ input[type="number"]:focus {
 
 .delivery-images-block {
     display: flex;
-
+    gap: 8px;
 }
 
 .delivery-image-block {
@@ -734,6 +737,7 @@ input[type="number"]:focus {
     .header {
         padding-left: 16px;
         padding-right: 16px;
+        height: 56px;
     }
 
     .header .icons {
@@ -790,7 +794,16 @@ input[type="number"]:focus {
         top: calc(50% - 9px);
     }
 
+    .main .card-header-main {
+        font-size: 20px;
+    }
+
     /* main */
+
+    .main {
+        padding: 0;
+        display: block;
+    }
 
     .main .good-count {
         display: none;
@@ -807,7 +820,7 @@ input[type="number"]:focus {
     .main .good-provider {
         display: none;
     }
-    
+
     .main .good-price {
         display: none;
     }
@@ -820,8 +833,38 @@ input[type="number"]:focus {
         display: none;
     }
 
-    .main {
+    .main .choose,
+    .main .goods>.good {
+        margin-left: 16px;
+        margin-right: 16px;
+        width: calc(100% - 32px)
+    }
+
+    .main .unavailable-goods {
+        margin-left: 16px;
+        margin-right: 16px;
+        width: calc(100% - 32px)
+    }
+
+    .main .good-size-mobile {
         display: block;
+        height: 22px;
+        line-height: 22px;
+        border-radius: 8px;
+        color: #000;
+        background: #fff;
+        padding: 0px 4px;
+        z-index: 3;
+        font-size: 14px;
+        position: absolute;
+        bottom: 4px;
+        left: 4px;
+    }
+
+    .main .card-header-main {
+        margin: 0;
+        padding-left: 16px;
+        padding-top: 16px;
     }
 
     .main .card-page {
@@ -830,25 +873,35 @@ input[type="number"]:focus {
 
     .main .good {
         display: block;
+        padding-top: 16px;
+    }
+
+    .main .good:has(+.good) {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding-bottom: 16px;
     }
 
     .main .good-mobile-footer {
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        gap: 16px;
+        gap: 12px;
+        max-width: 255px;
     }
 
-    .main .good-checkbox {
+    .main .good-checkbox,
+    .good-checkbox-mobile {
+        display: block;
         position: absolute;
         top: 4px;
+        z-index: 3;
         left: 4px;
     }
 
     .main .good-image {
         width: 80px;
     }
-    
+
     .main .good-image-block {
         justify-content: flex-start;
         width: auto;
@@ -863,6 +916,7 @@ input[type="number"]:focus {
     .main .good-text.good-text-mobile {
         display: block;
         width: 192px;
+        margin-left: 12px;
     }
 
     .main .good-price.good-price-mobile {
@@ -876,30 +930,126 @@ input[type="number"]:focus {
     .main .good-remains.good-remains-mobile {
         display: flex;
     }
-    
+
     .main .good-price.good-price-mobile {
         display: block;
         text-align: left;
         height: auto;
     }
-    
+
     .main .good-caption.good-caption-mobile {
+        margin-top: 4px;
+        line-height: 20px;
         font-size: 14px;
     }
 
     .main .good-total-price.good-total-price-mobile {
         display: inline;
+        margin-left: 0;
     }
 
     .main .good-previous-price.good-previous-price-mobile {
-        margin-left: 0;;
+        margin-left: 0;
+        ;
     }
 
     .main .good-icons-mobile {
         display: flex;
+        margin-left: auto;
     }
 
+    .main .card-header-text {
+        font-size: 20px;
+        white-space: nowrap;
+    }
+
+    .main .card {
+        padding: 16px;
+    }
+
+    .main .delivery-option {
+        display: block;
+        line-height: 20px;
+    }
+
+    .main .delivery-caption {
+        width: 100%;
+    }
+
+    .main .delivery-images-block {
+        margin-top: 12px;
+    }
+
+    .main .name-surname-block,
+    .main .email-tel-tin-block {
+        flex-direction: column;
+    }
+
+    .main .input-form-receiver:not(:first-child),
+    .main .tin-input-form-block {
+        margin-top: 34px;
+        margin-left: 0;
+    }
+
+    .main .tin-input-form-block {
+        margin-bottom: 0px;
+    }
+
+    /* aside  */
     .aside {
         width: 100%;
+    }
+
+    .aside-caption-section,
+    .aside-delivery-address,
+    .aside-delivery-date,
+    .aside-paycard {
+        display: none;
+    }
+
+    .aside.card {
+        background: #F6F6F6;
+        box-shadow: none;
+    }
+
+    .aside .aside-info-block {
+        background: #F0ECF4;
+    }
+
+    /* tabbar (mobile)*/
+
+    .tabbar-mobile {
+        color: #ccc;
+        height: 56px;
+        background: #fff;
+        display: flex;
+        padding: 0 13px;
+        justify-content: space-between;
+        box-shadow: 0px -0.5px 0px rgba(0, 0, 0, 0.3);
+        align-items: center;
+    }
+
+    .cart-image,
+    .profile-image,
+    .favorites-image,
+    .union-image {
+        filter: brightness(0) saturate(100%) invert(85%) sepia(45%) saturate(0%) hue-rotate(245deg) brightness(96%) contrast(76%);
+    }
+
+    .cart-image {
+        filter: brightness(0) saturate(100%) invert(15%) sepia(76%) saturate(6984%) hue-rotate(303deg) brightness(92%) contrast(93%);
+    }
+
+    .catalog-strips-image {
+        margin-bottom: 4px;
+        margin-left: -10px;
+    }
+
+    .cart,
+    .profile,
+    .union,
+    .favorites {
+        height: auto;
+        margin: 0;
     }
 }

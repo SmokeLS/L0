@@ -56,9 +56,10 @@
             <!-- first-item -->
             <div class="good">
               <div class="good-image-block">
+                <div class="good-size-mobile">56</div>
                 <input type="checkbox" class="hidden" id="choose-first" />
                 <label for="choose-first" class="choose-custom-checkbox good-checkbox"></label>
-                <img src="./img/photo-1.jpg" alt="Футболка" class="good-image" />
+                <img src="./img/photo-1.png" alt="Футболка" class="good-image" />
                 <div class="good-text good-text-mobile">
                   <div class="good-price good-price-mobile">
                     <div class="good-total-price good-total-price-mobile">
@@ -127,9 +128,9 @@
             <!-- second-item -->
             <div class="good">
               <div class="good-image-block">
-                <input type="checkbox" class="hidden" id="choose-first" />
-                <label for="choose-first" class="choose-custom-checkbox good-checkbox"></label>
-                <img src="./img/photo-2.jpg" alt="Футболка" class="good-image" />
+                <input type="checkbox" class="hidden" id="choose-second" />
+                <label for="choose-second" class="choose-custom-checkbox good-checkbox"></label>
+                <img src="./img/photo-2.png" alt="Футболка" class="good-image" />
                 <div class="good-text good-text-mobile">
                   <div class="good-price good-price-mobile">
                     <div class="good-total-price good-total-price-mobile">
@@ -150,10 +151,10 @@
               <div class="good-mobile-footer">
                 <div class="good-count good-count-mobile">
                   <div class="good-count-minus disabled">-</div>
-                  <input type="text" value="1" class="good-count-input" />
+                  <input type="text" value="255" class="good-count-input" />
                   <div class="good-count-plus">+</div>
                 </div>
-                <div class="good-remains good-remains-mobile">Осталось 2 шт.</div>
+                <div class="good-remains good-remains-mobile"></div>
                 <div class="good-icons good-icons-mobile">
                   <div class="good-favorite"><img src="./icons/Favourite.svg" alt="#" /></div>
                   <div class="good-delete"><img src="./icons/Delete.svg" alt="#" /></div>
@@ -171,7 +172,7 @@
                   <div class="good-warehouse">Коледино WB</div>
                   <div class="good-provider">ООО Мегапрофстиль <span class="good-info">&#9432;</span></div>
                 </div>
-                <div class="good-remains good-remains-mobile">Осталось 2 шт.</div>
+                <div class="good-remains good-remains-mobile"></div>
               </div>
 
               <div class="good-options">
@@ -196,9 +197,9 @@
             <!-- third-item -->
             <div class="good">
               <div class="good-image-block">
-                <input type="checkbox" class="hidden" id="choose-first" />
-                <label for="choose-first" class="choose-custom-checkbox good-checkbox"></label>
-                <img src="./img/photo-3.jpg" alt="Футболка" class="good-image" />
+                <input type="checkbox" class="hidden" id="choose-third" />
+                <label for="choose-third" class="choose-custom-checkbox good-checkbox"></label>
+                <img src="./img/photo-3.png" alt="Футболка" class="good-image" />
                 <div class="good-text good-text-mobile">
                   <div class="good-price good-price-mobile">
                     <div class="good-total-price good-total-price-mobile">
@@ -218,7 +219,7 @@
               <div class="good-mobile-footer">
                 <div class="good-count good-count-mobile">
                   <div class="good-count-minus disabled">-</div>
-                  <input type="text" value="1" class="good-count-input" />
+                  <input type="text" value="2" class="good-count-input" />
                   <div class="good-count-plus">+</div>
                 </div>
                 <div class="good-remains good-remains-mobile">Осталось 2 шт.</div>
@@ -268,9 +269,24 @@
               </div>
 
               <!-- first-item -->
-              <div class="unavailable-good">
+
+              <div class="unavailable-good good">
                 <div class="good-image-block unavailable-image-block">
-                  <img src="./img/photo-1.jpg" alt="Футболка" class="good-image unavailable-image" />
+                  <div class="good-size-mobile">56</div>
+                  <img src="./img/photo-1.png" alt="Футболка" class="good-image unavailable-image" />
+                  <div class="good-text good-text-mobile">
+                    <div class="good-caption good-caption-mobile">Футболка UZcotton мужская</div>
+                    <div class="good-characteristics">
+                      <div class="good-color">Цвет: белый</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="good-mobile-footer">
+                  <div class="good-icons good-icons-mobile">
+                    <div class="good-favorite"><img src="./icons/Favourite.svg" alt="#" /></div>
+                    <div class="good-delete"><img src="./icons/Delete.svg" alt="#" /></div>
+                  </div>
                 </div>
 
                 <div class="good-text">
@@ -279,10 +295,7 @@
                     <div class="good-color">Цвет: белый</div>
                     <div class="good-size">Размер: 56</div>
                   </div>
-                  <div class="good-footer">
-                    <div class="good-warehouse"></div>
-                    <div class="good-provider"></div>
-                  </div>
+                  <div class="good-remains good-remains-mobile">Осталось 2 шт.</div>
                 </div>
 
                 <div class="good-options">
@@ -294,24 +307,33 @@
 
                 <div class="good-price"></div>
               </div>
+
               <!-- second-item -->
-              <div class="unavailable-good">
+              <div class="unavailable-good good">
                 <div class="good-image-block unavailable-image-block">
-                  <img src="./img/photo-2.jpg" alt="Футболка" class="good-image unavailable-image" />
+                  <img src="./img/photo-2.png" alt="Футболка" class="good-image unavailable-image" />
+                  <div class="good-text good-text-mobile">
+                    <div class="good-caption good-caption-mobile">Футболка UZcotton мужская</div>
+                    <div class="good-characteristics">
+                      <div class="good-color">Цвет: белый</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="good-mobile-footer">
+                  <div class="good-icons good-icons-mobile">
+                    <div class="good-favorite"><img src="./icons/Favourite.svg" alt="#" /></div>
+                    <div class="good-delete"><img src="./icons/Delete.svg" alt="#" /></div>
+                  </div>
                 </div>
 
                 <div class="good-text">
-                  <div class="good-caption">
-                    Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR,
-                    MobiSafe
-                  </div>
+                  <div class="good-caption">Футболка UZcotton мужская</div>
                   <div class="good-characteristics">
-                    <div class="good-color">Цвет: прозрачный</div>
+                    <div class="good-color">Цвет: белый</div>
+                    <div class="good-size">Размер: 56</div>
                   </div>
-                  <div class="good-footer">
-                    <div class="good-warehouse"></div>
-                    <div class="good-provider"></div>
-                  </div>
+                  <div class="good-remains good-remains-mobile">Осталось 2 шт.</div>
                 </div>
 
                 <div class="good-options">
@@ -325,19 +347,34 @@
               </div>
 
               <!-- third-item -->
-              <div class="unavailable-good">
+              <div class="unavailable-good good">
                 <div class="good-image-block unavailable-image-block">
-                  <img src="./img/photo-3.jpg" alt="Футболка" class="good-image unavailable-image" />
+                  <div class="good-size-mobile">56/54/52...</div>
+                  <input type="checkbox" class="hidden" id="unavailable-third" />
+                  <label for="unavailable-third" class="choose-custom-checkbox good-checkbox-mobile"></label>
+                  <img src="./img/photo-3.png" alt="Футболка" class="good-image unavailable-image" />
+                  <div class="good-text good-text-mobile">
+                    <div class="good-caption good-caption-mobile">Футболка UZcotton мужская</div>
+                    <div class="good-characteristics">
+                      <div class="good-color">Цвет: белый</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="good-mobile-footer">
+                  <div class="good-icons good-icons-mobile">
+                    <div class="good-favorite"><img src="./icons/Favourite.svg" alt="#" /></div>
+                    <div class="good-delete"><img src="./icons/Delete.svg" alt="#" /></div>
+                  </div>
                 </div>
 
                 <div class="good-text">
-                  <div class="good-caption">
-                    Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell
+                  <div class="good-caption">Футболка UZcotton мужская</div>
+                  <div class="good-characteristics">
+                    <div class="good-color">Цвет: белый</div>
+                    <div class="good-size">Размер: 56</div>
                   </div>
-                  <div class="good-footer">
-                    <div class="good-warehouse"></div>
-                    <div class="good-provider"></div>
-                  </div>
+                  <div class="good-remains good-remains-mobile">Осталось 2 шт.</div>
                 </div>
 
                 <div class="good-options">
@@ -377,27 +414,27 @@
               </div>
 
               <div class="delivery-option">
-                <div class="delivery-caption">5-6 февраля</div>
+                <div class="delivery-caption">5—6 февраля</div>
                 <div class="delivery-images-block">
                   <div class="delivery-image-block">
-                    <img src="./img/photo-1.jpg" alt="Футболка" class="delivery-image" />
+                    <img src="./img/photo-1.png" alt="Футболка" class="delivery-image" />
                   </div>
                   <div class="delivery-image-block">
-                    <img src="./img/photo-2.jpg" alt="Футболка" class="delivery-image" />
+                    <img src="./img/photo-2.png" alt="Футболка" class="delivery-image" />
                     <div class="notification">184</div>
                   </div>
                   <div class="delivery-image-block">
-                    <img src="./img/photo-3.jpg" alt="Футболка" class="delivery-image" />
+                    <img src="./img/photo-3.png" alt="Футболка" class="delivery-image" />
                     <div class="notification">2</div>
                   </div>
                 </div>
               </div>
 
               <div class="delivery-option">
-                <div class="delivery-caption">7-8 февраля</div>
+                <div class="delivery-caption">7—8 февраля</div>
                 <div class="delivery-images-block">
                   <div class="delivery-image-block">
-                    <img src="./img/photo-2.jpg" alt="Футболка" class="delivery-image" />
+                    <img src="./img/photo-2.png" alt="Футболка" class="delivery-image" />
                     <div class="notification">16</div>
                   </div>
                 </div>
@@ -407,8 +444,7 @@
                 <span class="delivery-rejection-check">
                   <img src="./icons/Accepted-check.svg" alt="#" />
                 </span>
-                <span> Обратная доставка товаров на склад при отказе — </span>
-                <span class="delivery-price-rejection">бесплатно</span>
+                <span> Обратная доставка товаров на склад при отказе — <span class="delivery-price-rejection">бесплатно</span></span>
               </div>
             </div>
 
@@ -445,8 +481,8 @@
                   </div>
 
                   <div class="email-tel-tin-block">
-                    <input type="email" placeholder="Почта" class="email-input-form input-form-receiver" />
-                    <input type="tel" placeholder="Телефон" class="tel-input-form input-form-receiver" />
+                    <input type="email" placeholder="Электронна почта" class="email-input-form input-form-receiver" />
+                    <input type="tel" placeholder="Телефон" class="tel-input-form input-form-receiver" value="+7 (988) 123-45-67" />
                     <div class="tin-input-form-block">
                       <input type="number" placeholder="ИНН" class="tin-input-form input-form-receiver" />
                       <span class="tin-purpose">Для таможенного оформления</span>
@@ -490,7 +526,7 @@
 
             <div class="aside-delivery-address">Бишкек, улица Ахматбека Суюмбаева, 12/1</div>
 
-            <div class="aside-delivery-date"><span class="aside-delivery-date-text">5-8 фев</span></div>
+            <div class="aside-delivery-date"><span class="aside-delivery-date-text">5—8 фев</span></div>
 
             <div class="delivery-rejection aside-info-block">
               <span class="delivery-rejection-check">
@@ -547,6 +583,28 @@
       <footer class="footer">
         <div class="footer-text">© 2022 ООО «Товары и точка»</div>
       </footer>
+
+      <!-- footer-mobile  -->
+      <div class="tabbar-mobile">
+        <div class="union">
+          <img src="./icons/Union-mobile.svg" class="union-image" />
+        </div>
+        <div class="catalog">
+          <img src="./icons/Catalog-search-mobile.svg" class="catalog-search-image"/>
+          <img src="./icons/Catalog-strips-mobile.svg" class="catalog-strips-image"/>
+        </div>
+        <div class="cart">
+          <img src="./icons/Cart.svg" class="cart-image" />
+          <div>
+            <div class="notification">3</div>
+          </div>
+        </div>
+        <div class="favorites">
+          <img src="./icons/Favorites-mobile.svg" class="favorites-image" />
+        </div>
+        <div class="profile">
+          <img src="./icons/Profile.svg" class="profile-image" />
+        </div>
     </div>
   </body>
 </html>
