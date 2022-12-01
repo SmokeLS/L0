@@ -30,6 +30,26 @@ body {
     display: none;
 }
 
+.favorite {
+    filter: brightness(0) saturate(100%) invert(15%) sepia(76%) saturate(6984%) hue-rotate(303deg) brightness(92%) contrast(93%);
+}
+
+.good-favorite-image,
+.good-delete-image,
+.good-info,
+.aside-edit-image,
+.profile-image,
+.union,
+.catalog,
+.cart,
+.favorites,
+input[type=button],
+label,
+.good-count-minus,
+.good-count-plus {
+    cursor: pointer;
+}
+
 .disabled {
     color: rgba(0, 0, 0, 0.2);
 }
@@ -174,7 +194,6 @@ input[type="number"]:focus {
 
 .search-bar::placeholder {
     font-style: normal;
-    font-weight: 400;
     font-size: 18px;
     line-height: 24px;
     color: #fff;
@@ -194,7 +213,6 @@ input[type="number"]:focus {
     text-align: center;
     justify-content: space-between;
     font-style: normal;
-    font-weight: 400;
     font-size: 13px;
     height: 100%;
 }
@@ -413,7 +431,7 @@ input[type="number"]:focus {
     padding-top: 40px;
 }
 
-.selected {
+.deleted {
     filter: invert(44%) sepia(60%) saturate(4414%) hue-rotate(348deg) brightness(98%) contrast(96%);
 }
 
@@ -524,7 +542,6 @@ input[type="number"]:focus {
     display: flex;
     align-items: center;
     margin-top: 16px;
-    font-weight: 400;
 }
 
 .paycard-info {
@@ -537,7 +554,6 @@ input[type="number"]:focus {
 
 .payment-info {
     margin-top: 8px;
-    font-weight: 400px;
     font-size: 13px;
     color: #9797AF;
 }
@@ -579,7 +595,6 @@ input[type="number"]:focus {
 
 .tin-purpose {
     font-size: 12px;
-    font-weight: 400;
 }
 
 .receiver {

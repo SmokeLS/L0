@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/stylesheet.css" />
     <title>L0</title>
   </head>
   <body>
@@ -27,11 +27,11 @@
         <div class="search"><input type="text" placeholder="Я ищу..." class="search-bar" /></div>
         <div class="icons">
           <div class="profile">
-            <img src="./icons/Profile.svg" class="profile-image" />
+            <img src="./icons/Profile.svg" class="profile-image" alt="profile" />
             <div>Профиль</div>
           </div>
           <div class="cart">
-            <img src="./icons/Cart.svg" class="cart-image" />
+            <img src="./icons/Cart.svg" class="cart-image" alt="cart" />
             <div>
               Корзина
               <div class="notification">3</div>
@@ -57,9 +57,9 @@
             <div class="good">
               <div class="good-image-block">
                 <div class="good-size-mobile">56</div>
-                <input type="checkbox" class="hidden" id="choose-first" />
+                <input type="checkbox" class="hidden input-checked" id="choose-first" />
                 <label for="choose-first" class="choose-custom-checkbox good-checkbox"></label>
-                <img src="./img/photo-1.png" alt="Футболка" class="good-image" />
+                <img src="./img/photo-1.png" alt="t-shirt" class="good-image" />
                 <div class="good-text good-text-mobile">
                   <div class="good-price good-price-mobile">
                     <div class="good-total-price good-total-price-mobile">
@@ -84,10 +84,13 @@
                   <input type="text" value="1" class="good-count-input" />
                   <div class="good-count-plus">+</div>
                 </div>
+
                 <div class="good-remains good-remains-mobile">Осталось 2 шт.</div>
                 <div class="good-icons good-icons-mobile">
-                  <div class="good-favorite"><img src="./icons/Favourite.svg" alt="#" /></div>
-                  <div class="good-delete"><img src="./icons/Delete.svg" alt="#" /></div>
+                  <div class="good-favorite">
+                    <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
+                  </div>
+                  <div class="good-delete"><img src="./icons/Delete.svg" alt="delete" class="good-delete-image" /></div>
                 </div>
               </div>
 
@@ -114,8 +117,10 @@
                 <div class="good-remains">Осталось 2 шт.</div>
 
                 <div class="good-icons">
-                  <div class="good-favorite"><img src="./icons/Favourite.svg" alt="#" /></div>
-                  <div class="good-delete"><img src="./icons/Delete.svg" alt="#" /></div>
+                  <div class="good-favorite">
+                    <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
+                  </div>
+                  <div class="good-delete"><img src="./icons/Delete.svg" alt="delete" class="good-delete-image" /></div>
                 </div>
               </div>
 
@@ -128,9 +133,9 @@
             <!-- second-item -->
             <div class="good">
               <div class="good-image-block">
-                <input type="checkbox" class="hidden" id="choose-second" />
+                <input type="checkbox" class="hidden input-checked" id="choose-second" />
                 <label for="choose-second" class="choose-custom-checkbox good-checkbox"></label>
-                <img src="./img/photo-2.png" alt="Футболка" class="good-image" />
+                <img src="./img/photo-2.png" alt="case" class="good-image" />
                 <div class="good-text good-text-mobile">
                   <div class="good-price good-price-mobile">
                     <div class="good-total-price good-total-price-mobile">
@@ -156,8 +161,10 @@
                 </div>
                 <div class="good-remains good-remains-mobile"></div>
                 <div class="good-icons good-icons-mobile">
-                  <div class="good-favorite"><img src="./icons/Favourite.svg" alt="#" /></div>
-                  <div class="good-delete"><img src="./icons/Delete.svg" alt="#" /></div>
+                  <div class="good-favorite">
+                    <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
+                  </div>
+                  <div class="good-delete"><img src="./icons/Delete.svg" alt="delete" class="good-delete-image" /></div>
                 </div>
               </div>
 
@@ -183,8 +190,10 @@
                 </div>
 
                 <div class="good-icons">
-                  <div class="good-favorite"><img src="./icons/Favourite.svg" alt="#" /></div>
-                  <div class="good-delete"><img src="./icons/Delete.svg" alt="#" /></div>
+                  <div class="good-favorite">
+                    <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
+                  </div>
+                  <div class="good-delete"><img src="./icons/Delete.svg" alt="delete" class="good-delete-image" /></div>
                 </div>
               </div>
 
@@ -197,9 +206,9 @@
             <!-- third-item -->
             <div class="good">
               <div class="good-image-block">
-                <input type="checkbox" class="hidden" id="choose-third" />
+                <input type="checkbox" class="hidden input-checked" id="choose-third" />
                 <label for="choose-third" class="choose-custom-checkbox good-checkbox"></label>
-                <img src="./img/photo-3.png" alt="Футболка" class="good-image" />
+                <img src="./img/photo-3.png" alt="book" class="good-image" />
                 <div class="good-text good-text-mobile">
                   <div class="good-price good-price-mobile">
                     <div class="good-total-price good-total-price-mobile">
@@ -224,8 +233,10 @@
                 </div>
                 <div class="good-remains good-remains-mobile">Осталось 2 шт.</div>
                 <div class="good-icons good-icons-mobile">
-                  <div class="good-favorite"><img src="./icons/Favourite.svg" alt="#" /></div>
-                  <div class="good-delete"><img src="./icons/Delete.svg" alt="#" /></div>
+                  <div class="good-favorite">
+                    <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
+                  </div>
+                  <div class="good-delete"><img src="./icons/Delete.svg" alt="delete" class="good-delete-image" /></div>
                 </div>
               </div>
 
@@ -250,8 +261,10 @@
                 <div class="good-remains">Осталось 2 шт.</div>
 
                 <div class="good-icons">
-                  <div class="good-favorite"><img src="./icons/Favourite.svg" alt="#" /></div>
-                  <div class="good-delete selected"><img src="./icons/Delete.svg" alt="#" /></div>
+                  <div class="good-favorite">
+                    <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
+                  </div>
+                  <div class="good-delete"><img src="./icons/Delete.svg" alt="delete" class="good-delete-image" /></div>
                 </div>
               </div>
 
@@ -273,7 +286,7 @@
               <div class="unavailable-good good">
                 <div class="good-image-block unavailable-image-block">
                   <div class="good-size-mobile">56</div>
-                  <img src="./img/photo-1.png" alt="Футболка" class="good-image unavailable-image" />
+                  <img src="./img/photo-1.png" alt="t-shirt" class="good-image unavailable-image" />
                   <div class="good-text good-text-mobile">
                     <div class="good-caption good-caption-mobile">Футболка UZcotton мужская</div>
                     <div class="good-characteristics">
@@ -284,8 +297,12 @@
 
                 <div class="good-mobile-footer">
                   <div class="good-icons good-icons-mobile">
-                    <div class="good-favorite"><img src="./icons/Favourite.svg" alt="#" /></div>
-                    <div class="good-delete"><img src="./icons/Delete.svg" alt="#" /></div>
+                    <div class="good-favorite">
+                      <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
+                    </div>
+                    <div class="good-delete">
+                      <img src="./icons/Delete.svg" alt="delete" class="good-delete-image" />
+                    </div>
                   </div>
                 </div>
 
@@ -300,8 +317,12 @@
 
                 <div class="good-options">
                   <div class="good-icons">
-                    <div class="good-favorite"><img src="./icons/Favourite.svg" alt="#" /></div>
-                    <div class="good-delete"><img src="./icons/Delete.svg" alt="#" /></div>
+                    <div class="good-favorite">
+                      <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
+                    </div>
+                    <div class="good-delete">
+                      <img src="./icons/Delete.svg" alt="delete" class="good-delete-image" />
+                    </div>
                   </div>
                 </div>
 
@@ -311,7 +332,7 @@
               <!-- second-item -->
               <div class="unavailable-good good">
                 <div class="good-image-block unavailable-image-block">
-                  <img src="./img/photo-2.png" alt="Футболка" class="good-image unavailable-image" />
+                  <img src="./img/photo-2.png" alt="case" class="good-image unavailable-image" />
                   <div class="good-text good-text-mobile">
                     <div class="good-caption good-caption-mobile">Футболка UZcotton мужская</div>
                     <div class="good-characteristics">
@@ -322,8 +343,12 @@
 
                 <div class="good-mobile-footer">
                   <div class="good-icons good-icons-mobile">
-                    <div class="good-favorite"><img src="./icons/Favourite.svg" alt="#" /></div>
-                    <div class="good-delete"><img src="./icons/Delete.svg" alt="#" /></div>
+                    <div class="good-favorite">
+                      <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
+                    </div>
+                    <div class="good-delete">
+                      <img src="./icons/Delete.svg" alt="delete" class="good-delete-image" />
+                    </div>
                   </div>
                 </div>
 
@@ -338,8 +363,8 @@
 
                 <div class="good-options">
                   <div class="good-icons">
-                    <div class="good-favorite"><img src="./icons/Favourite.svg" alt="#" /></div>
-                    <div class="good-delete"><img src="./icons/Delete.svg" alt="#" /></div>
+                    <div class="good-favorite"><img src="./icons/Favorite.svg" alt="favorite" /></div>
+                    <div class="good-delete"><img src="./icons/Delete.svg" alt="delete" /></div>
                   </div>
                 </div>
 
@@ -352,7 +377,7 @@
                   <div class="good-size-mobile">56/54/52...</div>
                   <input type="checkbox" class="hidden" id="unavailable-third" />
                   <label for="unavailable-third" class="choose-custom-checkbox good-checkbox-mobile"></label>
-                  <img src="./img/photo-3.png" alt="Футболка" class="good-image unavailable-image" />
+                  <img src="./img/photo-3.png" alt="book" class="good-image unavailable-image" />
                   <div class="good-text good-text-mobile">
                     <div class="good-caption good-caption-mobile">Футболка UZcotton мужская</div>
                     <div class="good-characteristics">
@@ -363,8 +388,8 @@
 
                 <div class="good-mobile-footer">
                   <div class="good-icons good-icons-mobile">
-                    <div class="good-favorite"><img src="./icons/Favourite.svg" alt="#" /></div>
-                    <div class="good-delete"><img src="./icons/Delete.svg" alt="#" /></div>
+                    <div class="good-favorite"><img src="./icons/Favorite.svg" alt="favorite" /></div>
+                    <div class="good-delete"><img src="./icons/Delete.svg" alt="delete" /></div>
                   </div>
                 </div>
 
@@ -379,8 +404,8 @@
 
                 <div class="good-options">
                   <div class="good-icons">
-                    <div class="good-favorite"><img src="./icons/Favourite.svg" alt="#" /></div>
-                    <div class="good-delete"><img src="./icons/Delete.svg" alt="#" /></div>
+                    <div class="good-favorite"><img src="./icons/Favorite.svg" alt="favorite" /></div>
+                    <div class="good-delete"><img src="./icons/Delete.svg" alt="delete" /></div>
                   </div>
                 </div>
 
@@ -417,14 +442,14 @@
                 <div class="delivery-caption">5—6 февраля</div>
                 <div class="delivery-images-block">
                   <div class="delivery-image-block">
-                    <img src="./img/photo-1.png" alt="Футболка" class="delivery-image" />
+                    <img src="./img/photo-1.png" alt="t-shirt" class="delivery-image" />
                   </div>
                   <div class="delivery-image-block">
-                    <img src="./img/photo-2.png" alt="Футболка" class="delivery-image" />
+                    <img src="./img/photo-2.png" alt="case" class="delivery-image" />
                     <div class="notification">184</div>
                   </div>
                   <div class="delivery-image-block">
-                    <img src="./img/photo-3.png" alt="Футболка" class="delivery-image" />
+                    <img src="./img/photo-3.png" alt="book" class="delivery-image" />
                     <div class="notification">2</div>
                   </div>
                 </div>
@@ -434,7 +459,7 @@
                 <div class="delivery-caption">7—8 февраля</div>
                 <div class="delivery-images-block">
                   <div class="delivery-image-block">
-                    <img src="./img/photo-2.png" alt="Футболка" class="delivery-image" />
+                    <img src="./img/photo-2.png" alt="case" class="delivery-image" />
                     <div class="notification">16</div>
                   </div>
                 </div>
@@ -442,9 +467,12 @@
 
               <div class="delivery-rejection">
                 <span class="delivery-rejection-check">
-                  <img src="./icons/Accepted-check.svg" alt="#" />
+                  <img src="./icons/Accepted-check.svg" alt="check" />
                 </span>
-                <span> Обратная доставка товаров на склад при отказе — <span class="delivery-price-rejection">бесплатно</span></span>
+                <span>
+                  Обратная доставка товаров на склад при отказе —
+                  <span class="delivery-price-rejection">бесплатно</span></span
+                >
               </div>
             </div>
 
@@ -474,7 +502,7 @@
               </div>
 
               <div class="receiver-form-block">
-                <form action="" class="receiver-form">
+                <form action="." class="receiver-form">
                   <div class="name-surname-block">
                     <input type="text" placeholder="Имя" class="name-input-form input-form-receiver" />
                     <input type="text" placeholder="Фамилия" class="surname-input-form input-form-receiver" />
@@ -482,7 +510,12 @@
 
                   <div class="email-tel-tin-block">
                     <input type="email" placeholder="Электронна почта" class="email-input-form input-form-receiver" />
-                    <input type="tel" placeholder="Телефон" class="tel-input-form input-form-receiver" value="+7 (988) 123-45-67" />
+                    <input
+                      type="tel"
+                      placeholder="Телефон"
+                      class="tel-input-form input-form-receiver"
+                      value="+7 (988) 123-45-67"
+                    />
                     <div class="tin-input-form-block">
                       <input type="number" placeholder="ИНН" class="tin-input-form input-form-receiver" />
                       <span class="tin-purpose">Для таможенного оформления</span>
@@ -498,7 +531,7 @@
         <aside class="aside card">
           <div class="card-aside-header card-header">
             <div class="card-header-text">Итого</div>
-            <div class="card-header-text">2 101 603 сом</div>
+            <div class="card-header-text" id="total-price">2 101 603 сом</div>
           </div>
 
           <div class="aside-option">
@@ -520,7 +553,7 @@
             <div class="aside-caption-section">
               <div class="aside-section-caption">Доставка и пункт выдачи</div>
               <div class="aside-delivery-edit-block">
-                <img src="./icons/Pencil.svg" alt="pencil" />
+                <img src="./icons/Pencil.svg" alt="pencil" class="aside-edit-image" />
               </div>
             </div>
 
@@ -530,7 +563,7 @@
 
             <div class="delivery-rejection aside-info-block">
               <span class="delivery-rejection-check">
-                <img src="./icons/Accepted-check.svg" alt="#" />
+                <img src="./icons/Accepted-check.svg" alt="check" />
               </span>
               <span
                 >Обратная доставка товаров на склад при отказе —
@@ -587,24 +620,26 @@
       <!-- footer-mobile  -->
       <div class="tabbar-mobile">
         <div class="union">
-          <img src="./icons/Union-mobile.svg" class="union-image" />
+          <img src="./icons/Union-mobile.svg" class="union-image" alt="union" />
         </div>
         <div class="catalog">
-          <img src="./icons/Catalog-search-mobile.svg" class="catalog-search-image"/>
-          <img src="./icons/Catalog-strips-mobile.svg" class="catalog-strips-image"/>
+          <img src="./icons/Catalog-search-mobile.svg" class="catalog-search-image" alt="search" />
+          <img src="./icons/Catalog-strips-mobile.svg" class="catalog-strips-image" alt="strips" />
         </div>
         <div class="cart">
-          <img src="./icons/Cart.svg" class="cart-image" />
+          <img src="./icons/Cart.svg" class="cart-image" alt="cart" />
           <div>
             <div class="notification">3</div>
           </div>
         </div>
         <div class="favorites">
-          <img src="./icons/Favorites-mobile.svg" class="favorites-image" />
+          <img src="./icons/Favorites-mobile.svg" class="favorites-image" alt="favorite" />
         </div>
         <div class="profile">
-          <img src="./icons/Profile.svg" class="profile-image" />
+          <img src="./icons/Profile.svg" class="profile-image" alt="profile" />
         </div>
+      </div>
     </div>
+    <script src="js/script.js"></script>
   </body>
 </html>
