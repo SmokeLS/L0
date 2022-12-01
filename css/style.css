@@ -19,6 +19,13 @@ body {
     display: none;
 }
 
+.good-wrapper {
+    max-height: 600px;
+    overflow: hidden;
+    will-change: max-height;
+    transition: all 0.3s ease-out;
+}
+
 .main .good-count.good-count-mobile,
 .main .good-remains.good-remains-mobile,
 .header .search-mobile.search,
@@ -46,7 +53,9 @@ body {
 input[type=button],
 label,
 .good-count-minus,
-.good-count-plus {
+.good-count-plus,
+.triangle,
+.choose-text{
     cursor: pointer;
 }
 
@@ -290,6 +299,7 @@ input[type="number"]:focus {
     margin-top: 12px;
     margin-right: 0;
     margin-left: auto;
+    transition: all 0.3s ease-out;
 }
 
 .good,
@@ -343,9 +353,13 @@ input[type="number"]:focus {
     color: #A0A0A4;
 }
 
+.good-provider {
+    display: flex;
+    align-items: center;
+}
+
 .good-info {
     margin-left: 5px;
-    font-size: 16px;
 }
 
 .good-options {
@@ -424,11 +438,6 @@ input[type="number"]:focus {
     font-size: 13px;
     color: rgba(0, 0, 0, 0.2);
     margin-left: 16px;
-}
-
-.good:not(:nth-child(2)),
-.unavailable-good:not(:nth-child(2)) {
-    padding-top: 40px;
 }
 
 .deleted {
@@ -848,14 +857,8 @@ input[type="number"]:focus {
         display: none;
     }
 
-    .main .choose,
-    .main .goods>.good {
-        margin-left: 16px;
-        margin-right: 16px;
-        width: calc(100% - 32px)
-    }
-
-    .main .unavailable-goods {
+    .main .unavailable-goods,
+    .main .available-goods {
         margin-left: 16px;
         margin-right: 16px;
         width: calc(100% - 32px)

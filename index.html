@@ -46,370 +46,389 @@
         <div class="card-page">
           <h1 class="card-header-main">Корзина</h1>
           <div class="goods">
-            <div class="choose">
-              <input type="checkbox" class="hidden" id="choose-all" />
-              <label for="choose-all" class="choose-custom-checkbox"></label>
-              <div class="choose-text">Выбрать все</div>
-              <div class="triangle"></div>
-            </div>
+            <div class="available-goods">
+              <div class="choose">
+                <input type="checkbox" class="hidden" id="choose-all" />
+                <label for="choose-all" class="choose-custom-checkbox" id="choose-all-label"></label>
+                <div class="choose-text">Выбрать все</div>
+                <div class="hidden-choose-text"></div>
+                <div class="triangle" role="button" aria-expanded="true"></div>
+              </div>
 
-            <!-- first-item -->
-            <div class="good">
-              <div class="good-image-block">
-                <div class="good-size-mobile">56</div>
-                <input type="checkbox" class="hidden input-checked" id="choose-first" />
-                <label for="choose-first" class="choose-custom-checkbox good-checkbox"></label>
-                <img src="./img/photo-1.png" alt="t-shirt" class="good-image" />
-                <div class="good-text good-text-mobile">
-                  <div class="good-price good-price-mobile">
-                    <div class="good-total-price good-total-price-mobile">
-                      522 <span class="good-currency-price">сом</span>
+              <div class="good-wrapper open" aria-hidden="false">
+              <!-- first-item -->
+                <div class="good">
+                  <div class="good-image-block">
+                    <div class="good-size-mobile">56</div>
+                    <input type="checkbox" class="hidden input-checked" id="choose-first" />
+                    <label for="choose-first" class="choose-custom-checkbox good-checkbox"></label>
+                    <img src="./img/photo-1.png" alt="t-shirt" class="good-image" />
+                    <div class="good-text good-text-mobile">
+                      <div class="good-price good-price-mobile">
+                        <div class="good-total-price good-total-price-mobile">
+                          522 <span class="good-currency-price">сом</span>
+                        </div>
+                        <span class="good-previous-price good-previous-price-mobile">1051 сом</span>
+                      </div>
+                      <div class="good-caption good-caption-mobile">Футболка UZcotton мужская</div>
+                      <div class="good-characteristics">
+                        <div class="good-color">Цвет: белый</div>
+                        <div class="good-size">Размер: 56</div>
+                      </div>
+                      <div class="good-footer">
+                        <div class="good-warehouse">Коледино WB</div>
+                      </div>
                     </div>
-                    <span class="good-previous-price good-previous-price-mobile">1051 сом</span>
                   </div>
-                  <div class="good-caption good-caption-mobile">Футболка UZcotton мужская</div>
-                  <div class="good-characteristics">
-                    <div class="good-color">Цвет: белый</div>
-                    <div class="good-size">Размер: 56</div>
-                  </div>
-                  <div class="good-footer">
-                    <div class="good-warehouse">Коледино WB</div>
-                  </div>
-                </div>
-              </div>
 
-              <div class="good-mobile-footer">
-                <div class="good-count good-count-mobile">
-                  <div class="good-count-minus disabled">-</div>
-                  <input type="text" value="1" class="good-count-input" />
-                  <div class="good-count-plus">+</div>
-                </div>
-
-                <div class="good-remains good-remains-mobile">Осталось 2 шт.</div>
-                <div class="good-icons good-icons-mobile">
-                  <div class="good-favorite">
-                    <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
-                  </div>
-                  <div class="good-delete"><img src="./icons/Delete.svg" alt="delete" class="good-delete-image" /></div>
-                </div>
-              </div>
-
-              <div class="good-text">
-                <div class="good-caption">Футболка UZcotton мужская</div>
-                <div class="good-characteristics">
-                  <div class="good-color">Цвет: белый</div>
-                  <div class="good-size">Размер: 56</div>
-                </div>
-                <div class="good-footer">
-                  <div class="good-warehouse">Коледино WB</div>
-                  <div class="good-provider">ООО Вайлдберриз <span class="good-info">&#9432;</span></div>
-                </div>
-                <div class="good-remains good-remains-mobile">Осталось 2 шт.</div>
-              </div>
-
-              <div class="good-options">
-                <div class="good-count">
-                  <div class="good-count-minus disabled">-</div>
-                  <input type="text" value="1" class="good-count-input" />
-                  <div class="good-count-plus">+</div>
-                </div>
-
-                <div class="good-remains">Осталось 2 шт.</div>
-
-                <div class="good-icons">
-                  <div class="good-favorite">
-                    <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
-                  </div>
-                  <div class="good-delete"><img src="./icons/Delete.svg" alt="delete" class="good-delete-image" /></div>
-                </div>
-              </div>
-
-              <div class="good-price">
-                <div class="good-total-price">522 <span class="good-currency-price">сом</span></div>
-                <span class="good-previous-price">1051 сом</span>
-              </div>
-            </div>
-
-            <!-- second-item -->
-            <div class="good">
-              <div class="good-image-block">
-                <input type="checkbox" class="hidden input-checked" id="choose-second" />
-                <label for="choose-second" class="choose-custom-checkbox good-checkbox"></label>
-                <img src="./img/photo-2.png" alt="case" class="good-image" />
-                <div class="good-text good-text-mobile">
-                  <div class="good-price good-price-mobile">
-                    <div class="good-total-price good-total-price-mobile">
-                      2 100 047<span class="good-currency-price">сом</span>
+                  <div class="good-mobile-footer">
+                    <div class="good-count good-count-mobile">
+                      <div class="good-count-minus disabled">-</div>
+                      <input type="text" value="1" class="good-count-input" />
+                      <div class="good-count-plus">+</div>
                     </div>
-                    <span class="good-previous-price good-previous-price-mobile">2 300 047 сом</span>
-                  </div>
-                  <div class="good-caption good-caption-mobile">Силиконовый чехол картхолдер (отверстия) для...</div>
-                  <div class="good-characteristics">
-                    <div class="good-color">Цвет: прозрачный</div>
-                  </div>
-                  <div class="good-footer">
-                    <div class="good-warehouse">Коледино WB</div>
-                  </div>
-                </div>
-              </div>
 
-              <div class="good-mobile-footer">
-                <div class="good-count good-count-mobile">
-                  <div class="good-count-minus disabled">-</div>
-                  <input type="text" value="255" class="good-count-input" />
-                  <div class="good-count-plus">+</div>
-                </div>
-                <div class="good-remains good-remains-mobile"></div>
-                <div class="good-icons good-icons-mobile">
-                  <div class="good-favorite">
-                    <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
-                  </div>
-                  <div class="good-delete"><img src="./icons/Delete.svg" alt="delete" class="good-delete-image" /></div>
-                </div>
-              </div>
-
-              <div class="good-text">
-                <div class="good-caption">
-                  Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe
-                </div>
-                <div class="good-characteristics">
-                  <div class="good-color">Цвет: прозрачный</div>
-                </div>
-                <div class="good-footer">
-                  <div class="good-warehouse">Коледино WB</div>
-                  <div class="good-provider">ООО Мегапрофстиль <span class="good-info">&#9432;</span></div>
-                </div>
-                <div class="good-remains good-remains-mobile"></div>
-              </div>
-
-              <div class="good-options">
-                <div class="good-count">
-                  <div class="good-count-minus disabled">-</div>
-                  <input type="text" value="200" class="good-count-input" />
-                  <div class="good-count-plus">+</div>
-                </div>
-
-                <div class="good-icons">
-                  <div class="good-favorite">
-                    <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
-                  </div>
-                  <div class="good-delete"><img src="./icons/Delete.svg" alt="delete" class="good-delete-image" /></div>
-                </div>
-              </div>
-
-              <div class="good-price">
-                <div class="good-total-price">2 100 047 <span class="good-currency-price">сом</span></div>
-                <span class="good-previous-price">2 300 047 сом</span>
-              </div>
-            </div>
-
-            <!-- third-item -->
-            <div class="good">
-              <div class="good-image-block">
-                <input type="checkbox" class="hidden input-checked" id="choose-third" />
-                <label for="choose-third" class="choose-custom-checkbox good-checkbox"></label>
-                <img src="./img/photo-3.png" alt="book" class="good-image" />
-                <div class="good-text good-text-mobile">
-                  <div class="good-price good-price-mobile">
-                    <div class="good-total-price good-total-price-mobile">
-                      494 <span class="good-currency-price">сом</span>
+                    <div class="good-remains good-remains-mobile">Осталось 2 шт.</div>
+                    <div class="good-icons good-icons-mobile">
+                      <div class="good-favorite">
+                        <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
+                      </div>
+                      <div class="good-delete">
+                        <img src="./icons/Delete.svg" alt="delete" class="good-delete-image" />
+                      </div>
                     </div>
-                    <span class="good-previous-price good-previous-price-mobile">950 сом</span>
                   </div>
-                  <div class="good-caption good-caption-mobile">
-                    Карандаши цветные Faber-Castell "Замок", набор 24 цв...
+
+                  <div class="good-text">
+                    <div class="good-caption">Футболка UZcotton мужская</div>
+                    <div class="good-characteristics">
+                      <div class="good-color">Цвет: белый</div>
+                      <div class="good-size">Размер: 56</div>
+                    </div>
+                    <div class="good-footer">
+                      <div class="good-warehouse">Коледино WB</div>
+                      <div class="good-provider">ООО Вайлдберриз <img src="./icons/info.svg" alt="info" class="good-info"></div>
+                    </div>
+                    <div class="good-remains good-remains-mobile">Осталось 2 шт.</div>
                   </div>
-                  <div class="good-footer">
-                    <div class="good-warehouse">Коледино WB</div>
+
+                  <div class="good-options">
+                    <div class="good-count">
+                      <div class="good-count-minus disabled">-</div>
+                      <input type="text" value="1" class="good-count-input" />
+                      <div class="good-count-plus">+</div>
+                    </div>
+
+                    <div class="good-remains">Осталось 2 шт.</div>
+
+                    <div class="good-icons">
+                      <div class="good-favorite">
+                        <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
+                      </div>
+                      <div class="good-delete">
+                        <img src="./icons/Delete.svg" alt="delete" class="good-delete-image" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="good-price">
+                    <div class="good-total-price">522 <span class="good-currency-price">сом</span></div>
+                    <span class="good-previous-price">1051 сом</span>
                   </div>
                 </div>
-              </div>
-
-              <div class="good-mobile-footer">
-                <div class="good-count good-count-mobile">
-                  <div class="good-count-minus disabled">-</div>
-                  <input type="text" value="2" class="good-count-input" />
-                  <div class="good-count-plus">+</div>
-                </div>
-                <div class="good-remains good-remains-mobile">Осталось 2 шт.</div>
-                <div class="good-icons good-icons-mobile">
-                  <div class="good-favorite">
-                    <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
+                <!-- second-item -->
+                <div class="good">
+                  <div class="good-image-block">
+                    <input type="checkbox" class="hidden input-checked" id="choose-second" />
+                    <label for="choose-second" class="choose-custom-checkbox good-checkbox"></label>
+                    <img src="./img/photo-2.png" alt="case" class="good-image" />
+                    <div class="good-text good-text-mobile">
+                      <div class="good-price good-price-mobile">
+                        <div class="good-total-price good-total-price-mobile">
+                          2 100 047<span class="good-currency-price">сом</span>
+                        </div>
+                        <span class="good-previous-price good-previous-price-mobile">2 300 047 сом</span>
+                      </div>
+                      <div class="good-caption good-caption-mobile">
+                        Силиконовый чехол картхолдер (отверстия) для...
+                      </div>
+                      <div class="good-characteristics">
+                        <div class="good-color">Цвет: прозрачный</div>
+                      </div>
+                      <div class="good-footer">
+                        <div class="good-warehouse">Коледино WB</div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="good-delete"><img src="./icons/Delete.svg" alt="delete" class="good-delete-image" /></div>
-                </div>
-              </div>
 
-              <div class="good-text">
-                <div class="good-caption">
-                  Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные,Faber-Castell
-                </div>
-                <div class="good-footer">
-                  <div class="good-warehouse">Коледино WB</div>
-                  <div class="good-provider">ООО Вайлдберриз <span class="good-info">&#9432;</span></div>
-                </div>
-                <div class="good-remains good-remains-mobile">Осталось 2 шт.</div>
-              </div>
-
-              <div class="good-options">
-                <div class="good-count">
-                  <div class="good-count-minus disabled">-</div>
-                  <input type="text" value="2" class="good-count-input" />
-                  <div class="good-count-plus">+</div>
-                </div>
-
-                <div class="good-remains">Осталось 2 шт.</div>
-
-                <div class="good-icons">
-                  <div class="good-favorite">
-                    <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
+                  <div class="good-mobile-footer">
+                    <div class="good-count good-count-mobile">
+                      <div class="good-count-minus disabled">-</div>
+                      <input type="text" value="255" class="good-count-input" />
+                      <div class="good-count-plus">+</div>
+                    </div>
+                    <div class="good-remains good-remains-mobile"></div>
+                    <div class="good-icons good-icons-mobile">
+                      <div class="good-favorite">
+                        <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
+                      </div>
+                      <div class="good-delete">
+                        <img src="./icons/Delete.svg" alt="delete" class="good-delete-image" />
+                      </div>
+                    </div>
                   </div>
-                  <div class="good-delete"><img src="./icons/Delete.svg" alt="delete" class="good-delete-image" /></div>
-                </div>
-              </div>
 
-              <div class="good-price">
-                <div class="good-total-price">494 <span class="good-currency-price">сом</span></div>
-                <span class="good-previous-price">950 сом</span>
+                  <div class="good-text">
+                    <div class="good-caption">
+                      Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR,
+                      MobiSafe
+                    </div>
+                    <div class="good-characteristics">
+                      <div class="good-color">Цвет: прозрачный</div>
+                    </div>
+                    <div class="good-footer">
+                      <div class="good-warehouse">Коледино WB</div>
+                      <div class="good-provider">ООО Мегапрофстиль <img src="./icons/info.svg" alt="info" class="good-info"></div>
+                    </div>
+                    <div class="good-remains good-remains-mobile"></div>
+                  </div>
+
+                  <div class="good-options">
+                    <div class="good-count">
+                      <div class="good-count-minus disabled">-</div>
+                      <input type="text" value="200" class="good-count-input" />
+                      <div class="good-count-plus">+</div>
+                    </div>
+
+                    <div class="good-icons">
+                      <div class="good-favorite">
+                        <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
+                      </div>
+                      <div class="good-delete">
+                        <img src="./icons/Delete.svg" alt="delete" class="good-delete-image" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="good-price">
+                    <div class="good-total-price">2 100 047 <span class="good-currency-price">сом</span></div>
+                    <span class="good-previous-price">2 300 047 сом</span>
+                  </div>
+                </div>
+
+                <!-- third-item -->
+                <div class="good">
+                  <div class="good-image-block">
+                    <input type="checkbox" class="hidden input-checked" id="choose-third" />
+                    <label for="choose-third" class="choose-custom-checkbox good-checkbox"></label>
+                    <img src="./img/photo-3.png" alt="book" class="good-image" />
+                    <div class="good-text good-text-mobile">
+                      <div class="good-price good-price-mobile">
+                        <div class="good-total-price good-total-price-mobile">
+                          494 <span class="good-currency-price">сом</span>
+                        </div>
+                        <span class="good-previous-price good-previous-price-mobile">950 сом</span>
+                      </div>
+                      <div class="good-caption good-caption-mobile">
+                        Карандаши цветные Faber-Castell "Замок", набор 24 цв...
+                      </div>
+                      <div class="good-footer">
+                        <div class="good-warehouse">Коледино WB</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="good-mobile-footer">
+                    <div class="good-count good-count-mobile">
+                      <div class="good-count-minus disabled">-</div>
+                      <input type="text" value="2" class="good-count-input" />
+                      <div class="good-count-plus">+</div>
+                    </div>
+                    <div class="good-remains good-remains-mobile">Осталось 2 шт.</div>
+                    <div class="good-icons good-icons-mobile">
+                      <div class="good-favorite">
+                        <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
+                      </div>
+                      <div class="good-delete">
+                        <img src="./icons/Delete.svg" alt="delete" class="good-delete-image" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="good-text">
+                    <div class="good-caption">
+                      Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные,Faber-Castell
+                    </div>
+                    <div class="good-footer">
+                      <div class="good-warehouse">Коледино WB</div>
+                      <div class="good-provider">ООО Вайлдберриз <img src="./icons/info.svg" alt="info" class="good-info"></div>
+                    </div>
+                    <div class="good-remains good-remains-mobile">Осталось 2 шт.</div>
+                  </div>
+
+                  <div class="good-options">
+                    <div class="good-count">
+                      <div class="good-count-minus disabled">-</div>
+                      <input type="text" value="2" class="good-count-input" />
+                      <div class="good-count-plus">+</div>
+                    </div>
+
+                    <div class="good-remains">Осталось 2 шт.</div>
+
+                    <div class="good-icons">
+                      <div class="good-favorite">
+                        <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
+                      </div>
+                      <div class="good-delete">
+                        <img src="./icons/Delete.svg" alt="delete" class="good-delete-image" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="good-price">
+                    <div class="good-total-price">494 <span class="good-currency-price">сом</span></div>
+                    <span class="good-previous-price">950 сом</span>
+                  </div>
+                </div>
               </div>
             </div>
-
             <!-- unavailable -->
             <div class="unavailable-goods">
               <div class="unavailable">
                 <div class="unavailable-header">Отсутствуют · 3 товара</div>
-                <div class="triangle"></div>
+                <div class="triangle" role="button" aria-expanded="true"></div>
               </div>
 
+              <div class="good-wrapper open" aria-hidden="false">
               <!-- first-item -->
+                <div class="unavailable-good good">
+                  <div class="good-image-block unavailable-image-block">
+                    <div class="good-size-mobile">56</div>
+                    <img src="./img/photo-1.png" alt="t-shirt" class="good-image unavailable-image" />
+                    <div class="good-text good-text-mobile">
+                      <div class="good-caption good-caption-mobile">Футболка UZcotton мужская</div>
+                      <div class="good-characteristics">
+                        <div class="good-color">Цвет: белый</div>
+                      </div>
+                    </div>
+                  </div>
 
-              <div class="unavailable-good good">
-                <div class="good-image-block unavailable-image-block">
-                  <div class="good-size-mobile">56</div>
-                  <img src="./img/photo-1.png" alt="t-shirt" class="good-image unavailable-image" />
-                  <div class="good-text good-text-mobile">
-                    <div class="good-caption good-caption-mobile">Футболка UZcotton мужская</div>
+                  <div class="good-mobile-footer">
+                    <div class="good-icons good-icons-mobile">
+                      <div class="good-favorite">
+                        <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
+                      </div>
+                      <div class="good-delete">
+                        <img src="./icons/Delete.svg" alt="delete" class="good-delete-image" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="good-text">
+                    <div class="good-caption">Футболка UZcotton мужская</div>
                     <div class="good-characteristics">
                       <div class="good-color">Цвет: белый</div>
+                      <div class="good-size">Размер: 56</div>
+                    </div>
+                    <div class="good-remains good-remains-mobile">Осталось 2 шт.</div>
+                  </div>
+
+                  <div class="good-options">
+                    <div class="good-icons">
+                      <div class="good-favorite">
+                        <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
+                      </div>
+                      <div class="good-delete">
+                        <img src="./icons/Delete.svg" alt="delete" class="good-delete-image" />
+                      </div>
                     </div>
                   </div>
+
+                  <div class="good-price"></div>
                 </div>
 
-                <div class="good-mobile-footer">
-                  <div class="good-icons good-icons-mobile">
-                    <div class="good-favorite">
-                      <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
-                    </div>
-                    <div class="good-delete">
-                      <img src="./icons/Delete.svg" alt="delete" class="good-delete-image" />
-                    </div>
-                  </div>
-                </div>
-
-                <div class="good-text">
-                  <div class="good-caption">Футболка UZcotton мужская</div>
-                  <div class="good-characteristics">
-                    <div class="good-color">Цвет: белый</div>
-                    <div class="good-size">Размер: 56</div>
-                  </div>
-                  <div class="good-remains good-remains-mobile">Осталось 2 шт.</div>
-                </div>
-
-                <div class="good-options">
-                  <div class="good-icons">
-                    <div class="good-favorite">
-                      <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
-                    </div>
-                    <div class="good-delete">
-                      <img src="./icons/Delete.svg" alt="delete" class="good-delete-image" />
+                <!-- second-item -->
+                <div class="unavailable-good good">
+                  <div class="good-image-block unavailable-image-block">
+                    <img src="./img/photo-2.png" alt="case" class="good-image unavailable-image" />
+                    <div class="good-text good-text-mobile">
+                      <div class="good-caption good-caption-mobile">Футболка UZcotton мужская</div>
+                      <div class="good-characteristics">
+                        <div class="good-color">Цвет: белый</div>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div class="good-price"></div>
-              </div>
+                  <div class="good-mobile-footer">
+                    <div class="good-icons good-icons-mobile">
+                      <div class="good-favorite">
+                        <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
+                      </div>
+                      <div class="good-delete">
+                        <img src="./icons/Delete.svg" alt="delete" class="good-delete-image" />
+                      </div>
+                    </div>
+                  </div>
 
-              <!-- second-item -->
-              <div class="unavailable-good good">
-                <div class="good-image-block unavailable-image-block">
-                  <img src="./img/photo-2.png" alt="case" class="good-image unavailable-image" />
-                  <div class="good-text good-text-mobile">
-                    <div class="good-caption good-caption-mobile">Футболка UZcotton мужская</div>
+                  <div class="good-text">
+                    <div class="good-caption">Футболка UZcotton мужская</div>
                     <div class="good-characteristics">
                       <div class="good-color">Цвет: белый</div>
+                      <div class="good-size">Размер: 56</div>
+                    </div>
+                    <div class="good-remains good-remains-mobile">Осталось 2 шт.</div>
+                  </div>
+
+                  <div class="good-options">
+                    <div class="good-icons">
+                      <div class="good-favorite"><img src="./icons/Favorite.svg" alt="favorite" /></div>
+                      <div class="good-delete"><img src="./icons/Delete.svg" alt="delete" /></div>
                     </div>
                   </div>
+
+                  <div class="good-price"></div>
                 </div>
 
-                <div class="good-mobile-footer">
-                  <div class="good-icons good-icons-mobile">
-                    <div class="good-favorite">
-                      <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
+                <!-- third-item -->
+                <div class="unavailable-good good">
+                  <div class="good-image-block unavailable-image-block">
+                    <div class="good-size-mobile">56/54/52...</div>
+                    <input type="checkbox" class="hidden" id="unavailable-third" />
+                    <label for="unavailable-third" class="choose-custom-checkbox good-checkbox-mobile"></label>
+                    <img src="./img/photo-3.png" alt="book" class="good-image unavailable-image" />
+                    <div class="good-text good-text-mobile">
+                      <div class="good-caption good-caption-mobile">Футболка UZcotton мужская</div>
+                      <div class="good-characteristics">
+                        <div class="good-color">Цвет: белый</div>
+                      </div>
                     </div>
-                    <div class="good-delete">
-                      <img src="./icons/Delete.svg" alt="delete" class="good-delete-image" />
+                  </div>
+
+                  <div class="good-mobile-footer">
+                    <div class="good-icons good-icons-mobile">
+                      <div class="good-favorite"><img src="./icons/Favorite.svg" alt="favorite" /></div>
+                      <div class="good-delete"><img src="./icons/Delete.svg" alt="delete" /></div>
                     </div>
                   </div>
-                </div>
 
-                <div class="good-text">
-                  <div class="good-caption">Футболка UZcotton мужская</div>
-                  <div class="good-characteristics">
-                    <div class="good-color">Цвет: белый</div>
-                    <div class="good-size">Размер: 56</div>
-                  </div>
-                  <div class="good-remains good-remains-mobile">Осталось 2 шт.</div>
-                </div>
-
-                <div class="good-options">
-                  <div class="good-icons">
-                    <div class="good-favorite"><img src="./icons/Favorite.svg" alt="favorite" /></div>
-                    <div class="good-delete"><img src="./icons/Delete.svg" alt="delete" /></div>
-                  </div>
-                </div>
-
-                <div class="good-price"></div>
-              </div>
-
-              <!-- third-item -->
-              <div class="unavailable-good good">
-                <div class="good-image-block unavailable-image-block">
-                  <div class="good-size-mobile">56/54/52...</div>
-                  <input type="checkbox" class="hidden" id="unavailable-third" />
-                  <label for="unavailable-third" class="choose-custom-checkbox good-checkbox-mobile"></label>
-                  <img src="./img/photo-3.png" alt="book" class="good-image unavailable-image" />
-                  <div class="good-text good-text-mobile">
-                    <div class="good-caption good-caption-mobile">Футболка UZcotton мужская</div>
+                  <div class="good-text">
+                    <div class="good-caption">Футболка UZcotton мужская</div>
                     <div class="good-characteristics">
                       <div class="good-color">Цвет: белый</div>
+                      <div class="good-size">Размер: 56</div>
+                    </div>
+                    <div class="good-remains good-remains-mobile">Осталось 2 шт.</div>
+                  </div>
+
+                  <div class="good-options">
+                    <div class="good-icons">
+                      <div class="good-favorite"><img src="./icons/Favorite.svg" alt="favorite" /></div>
+                      <div class="good-delete"><img src="./icons/Delete.svg" alt="delete" /></div>
                     </div>
                   </div>
-                </div>
 
-                <div class="good-mobile-footer">
-                  <div class="good-icons good-icons-mobile">
-                    <div class="good-favorite"><img src="./icons/Favorite.svg" alt="favorite" /></div>
-                    <div class="good-delete"><img src="./icons/Delete.svg" alt="delete" /></div>
-                  </div>
+                  <div class="good-price"></div>
                 </div>
-
-                <div class="good-text">
-                  <div class="good-caption">Футболка UZcotton мужская</div>
-                  <div class="good-characteristics">
-                    <div class="good-color">Цвет: белый</div>
-                    <div class="good-size">Размер: 56</div>
-                  </div>
-                  <div class="good-remains good-remains-mobile">Осталось 2 шт.</div>
-                </div>
-
-                <div class="good-options">
-                  <div class="good-icons">
-                    <div class="good-favorite"><img src="./icons/Favorite.svg" alt="favorite" /></div>
-                    <div class="good-delete"><img src="./icons/Delete.svg" alt="delete" /></div>
-                  </div>
-                </div>
-
-                <div class="good-price"></div>
               </div>
             </div>
 
@@ -600,7 +619,7 @@
 
             <div class="aside-footer">
               <div>
-                <input type="checkbox" class="hidden" id="agreement-check" />
+                <input type="checkbox" class="hidden" id="agreement-check" checked disabled/>
                 <label for="agreement-check" class="aside-agreement-checkbox"></label>
               </div>
               <span>
