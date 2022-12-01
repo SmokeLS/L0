@@ -84,7 +84,7 @@
                   <div class="good-mobile-footer">
                     <div class="good-count good-count-mobile">
                       <div class="good-count-minus disabled">-</div>
-                      <input type="text" value="1" class="good-count-input" />
+                      <input type="text" value="1" min="1" max="999"  class="good-count-input" />
                       <div class="good-count-plus">+</div>
                     </div>
 
@@ -115,7 +115,7 @@
                   <div class="good-options">
                     <div class="good-count">
                       <div class="good-count-minus disabled">-</div>
-                      <input type="text" value="1" class="good-count-input" />
+                      <input type="text" value="1" min="1" max="999" class="good-count-input" />
                       <div class="good-count-plus">+</div>
                     </div>
 
@@ -163,8 +163,8 @@
 
                   <div class="good-mobile-footer">
                     <div class="good-count good-count-mobile">
-                      <div class="good-count-minus disabled">-</div>
-                      <input type="text" value="255" class="good-count-input" />
+                      <div class="good-count-minus">-</div>
+                      <input type="text" value="255" min="1" max="999" class="good-count-input" />
                       <div class="good-count-plus">+</div>
                     </div>
                     <div class="good-remains good-remains-mobile"></div>
@@ -195,8 +195,8 @@
 
                   <div class="good-options">
                     <div class="good-count">
-                      <div class="good-count-minus disabled">-</div>
-                      <input type="text" value="200" class="good-count-input" />
+                      <div class="good-count-minus">-</div>
+                      <input type="text" value="200" min="1" max="999" class="good-count-input" />
                       <div class="good-count-plus">+</div>
                     </div>
 
@@ -240,7 +240,7 @@
 
                   <div class="good-mobile-footer">
                     <div class="good-count good-count-mobile">
-                      <div class="good-count-minus disabled">-</div>
+                      <div class="good-count-minus">-</div>
                       <input type="text" value="2" class="good-count-input" />
                       <div class="good-count-plus">+</div>
                     </div>
@@ -268,8 +268,8 @@
 
                   <div class="good-options">
                     <div class="good-count">
-                      <div class="good-count-minus disabled">-</div>
-                      <input type="text" value="2" class="good-count-input" />
+                      <div class="good-count-minus">-</div>
+                      <input type="text" value="2" min="1" max="999" class="good-count-input" />
                       <div class="good-count-plus">+</div>
                     </div>
 
@@ -528,15 +528,16 @@
                   </div>
 
                   <div class="email-tel-tin-block">
-                    <input type="email" placeholder="Электронна почта" class="email-input-form input-form-receiver" />
+                    <input type="email" placeholder="Электронна почта" class="email-input-form input-form-receiver" value="s@gmail.com"/>
                     <input
                       type="tel"
                       placeholder="Телефон"
+                      maxlength="30"
                       class="tel-input-form input-form-receiver"
-                      value="+7 (988) 123-45-67"
+                      value="+7 988 123 45 67"
                     />
                     <div class="tin-input-form-block">
-                      <input type="number" placeholder="ИНН" class="tin-input-form input-form-receiver" />
+                      <input type="number" placeholder="ИНН" maxlength = "10" class="tin-input-form input-form-receiver" />
                       <span class="tin-purpose">Для таможенного оформления</span>
                     </div>
                   </div>
@@ -614,7 +615,7 @@
             </div>
 
             <div class="aside-button">
-              <input type="button" value="Заказать" class="custom-button" />
+              <input type="button" value="Заказать" class="custom-button" id="make-order" />
             </div>
 
             <div class="aside-footer">

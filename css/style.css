@@ -105,6 +105,10 @@ label,
     content: url('../icons/Check.svg');
 }
 
+.error-form-input::placeholder {
+    color:#F55123;
+}
+
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -200,7 +204,6 @@ input[type="number"]:focus {
     background: rgba(255, 255, 255, 0.2);
 }
 
-
 .search-bar::placeholder {
     font-style: normal;
     font-size: 18px;
@@ -241,7 +244,7 @@ input[type="number"]:focus {
     background: #F6F6FA;
     width: 100%;
     border-radius: 24px;
-    min-height: 550px;
+    min-height: 600px;
     padding-left: 24px;
     padding-right: 24px;
     padding-top: 14px;
@@ -307,7 +310,13 @@ input[type="number"]:focus {
     display: flex;
     align-items: flex-start;
     min-height: 105px;
+    margin-top: 24px;
     padding-top: 8px;
+}
+
+.good:first-child,
+.unavailable-good:first-child{
+    margin-top: 0;
 }
 
 .good-checkbox,
@@ -579,6 +588,11 @@ input[type="number"]:focus {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     width: 100%;
     padding-bottom: 5px;
+}
+
+.input-form-receiver.error-form-input {
+    color: #F55123;
+    border-bottom: 1px solid #F55123;
 }
 
 .input-form-receiver:not(:first-child),
