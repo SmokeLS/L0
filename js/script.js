@@ -11,10 +11,10 @@ window.addEventListener('DOMContentLoaded', () => {
     const chooseText = document.querySelector('.choose-text');
     const hiddenChooseText = document.querySelector('.hidden-choose-text');
     const labelCheckbox = document.querySelector('#choose-all-label');
-    
-    const countPlus = document.querySelectorAll(".good-count-plus");
-    const countMinus = document.querySelectorAll(".good-count-minus");
-    const countInputs = document.querySelectorAll(".good-count-input");
+
+    const countPlus = document.querySelectorAll('.good-count-plus');
+    const countMinus = document.querySelectorAll('.good-count-minus');
+    const countInputs = document.querySelectorAll('.good-count-input');
 
     favorites.forEach((favorite) => {
       favorite.addEventListener('click', (e) => {
@@ -95,47 +95,47 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     countPlus.forEach((button, index) => {
-      button.addEventListener("click", (e) => {
-        if (!e.currentTarget.classList.contains("disabled")) {
+      button.addEventListener('click', (e) => {
+        if (!e.currentTarget.classList.contains('disabled')) {
           countInputs[index].value++;
         }
         if (countInputs[index].value >= 999) {
-          button.classList.add("disabled");
+          button.classList.add('disabled');
         }
         if (countInputs[index].value <= 998) {
-          countMinus[index].classList.remove("disabled");
+          countMinus[index].classList.remove('disabled');
         }
       });
     });
 
     countMinus.forEach((button, index) => {
-      button.addEventListener("click", (e) => {
-        if (!e.currentTarget.classList.contains("disabled")) {
+      button.addEventListener('click', (e) => {
+        if (!e.currentTarget.classList.contains('disabled')) {
           countInputs[index].value--;
         }
         if (countInputs[index].value <= 1) {
-          button.classList.add("disabled");
+          button.classList.add('disabled');
         }
         if (countInputs[index].value >= 2) {
-          countPlus[index].classList.remove("disabled");
+          countPlus[index].classList.remove('disabled');
         }
       });
     });
 
     countInputs.forEach((input, index) => {
-      input.addEventListener("input", () => {
+      input.addEventListener('input', () => {
         if (input.value >= 999) {
           input.value = 999;
-          countPlus[index].classList.add("disabled");
+          countPlus[index].classList.add('disabled');
         } else {
-          countPlus[index].classList.remove("disabled");
+          countPlus[index].classList.remove('disabled');
         }
 
         if (input.value <= 1) {
           input.value = 1;
-          countMinus[index].classList.add("disabled");
+          countMinus[index].classList.add('disabled');
         } else {
-          countMinus[index].classList.remove("disabled");
+          countMinus[index].classList.remove('disabled');
         }
       });
     });
@@ -156,60 +156,82 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   function formValidation() {
-    const form = document.querySelector(".receiver-form");
-    const formInputs = document.querySelectorAll("form input");
-    const orderButton = document.querySelector("#make-order");
-    
-    const nameInput = document.querySelector(".name-input-form");
-    const surnameInput = document.querySelector(".surname-input-form");
-    const emailInput = document.querySelector(".email-input-form");
-    const telInput = document.querySelector(".tel-input-form");
-    const tinInput = document.querySelector(".tin-input-form");
+    const form = document.querySelector('.receiver-form');
+    const formInputs = document.querySelectorAll('form input');
+    const orderButton = document.querySelector('#make-order');
 
-    nameInput.addEventListener("change", (e) => {
-      e.currentTarget.classList.remove("error-form-input");
-    });
-  
-    surnameInput.addEventListener("change", (e) => {
-      e.currentTarget.classList.remove("error-form-input");
-    });
+    const nameInput = document.querySelector('#name-input-form');
+    const surnameInput = document.querySelector('#surname-input-form');
+    const emailInput = document.querySelector('#email-input-form');
+    const telInput = document.querySelector('#tel-input-form');
+    const tinInput = document.querySelector('#tin-input-form');
 
-    emailInput.addEventListener("change", (e) => {
+    function focused (e) {
+      e.currentTarget.classList.add('focused');
+
       if (!e.currentTarget.value) {
-        e.currentTarget.classList.remove("error-form-input");
+        e.currentTarget.classList.remove('focused');
+      }
+    }
+    nameInput.addEventListener('change', (e) => {
+      focused(e);
+
+      e.currentTarget.parentNode.classList.remove('error-form-input');
+    });
+
+    surnameInput.addEventListener('change', (e) => {
+      focused(e);
+
+      e.currentTarget.parentNode.classList.remove('error-form-input');
+    });
+
+    emailInput.addEventListener('change', (e) => {
+      focused(e);
+
+      if (!e.currentTarget.value || e.currentTarget.value.match(/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/)) {
+        e.currentTarget.parentNode.classList.remove('error-form-input');
       } else if (!e.currentTarget.value.match(/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/)) {
-        e.currentTarget.classList.add("error-form-input");
+        console.log(true);
+        e.currentTarget.parentNode.classList.add('error-form-input');
       }
     });
 
-    telInput.addEventListener("change", (e) => {
-      if (!e.currentTarget.value || !e.currentTarget.value.match(/\+\d \(\d{3}\) \d{3} \d{2} \d{2}/)) {
-        e.currentTarget.classList.remove("error-form-input");
+    telInput.addEventListener('change', (e) => {
+      focused(e);
+
+      if (!e.currentTarget.value || e.currentTarget.value.match(/\+\d \d{3} \d{3} \d{2} \d{2}/)) {
+        e.currentTarget.parentNode.classList.remove('error-form-input');
       } else if (!e.currentTarget.value.match(/\+\d \d{3} \d{3} \d{2} \d{2}/)) {
-        e.currentTarget.classList.add("error-form-input");
-      } 
-    });
-
-    tinInput.addEventListener("change", (e) => {
-      e.currentTarget.classList.remove("error-form-input");
-    });
-
-    tinInput.addEventListener("input",function() {
-      if (this.value.length > 10) {
-        this.value = this.value.slice(0,10); 
+        e.currentTarget.parentNode.classList.add('error-form-input');
       }
     });
 
-    orderButton.addEventListener("click", () => {
-      formInputs.forEach(input => {
+    tinInput.addEventListener('change', (e) => {
+      focused(e);
+
+      e.currentTarget.parentNode.classList.remove('error-form-input');
+    });
+
+    tinInput.addEventListener('input', function () {
+      if (this.value.length > 10) {
+        this.value = this.value.slice(0, 10);
+      }
+    });
+
+    orderButton.addEventListener('click', () => {
+      formInputs.forEach((input) => {
         if (!input.value) {
-          input.classList.add("error-form-input");
+          if (input.parentNode.classList.value !== 'input-form-block') {
+            input.parentNode.parentNode.classList.add('error-form-input');
+          } else {
+            input.parentNode.classList.add('error-form-input');
+          }
         }
       });
 
       const inputArray = [...formInputs];
 
-      const result = inputArray.some((item) => item.classList.contains("error-form-input"));
+      const result = inputArray.some((item) => item.parentNode.classList.contains('error-form-input'));
       console.log(result);
     });
   }

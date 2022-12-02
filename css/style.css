@@ -1,6 +1,8 @@
 /* general */
 
 * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -20,7 +22,7 @@ body {
 }
 
 .good-wrapper {
-    max-height: 600px;
+    max-height: 700px;
     overflow: hidden;
     will-change: max-height;
     transition: all 0.3s ease-out;
@@ -51,12 +53,16 @@ body {
 .cart,
 .favorites,
 input[type=button],
-label,
+label:not(.label-input-form),
 .good-count-minus,
 .good-count-plus,
 .triangle,
-.choose-text{
+.choose-text {
     cursor: pointer;
+}
+
+.label-input-form {
+    cursor: text;
 }
 
 .disabled {
@@ -106,7 +112,7 @@ label,
 }
 
 .error-form-input::placeholder {
-    color:#F55123;
+    color: #F55123;
 }
 
 input[type="number"]::-webkit-outer-spin-button,
@@ -315,7 +321,7 @@ input[type="number"]:focus {
 }
 
 .good:first-child,
-.unavailable-good:first-child{
+.unavailable-good:first-child {
     margin-top: 0;
 }
 
@@ -582,22 +588,53 @@ input[type="number"]:focus {
     max-width: 700px;
 }
 
+.input-form-wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.input-form-block {
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.label-input-form {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 16px;
+    color: #9797AF;
+    transition: all 0.2s ease-in-out;
+}
+
+.input-form-block.error-form-input .input-form-receiver {
+    color: #F55123;
+}
+
+.input-form-block .input-form-receiver:focus + .label-input-form ,
+.input-form-block .input-form-receiver.focused + .label-input-form {
+    top: -100%;
+    font-size: 13px;
+}
+
 .input-form-receiver {
     border: none;
     outline: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    width: 100%;
     padding-bottom: 5px;
+    width: auto;
 }
 
-.input-form-receiver.error-form-input {
-    color: #F55123;
-    border-bottom: 1px solid #F55123;
-}
-
-.input-form-receiver:not(:first-child),
-.tin-input-form-block {
+.input-form-wrapper:not(:first-child) {
+    min-width: 0;
     margin-left: 24px;
+}
+
+.input-form-error {
+    position: absolute;
+    top: 100%;
+    color: #F55123;
+    font-size: 12px;
 }
 
 .name-surname-block {
@@ -613,11 +650,11 @@ input[type="number"]:focus {
 
 .tin-input-form-block {
     width: 100%;
-    margin-bottom: -20px;
 }
 
 .tin-purpose {
     font-size: 12px;
+    white-space: nowrap;
 }
 
 .receiver {
@@ -875,6 +912,7 @@ input[type="number"]:focus {
     .main .available-goods {
         margin-left: 16px;
         margin-right: 16px;
+        margin-top: 0;
         width: calc(100% - 32px)
     }
 
@@ -906,6 +944,7 @@ input[type="number"]:focus {
     .main .good {
         display: block;
         padding-top: 16px;
+        margin-top: 0;
     }
 
     .main .good:has(+.good) {
@@ -999,6 +1038,10 @@ input[type="number"]:focus {
         padding: 16px;
     }
 
+    .main .receiver {
+        padding-bottom: 32px;
+    }
+
     .main .delivery-option {
         display: block;
         line-height: 20px;
@@ -1015,11 +1058,11 @@ input[type="number"]:focus {
     .main .name-surname-block,
     .main .email-tel-tin-block {
         flex-direction: column;
+        gap: 50px;
     }
 
-    .main .input-form-receiver:not(:first-child),
-    .main .tin-input-form-block {
-        margin-top: 34px;
+    .name-surname-block .input-form-wrapper,
+    .email-tel-tin-block .input-form-wrapper {
         margin-left: 0;
     }
 

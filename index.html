@@ -352,9 +352,9 @@
                   <div class="good-image-block unavailable-image-block">
                     <img src="./img/photo-2.png" alt="case" class="good-image unavailable-image" />
                     <div class="good-text good-text-mobile">
-                      <div class="good-caption good-caption-mobile">Футболка UZcotton мужская</div>
+                      <div class="good-caption good-caption-mobile">Силиконовый чехол картхолдер (отверстия) для...</div>
                       <div class="good-characteristics">
-                        <div class="good-color">Цвет: белый</div>
+                        <div class="good-color">Цвет: прозрачный</div>
                       </div>
                     </div>
                   </div>
@@ -371,10 +371,9 @@
                   </div>
 
                   <div class="good-text">
-                    <div class="good-caption">Футболка UZcotton мужская</div>
+                    <div class="good-caption">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe</div>
                     <div class="good-characteristics">
-                      <div class="good-color">Цвет: белый</div>
-                      <div class="good-size">Размер: 56</div>
+                      <div class="good-color">Цвет: прозрачный</div>
                     </div>
                     <div class="good-remains good-remains-mobile">Осталось 2 шт.</div>
                   </div>
@@ -397,7 +396,7 @@
                     <label for="unavailable-third" class="choose-custom-checkbox good-checkbox-mobile"></label>
                     <img src="./img/photo-3.png" alt="book" class="good-image unavailable-image" />
                     <div class="good-text good-text-mobile">
-                      <div class="good-caption good-caption-mobile">Футболка UZcotton мужская</div>
+                      <div class="good-caption good-caption-mobile">Карандаши цветные Faber-Castell "Замок", набор 24 цв...</div>
                       <div class="good-characteristics">
                         <div class="good-color">Цвет: белый</div>
                       </div>
@@ -412,10 +411,8 @@
                   </div>
 
                   <div class="good-text">
-                    <div class="good-caption">Футболка UZcotton мужская</div>
+                    <div class="good-caption">        Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные,Faber-Castell</div>
                     <div class="good-characteristics">
-                      <div class="good-color">Цвет: белый</div>
-                      <div class="good-size">Размер: 56</div>
                     </div>
                     <div class="good-remains good-remains-mobile">Осталось 2 шт.</div>
                   </div>
@@ -523,13 +520,59 @@
               <div class="receiver-form-block">
                 <form action="." class="receiver-form">
                   <div class="name-surname-block">
-                    <input type="text" placeholder="Имя" class="name-input-form input-form-receiver" />
-                    <input type="text" placeholder="Фамилия" class="surname-input-form input-form-receiver" />
+                    
+                    <div class="input-form-wrapper">
+                      <div class="input-form-block">
+                        <input type="text" class="input-form-receiver" id="name-input-form"/>
+                        <label for="name-input-form" class="label-input-form">Имя</label>
+                      </div>
+                      <div class="input-form-error hidden">Ошибка</div>
+                    </div>
+
+                    <div class="input-form-wrapper">
+                      <div class="input-form-block">
+                        <input type="text" id="surname-input-form" class="input-form-receiver" />
+                        <label for="surname-input-form" class="label-input-form">Фамилия</label>
+                      </div>
+                      <div class="input-form-error hidden">Ошибка</div>
+                    </div>
                   </div>
 
                   <div class="email-tel-tin-block">
-                    <input type="email" placeholder="Электронна почта" class="email-input-form input-form-receiver" value="s@gmail.com"/>
-                    <input
+                    <div class="input-form-wrapper">
+                      <div class="input-form-block">
+                        <input type="email" class="input-form-receiver" id="email-input-form"/>
+                        <label for="email-input-form" class="label-input-form">Почта</label>
+                        <div class="input-form-error hidden">Ошибка</div>
+                      </div>
+                    </div>
+
+                    <div class="input-form-wrapper">
+                      <div class="input-form-block">
+                        <input
+                        type="tel"
+                        maxlength="30"
+                        class="input-form-receiver"
+                        id="tel-input-form"
+                        />
+                        <!-- value="+7 988 123 45 67" -->
+                        <label for="tel-input-form" class="label-input-form">Телефон</label>
+                        <div class="input-form-error hidden">Ошибка</div>
+                      </div>
+                    </div>
+
+                    <div class="input-form-wrapper">
+                      <div class="input-form-block">
+                        <div class="tin-input-form-block">
+                          <input id="tin-input-form" type="number" maxlength = "10" class="input-form-receiver" />
+                          <label class="label-input-form" for="tin-input-form">ИНН</label>
+                        </div>
+                      </div>
+                      <div class="input-form-error">Ошибка</div>
+                      <span class="tin-purpose">Для таможенного оформления</ы>
+                    </div>
+                    
+                    <!-- <input
                       type="tel"
                       placeholder="Телефон"
                       maxlength="30"
@@ -539,7 +582,7 @@
                     <div class="tin-input-form-block">
                       <input type="number" placeholder="ИНН" maxlength = "10" class="tin-input-form input-form-receiver" />
                       <span class="tin-purpose">Для таможенного оформления</span>
-                    </div>
+                    </div> -->
                   </div>
                 </form>
               </div>
