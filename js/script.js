@@ -121,6 +121,24 @@ window.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
+
+    countInputs.forEach((input, index) => {
+      input.addEventListener("input", () => {
+        if (input.value >= 999) {
+          input.value = 999;
+          countPlus[index].classList.add("disabled");
+        } else {
+          countPlus[index].classList.remove("disabled");
+        }
+
+        if (input.value <= 1) {
+          input.value = 1;
+          countMinus[index].classList.add("disabled");
+        } else {
+          countMinus[index].classList.remove("disabled");
+        }
+      });
+    });
   }
 
   function summary() {
