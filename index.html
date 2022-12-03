@@ -669,14 +669,20 @@
                     <div class="input-form-wrapper">
                       <div class="input-form-block">
                         <div class="tin-input-form-block">
-                          <input id="tin-input-form" type="number" maxlength="10" class="input-form-receiver" />
+                          <input
+                            id="tin-input-form"
+                            type="number"
+                            maxlength="10"
+                            class="input-form-receiver"
+                            onkeydown="return event.keyCode !== 69"
+                          />
                           <label class="label-input-form" for="tin-input-form">ИНН</label>
                           <div class="input-form-error hidden" data-empty="Укажите ИНН" data-error="Формат: 1234567">
                             Ошибка
                           </div>
-                          <span class="tin-purpose hidden">Для таможенного оформления</span>
                         </div>
                       </div>
+                      <span class="tin-purpose">Для таможенного оформления</span>
                     </div>
 
                     <!-- <input

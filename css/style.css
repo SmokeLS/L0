@@ -202,6 +202,7 @@ input[type="number"]:focus {
     width: 24px;
     height: 24px;
     content: url('../icons/Search.svg');
+    cursor: pointer;
 }
 
 .search-bar {
@@ -211,6 +212,7 @@ input[type="number"]:focus {
     height: 48px;
     outline: none;
     border: none;
+    color: #fff;
     background: rgba(255, 255, 255, 0.2);
 }
 
@@ -237,6 +239,7 @@ input[type="number"]:focus {
     font-style: normal;
     font-size: 13px;
     height: 100%;
+    cursor: pointer;
 }
 
 .cart {

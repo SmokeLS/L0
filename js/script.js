@@ -22,13 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    deletes.forEach((item) => {
-      item.addEventListener('click', (e) => {
-        e.target.classList.toggle('deleted');
-      });
-    });
-
-    chooseAll.addEventListener('click', () => {
+    function checkboxChange() {
       if (chooseAll.checked) {
         chooseCheckbox.forEach((checkbox) => {
           checkbox.checked = true;
@@ -40,7 +34,15 @@ window.addEventListener('DOMContentLoaded', () => {
           checkbox.checked = false;
         });
       }
+    }
+
+    deletes.forEach((item) => {
+      item.addEventListener('click', (e) => {
+        e.target.classList.toggle('deleted');
+      });
     });
+
+    chooseAll.addEventListener('change', checkboxChange);
 
     chooseCheckbox.forEach((checkbox) => {
       checkbox.addEventListener('click', () => {
@@ -91,6 +93,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         const inputCheckbox = document.querySelector('#choose-all');
         inputCheckbox.checked = !inputCheckbox.checked;
+        checkboxChange();
       });
     });
 
@@ -229,11 +232,12 @@ window.addEventListener('DOMContentLoaded', () => {
     tinInput.addEventListener('change', (e) => {
       focused(e);
 
+      const purposeElem = document.querySelector('.tin-purpose');
       const errorElem = e.currentTarget.parentNode.querySelector('.input-form-error');
-      e.currentTarget.parentNode.classList.remove('error-form-input');
       errorElem.classList.add('hidden');
+      purposeElem.classList.remove('hidden');
 
-      e.currentTarget.parentNode.classList.remove('error-form-input');
+      e.currentTarget.parentNode.parentNode.classList.remove('error-form-input');
     });
 
     tinInput.addEventListener('input', function () {
@@ -244,13 +248,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
     orderButton.addEventListener('click', () => {
       formInputs.forEach((input) => {
-        if (!input.value) {
+        if (!input.value && input.parentNode.querySelector('.hidden')) {
           const errorElem = input.parentNode.querySelector('.hidden');
 
           errorElem.textContent = errorElem.dataset.empty;
           errorElem.classList.remove('hidden');
 
           if (input.parentNode.classList.value !== 'input-form-block') {
+            const purposeElem = document.querySelector('.tin-purpose');
+            purposeElem.classList.add('hidden');
+
             input.parentNode.parentNode.classList.add('error-form-input');
           } else {
             input.parentNode.classList.add('error-form-input');
