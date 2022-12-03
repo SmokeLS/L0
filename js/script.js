@@ -290,10 +290,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let totalCost = 0;
 
+
     chooseCheckbox.forEach((item, index) => {
       const itemPrice = goodsPrice[index * 2].textContent.replace(/\s/g, '');
 
-      chooseCheckbox[index].checked ? (totalCost += +itemPrice) : totalCost;
+      if (chooseCheckbox[index].checked) {
+        totalCost += +itemPrice
+      }
     });
 
     const formatedTotalCost = totalCost
@@ -304,6 +307,29 @@ window.addEventListener('DOMContentLoaded', () => {
     return formatedTotalCost;
   }
 
+  function findPrevSum() {
+    const goodsPrevPrice = document.querySelectorAll('.prev-good-cost');
+    const chooseCheckbox = document.querySelectorAll('.good .input-checked');
+
+    let prevTotalCost = 0;
+
+    chooseCheckbox.forEach((item, index) => {
+      const prevItemPrice = goodsPrevPrice[index * 2].textContent.replace(/\s/g, '');
+      
+      if (chooseCheckbox[index].checked) {
+        prevTotalCost += +prevItemPrice;
+      }
+    });
+
+    const formatedTotalCost = prevTotalCost
+      .toString()
+      .match(/\d{1,3}(?=(\d{3})*$)/g)
+      .join(' ');
+
+    return formatedTotalCost;
+  }
+
+
   function checkOrderSum() {
     const summaryCheck = document.querySelector('#payment-check');
     const buttonOrder = document.querySelector('.custom-button');
@@ -313,7 +339,7 @@ window.addEventListener('DOMContentLoaded', () => {
     changeCountsCosts();
 
     if (summaryCheck.checked) {
-      buttonOrder.value = `Оплатить ${totalCost}`;
+      buttonOrder.value = `Оплатить ${totalCost} сом`;
     } else {
       buttonOrder.value = 'Заказать';
     }
@@ -366,13 +392,16 @@ window.addEventListener('DOMContentLoaded', () => {
   function changeCountsCosts() {
     const asideCounts = document.querySelector('.aside-caption');
     const totalPrice = document.querySelector('#total-price');
+    const asideInfo = document.querySelector('.aside-info');
 
     const totalCost = findSum();
+    const totalPrevCost = findPrevSum();
     const totalCounts = findGoodCounts();
     const good = goodToStr("Товар", totalCounts);
 
     totalPrice.textContent = `${totalCost} сом`;
     asideCounts.textContent = `${totalCounts} ${good}`;
+    asideInfo.textContent = `${totalPrevCost} сом`;
   }
 
   cart();

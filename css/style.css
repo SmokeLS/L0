@@ -1139,7 +1139,10 @@ input[type="number"]:focus {
 
     .main .good-previous-price.good-previous-price-mobile {
         margin-left: 0;
-        ;
+    }
+
+    .main .good-previous-tooltip {
+        left: 40px;
     }
 
     .main .good-icons-mobile {
