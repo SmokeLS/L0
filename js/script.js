@@ -11,6 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const chooseText = document.querySelector('.choose-text');
     const hiddenChooseText = document.querySelector('.hidden-choose-text');
     const labelCheckbox = document.querySelector('#choose-all-label');
+    const inputCheckbox = document.querySelector('#choose-all');
 
     const countPlus = document.querySelectorAll('.good-count-plus');
     const countMinus = document.querySelectorAll('.good-count-minus');
@@ -43,18 +44,27 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     chooseAll.addEventListener('change', checkboxChange);
+    chooseAll.addEventListener('change', checkOrderSum);
+    chooseAll.addEventListener('change', findGoodCounts);
 
     chooseCheckbox.forEach((checkbox) => {
-      checkbox.addEventListener('click', () => {
-        const inputArray = [...document.querySelectorAll('.good .input-checked')];
+      checkbox.addEventListener('change', () => {
+        const inputArray = [...chooseCheckbox];
 
         chooseAll.checked = inputArray.every((item) => item.checked);
       });
+
+      checkbox.addEventListener('change', summary);
+      checkbox.addEventListener('change', checkOrderSum);
     });
 
     buttonsExpand.forEach((button, index) => {
       button.addEventListener('click', (e) => {
         const expandList = goodsWrappers[index];
+        const totalCost = findSum();
+        const totalCounts = findGoodCounts();
+
+        const good = goodToStr("товар", totalCounts);
 
         expandList.classList.toggle('open');
 
@@ -73,7 +83,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         if (expandList.parentNode.classList.contains('available-goods') && !expandList.classList.contains('open')) {
-          hiddenChooseText.textContent = '266 товаров · 2 100 569 сом';
+          hiddenChooseText.textContent = `${totalCounts} ${good} · ${totalCost} сом`;
 
           labelCheckbox.style.display = 'none';
           chooseText.style.display = 'none';
@@ -91,10 +101,13 @@ window.addEventListener('DOMContentLoaded', () => {
       chooseText.addEventListener('click', (e) => {
         e.stopImmediatePropagation();
 
-        const inputCheckbox = document.querySelector('#choose-all');
         inputCheckbox.checked = !inputCheckbox.checked;
         checkboxChange();
+        summary();
+        changeCountsCosts();
       });
+
+      inputCheckbox.addEventListener('change', summary);
     });
 
     countPlus.forEach((button, index) => {
@@ -108,6 +121,8 @@ window.addEventListener('DOMContentLoaded', () => {
         if (countInputs[index].value <= 998) {
           countMinus[index].classList.remove('disabled');
         }
+
+        changeCountsCosts();
       });
     });
 
@@ -122,6 +137,9 @@ window.addEventListener('DOMContentLoaded', () => {
         if (countInputs[index].value >= 2) {
           countPlus[index].classList.remove('disabled');
         }
+
+        changeCountsCosts();
+        
       });
     });
 
@@ -146,16 +164,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
   function summary() {
     const summaryCheck = document.querySelector('#payment-check');
-    const buttonOrder = document.querySelector('.custom-button');
-    const totalPrice = document.querySelector('#total-price');
 
-    summaryCheck.addEventListener('click', () => {
-      if (summaryCheck.checked) {
-        buttonOrder.value = `Оплатить ${totalPrice.textContent}`;
-      } else {
-        buttonOrder.value = 'Заказать';
-      }
-    });
+    changeCountsCosts();
+
+    summaryCheck.addEventListener('change', checkOrderSum);
   }
 
   function formValidation() {
@@ -270,6 +282,97 @@ window.addEventListener('DOMContentLoaded', () => {
       const result = inputArray.some((item) => item.parentNode.classList.contains('error-form-input'));
       console.log(result);
     });
+  }
+
+  function findSum() {
+    const goodsPrice = document.querySelectorAll('.good-cost');
+    const chooseCheckbox = document.querySelectorAll('.good .input-checked');
+
+    let totalCost = 0;
+
+    chooseCheckbox.forEach((item, index) => {
+      const itemPrice = goodsPrice[index * 2].textContent.replace(/\s/g, '');
+
+      chooseCheckbox[index].checked ? (totalCost += +itemPrice) : totalCost;
+    });
+
+    const formatedTotalCost = totalCost
+      .toString()
+      .match(/\d{1,3}(?=(\d{3})*$)/g)
+      .join(' ');
+
+    return formatedTotalCost;
+  }
+
+  function checkOrderSum() {
+    const summaryCheck = document.querySelector('#payment-check');
+    const buttonOrder = document.querySelector('.custom-button');
+
+    const totalCost = findSum();
+
+    changeCountsCosts();
+
+    if (summaryCheck.checked) {
+      buttonOrder.value = `Оплатить ${totalCost}`;
+    } else {
+      buttonOrder.value = 'Заказать';
+    }
+  }
+
+  function findGoodCounts() {
+    const goodsPrice = document.querySelectorAll('.good-cost');
+    const chooseCheckbox = document.querySelectorAll('.good .input-checked');
+    const countInputs = document.querySelectorAll('.good-count-input');
+
+    let totalCounts = 0;
+
+    chooseCheckbox.forEach((item, index) => {
+      const countItems = countInputs[index * 2].value;
+
+      chooseCheckbox[index].checked ? (totalCounts += +countItems) : totalCounts;
+    });
+
+    const formatedTotalCounts = totalCounts
+      .toString()
+      .match(/\d{1,3}(?=(\d{3})*$)/g)
+      .join(' ');
+
+    return formatedTotalCounts;
+  }
+
+  // работает для ограниченного количества слов
+  function goodToStr(good, totalCounts) {
+    let goodString = good;
+
+    switch (totalCounts % 10) {
+      case 1: {
+        goodString = good;
+        break;
+      }
+      case 2:
+      case 3:
+      case 4: {
+        goodString = `${good}а`;
+        break;
+      }
+      default: {
+        goodString = `${good}ов`;
+      }
+    }
+
+    return goodString;
+  }
+
+  function changeCountsCosts() {
+    const asideCounts = document.querySelector('.aside-caption');
+    const totalPrice = document.querySelector('#total-price');
+
+    const totalCost = findSum();
+    const totalCounts = findGoodCounts();
+    const good = goodToStr("Товар", totalCounts);
+
+    totalPrice.textContent = `${totalCost} сом`;
+    asideCounts.textContent = `${totalCounts} ${good}`;
   }
 
   cart();

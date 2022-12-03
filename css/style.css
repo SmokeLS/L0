@@ -1150,6 +1150,7 @@ input[type="number"]:focus {
     .main .card-header-text {
         font-size: 20px;
         white-space: nowrap;
+        display: block;
     }
 
     .main .card {
