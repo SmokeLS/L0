@@ -166,15 +166,20 @@ window.addEventListener('DOMContentLoaded', () => {
     const telInput = document.querySelector('#tel-input-form');
     const tinInput = document.querySelector('#tin-input-form');
 
-    function focused (e) {
+    function focused(e) {
       e.currentTarget.classList.add('focused');
 
       if (!e.currentTarget.value) {
         e.currentTarget.classList.remove('focused');
       }
     }
+
     nameInput.addEventListener('change', (e) => {
       focused(e);
+
+      const errorElem = e.currentTarget.parentNode.querySelector('.input-form-error');
+      e.currentTarget.parentNode.classList.remove('error-form-input');
+      errorElem.classList.add('hidden');
 
       e.currentTarget.parentNode.classList.remove('error-form-input');
     });
@@ -182,32 +187,51 @@ window.addEventListener('DOMContentLoaded', () => {
     surnameInput.addEventListener('change', (e) => {
       focused(e);
 
+      const errorElem = e.currentTarget.parentNode.querySelector('.input-form-error');
+      e.currentTarget.parentNode.classList.remove('error-form-input');
+      errorElem.classList.add('hidden');
+
       e.currentTarget.parentNode.classList.remove('error-form-input');
     });
 
     emailInput.addEventListener('change', (e) => {
       focused(e);
+      const errorElem = e.currentTarget.parentNode.querySelector('.input-form-error');
 
       if (!e.currentTarget.value || e.currentTarget.value.match(/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/)) {
         e.currentTarget.parentNode.classList.remove('error-form-input');
+
+        errorElem.classList.add('hidden');
       } else if (!e.currentTarget.value.match(/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/)) {
-        console.log(true);
+        errorElem.textContent = errorElem.dataset.error;
+        errorElem.classList.remove('hidden');
+
         e.currentTarget.parentNode.classList.add('error-form-input');
       }
     });
 
     telInput.addEventListener('change', (e) => {
       focused(e);
+      const errorElem = e.currentTarget.parentNode.querySelector('.input-form-error');
 
       if (!e.currentTarget.value || e.currentTarget.value.match(/\+\d \d{3} \d{3} \d{2} \d{2}/)) {
         e.currentTarget.parentNode.classList.remove('error-form-input');
+
+        errorElem.classList.add('hidden');
       } else if (!e.currentTarget.value.match(/\+\d \d{3} \d{3} \d{2} \d{2}/)) {
+        errorElem.textContent = errorElem.dataset.error;
+        errorElem.classList.remove('hidden');
+
         e.currentTarget.parentNode.classList.add('error-form-input');
       }
     });
 
     tinInput.addEventListener('change', (e) => {
       focused(e);
+
+      const errorElem = e.currentTarget.parentNode.querySelector('.input-form-error');
+      e.currentTarget.parentNode.classList.remove('error-form-input');
+      errorElem.classList.add('hidden');
 
       e.currentTarget.parentNode.classList.remove('error-form-input');
     });
@@ -221,6 +245,11 @@ window.addEventListener('DOMContentLoaded', () => {
     orderButton.addEventListener('click', () => {
       formInputs.forEach((input) => {
         if (!input.value) {
+          const errorElem = input.parentNode.querySelector('.hidden');
+
+          errorElem.textContent = errorElem.dataset.empty;
+          errorElem.classList.remove('hidden');
+
           if (input.parentNode.classList.value !== 'input-form-block') {
             input.parentNode.parentNode.classList.add('error-form-input');
           } else {

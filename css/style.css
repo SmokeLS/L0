@@ -57,7 +57,11 @@ label:not(.label-input-form),
 .good-count-minus,
 .good-count-plus,
 .triangle,
-.choose-text {
+.choose-text,
+.good-caption,
+.aside-price-rejection,
+.delivery-price-rejection,
+.good-previous-price {
     cursor: pointer;
 }
 
@@ -366,6 +370,7 @@ input[type="number"]:focus {
     font-size: 13px;
     line-height: 20px;
     color: #A0A0A4;
+    position: relative;
 }
 
 .good-provider {
@@ -375,6 +380,31 @@ input[type="number"]:focus {
 
 .good-info {
     margin-left: 5px;
+}
+
+.good-info-tooltip {
+    width: 280px;
+    height: 104px;
+    padding: 16px;
+    background: white;
+    position: absolute;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15), 0px 0px 1px rgba(0, 0, 0, 0.3);
+    top: 50px;
+    left: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    color: #000;
+}
+
+.good-info:hover+.good-info-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.good-tooltip-header {
+    font-weight: 700;
 }
 
 .good-options {
@@ -430,6 +460,22 @@ input[type="number"]:focus {
     text-align: right;
 }
 
+.good-price-tooltip {
+    width: 240px;
+    height: 64px;
+    padding: 16px;
+    background: white;
+    position: absolute;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15), 0px 0px 1px rgba(0, 0, 0, 0.3);
+    top: 50px;
+    left: 0;
+    visibility: visible;
+    transition: all 0.5s ease-in-out;
+    opacity: 1;
+    color: #000;
+}
+
 .good-total-price {
     margin-top: 4px;
     margin-left: 6px;
@@ -453,6 +499,36 @@ input[type="number"]:focus {
     font-size: 13px;
     color: rgba(0, 0, 0, 0.2);
     margin-left: 16px;
+}
+
+.good-previous-tooltip {
+    width: 230px;
+    height: 64px;
+    padding: 16px;
+    position: absolute;
+    background: #fff;
+    font-size: 13px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15), 0px 0px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    left: calc(61.5% - 200px);
+    margin-top: 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+.good-tooltip-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.good-tooltip-discount {
+    display: inline-block;
+}
+
+.good-tooltip-discount {
+    color: #A0A0A4;
 }
 
 .deleted {
@@ -548,12 +624,52 @@ input[type="number"]:focus {
     font-size: 13px;
     display: flex;
     align-items: center;
+    position: relative;
 }
 
-.delivery-price-rejection {
+.delivery-rejection-block {
+    position: relative;
+}
+
+.delivery-price-rejection,
+.aside-price-rejection {
     color: #0CB477;
-    margin-left: 5px;
     border-bottom: 1px dashed rgba(12, 180, 119, 0.2);
+}
+
+.delivery-price-tooltip,
+.aside-price-tooltip {
+    width: 288px;
+    height: 72px;
+    padding: 16px;
+    background: white;
+    position: absolute;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15), 0px 0px 1px rgba(0, 0, 0, 0.3);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    color: #000;
+    z-index: 999;
+}
+
+.delivery-price-info {
+    position: relative;
+}
+
+.aside-price-tooltip {
+    right: 0;
+}
+
+.delivery-price-tooltip {
+    right: -120px;
+}
+
+.delivery-price-rejection:hover+.delivery-price-tooltip,
+.aside-price-rejection:hover+.aside-price-tooltip,
+.good-previous-price:hover+.good-previous-tooltip {
+    visibility: visible;
+    opacity: 1;
 }
 
 .delivery-rejection-check {
@@ -585,7 +701,7 @@ input[type="number"]:focus {
 /* receiver */
 
 .receiver-form-block {
-    max-width: 700px;
+    max-width: 100%;
 }
 
 .input-form-wrapper {
@@ -612,8 +728,8 @@ input[type="number"]:focus {
     color: #F55123;
 }
 
-.input-form-block .input-form-receiver:focus + .label-input-form ,
-.input-form-block .input-form-receiver.focused + .label-input-form {
+.input-form-block .input-form-receiver:focus+.label-input-form,
+.input-form-block .input-form-receiver.focused+.label-input-form {
     top: -100%;
     font-size: 13px;
 }
@@ -622,7 +738,7 @@ input[type="number"]:focus {
     border: none;
     outline: none;
     padding-bottom: 5px;
-    width: auto;
+    width: 100%;
 }
 
 .input-form-wrapper:not(:first-child) {
@@ -701,16 +817,15 @@ input[type="number"]:focus {
     border-bottom: 1px dashed rgba(203, 17, 171, 0.2);
 }
 
+.aside-rejection-block {
+    position: relative;
+}
+
 .aside-info-block {
     background: #F6F6FA;
     margin-top: 16px;
     padding: 8px 8px 12px 8px;
     border-radius: 8px;
-}
-
-.aside-price-rejection {
-    color: #0CB477;
-    border-bottom: 1px dashed rgba(12, 180, 119, 0.2);
 }
 
 .aside-paycard {
@@ -1053,6 +1168,10 @@ input[type="number"]:focus {
 
     .main .delivery-images-block {
         margin-top: 12px;
+    }
+
+    .main .delivery-price-tooltip {
+        right: 0;
     }
 
     .main .name-surname-block,
