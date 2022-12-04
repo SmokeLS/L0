@@ -22,17 +22,13 @@ body {
 }
 
 .good-wrapper {
-    max-height: 700px;
+    max-height: 1000px;
     overflow: hidden;
     will-change: max-height;
     transition: all 0.3s ease-out;
 }
 
-.main .good-count.good-count-mobile,
-.main .good-remains.good-remains-mobile,
 .header .search-mobile.search,
-.good-mobile-footer,
-.good-text-mobile,
 .good-size-mobile,
 .good-checkbox-mobile,
 .tabbar-mobile {
@@ -461,6 +457,7 @@ input[type="number"]:focus {
     height: 100%;
     width: 120px;
     text-align: right;
+    word-spacing: -2px;
 }
 
 .good-price-tooltip {
@@ -998,34 +995,6 @@ input[type="number"]:focus {
         display: block;
     }
 
-    .main .good-count {
-        display: none;
-    }
-
-    .main .good-remains {
-        display: none;
-    }
-
-    .main .good-size {
-        display: none;
-    }
-
-    .main .good-provider {
-        display: none;
-    }
-
-    .main .good-price {
-        display: none;
-    }
-
-    .main .good-text {
-        display: none;
-    }
-
-    .main .good-icons {
-        display: none;
-    }
-
     .main .unavailable-goods,
     .main .available-goods {
         margin-left: 16px;
@@ -1060,11 +1029,64 @@ input[type="number"]:focus {
     }
 
     .main .good {
-        display: block;
-        padding-top: 16px;
-        margin-top: 0;
+        display: grid;
+        grid-template-areas: 
+        "a d"
+        "a b"   
+        "a b"
+        "a b"
+        "c c"
+        "c c";
+        grid-template-columns: auto 1fr;
+        margin-top: 8px;
     }
 
+    .main .good-image-block {
+        grid-area: a;
+    }
+
+    .main .good-text {
+        grid-area: b;
+        margin-left: 12px;
+    }
+
+    .main .good-caption {
+        max-width: 100%;
+    }
+
+    .main .good-size {
+        display: none;
+    }
+
+    .main .good-provider {
+        display: none;
+    }
+
+    .main .good-options {
+        grid-area: c;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .main .good-price {
+        grid-area: d;
+        text-align: left;
+        margin-left: 12px;
+        width: auto;
+    }
+
+    .main .good-total-price {
+        display: inline-block;
+        margin: 0;
+    }
+
+    .main .good-previous-price {
+        display: inline-block;
+        margin: 0;
+    }
+    
     .main .good:has(+.good) {
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         padding-bottom: 16px;
@@ -1102,52 +1124,26 @@ input[type="number"]:focus {
         width: 80px;
     }
 
-    .main .good-text.good-text-mobile {
-        display: block;
-        width: 192px;
-        margin-left: 12px;
-    }
-
-    .main .good-price.good-price-mobile {
-        width: 192px;
-    }
-
-    .main .good-count.good-count-mobile {
-        display: flex;
-    }
-
-    .main .good-remains.good-remains-mobile {
-        display: flex;
-    }
-
-    .main .good-price.good-price-mobile {
-        display: block;
-        text-align: left;
-        height: auto;
-    }
-
-    .main .good-caption.good-caption-mobile {
-        margin-top: 4px;
-        line-height: 20px;
-        font-size: 14px;
-    }
-
-    .main .good-total-price.good-total-price-mobile {
-        display: inline;
-        margin-left: 0;
-    }
-
-    .main .good-previous-price.good-previous-price-mobile {
-        margin-left: 0;
-    }
-
     .main .good-previous-tooltip {
         left: 40px;
     }
 
-    .main .good-icons-mobile {
-        display: flex;
+    .main .unavailable-good {
+        grid-template-areas: 
+        "a b"
+        "a b"   
+        "a b"
+        "a b"
+        "c c"
+        "c c";
+    }
+
+    .main .unavailable-good .good-options {
         margin-left: auto;
+    }
+
+    .main .good-text {
+        margin-top: 0;
     }
 
     .main .card-header-text {
