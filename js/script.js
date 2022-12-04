@@ -105,6 +105,7 @@ window.addEventListener('DOMContentLoaded', () => {
         checkboxChange();
         summary();
         changeCountsCosts();
+        checkOrderSum();
       });
 
       inputCheckbox.addEventListener('change', summary);
@@ -290,12 +291,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let totalCost = 0;
 
-
-    chooseCheckbox.forEach((item, index) => {
-      const itemPrice = goodsPrice[index * 2].textContent.replace(/\s/g, '');
+    goodsPrice.forEach((item, index) => {
+      const itemPrice = item.textContent.replace(/\s/g, '');
 
       if (chooseCheckbox[index].checked) {
-        totalCost += +itemPrice
+        totalCost += +itemPrice;
       }
     });
 
@@ -313,11 +313,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let prevTotalCost = 0;
 
-    chooseCheckbox.forEach((item, index) => {
-      const prevItemPrice = goodsPrevPrice[index * 2].textContent.replace(/\s/g, '');
-      
+    goodsPrevPrice.forEach((item, index) => {
+      const itemCounts = item.textContent.replace(/\s/g, '');
+
       if (chooseCheckbox[index].checked) {
-        prevTotalCost += +prevItemPrice;
+        prevTotalCost += +itemCounts;
       }
     });
 
@@ -352,10 +352,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let totalCounts = 0;
 
-    chooseCheckbox.forEach((item, index) => {
-      const countItems = countInputs[index * 2].value;
+    countInputs.forEach((item, index) => {
 
-      chooseCheckbox[index].checked ? (totalCounts += +countItems) : totalCounts;
+      if (chooseCheckbox[index].checked) {
+        totalCounts += +item.value;
+      }
+
     });
 
     const formatedTotalCounts = totalCounts
@@ -371,10 +373,6 @@ window.addEventListener('DOMContentLoaded', () => {
     let goodString = good;
 
     switch (totalCounts % 10) {
-      case 1: {
-        goodString = good;
-        break;
-      }
       case 2:
       case 3:
       case 4: {

@@ -22,7 +22,7 @@ body {
 }
 
 .good-wrapper {
-    max-height: 1000px;
+    max-height: 800px;
     overflow: hidden;
     will-change: max-height;
     transition: all 0.3s ease-out;
