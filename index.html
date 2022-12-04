@@ -77,8 +77,8 @@
                         ООО Вайлдберриз <img src="./icons/info.svg" alt="info" class="good-info" />
 
                         <div class="good-info-tooltip">
-                          <div class="tooltip-header">OOO «ВАЙЛДБЕРРИЗ»</div>
-                          <div class="tooltip-info">
+                          <div class="good-tooltip-header">OOO «ВАЙЛДБЕРРИЗ»</div>
+                          <div>
                             <div>ОГРН: 5167746237148</div>
                             <div>129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34</div>
                           </div>
@@ -94,8 +94,8 @@
                       <div class="good-count-plus">+</div>
                     </div>
 
-                    <div class="good-remains">Осталось 2 шт.</div>
-
+                    <div class="good-remains">Осталось <span class="good-remain-number">2</span> шт.</div>
+                    
                     <div class="good-icons">
                       <div class="good-favorite">
                         <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
@@ -126,6 +126,7 @@
                     </div>
                   </div>
                 </div>
+
                 <!-- second-item -->
                 <div class="good">
                   <div class="good-image-block">
@@ -147,15 +148,14 @@
                       <div class="good-provider">
                         ООО Мегапрофстиль <img src="./icons/info.svg" alt="info" class="good-info" />
                         <div class="good-info-tooltip">
-                          <div class="tooltip-header">OOO «МЕГАПРОФСТИЛЬ»</div>
-                          <div class="tooltip-info">
+                          <div class="good-tooltip-header">OOO «МЕГАПРОФСТИЛЬ»</div>
+                          <div>
                             <div>ОГРН: 5167746237148</div>
                             <div>129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34</div>
                           </div>
                         </div>
                       </div>
                     </div>
-
                   </div>
 
                   <div class="good-options">
@@ -206,7 +206,7 @@
 
                   <div class="good-text">
                     <div class="good-caption">
-                      Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные,Faber-Castell
+                      Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell
                     </div>
                     <div class="good-footer">
                       <div class="good-warehouse">Коледино WB</div>
@@ -214,7 +214,7 @@
                         ООО Вайлдберриз <img src="./icons/info.svg" alt="info" class="good-info" />
                         <div class="good-info-tooltip">
                           <div class="good-tooltip-header">OOO «ВАЙЛДБЕРРИЗ»</div>
-                          <div class="good-tooltip-info">
+                          <div>
                             <div>ОГРН: 5167746237148</div>
                             <div>129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34</div>
                           </div>
@@ -230,7 +230,7 @@
                       <div class="good-count-plus">+</div>
                     </div>
 
-                    <div class="good-remains">Осталось 2 шт.</div>
+                    <div class="good-remains">Осталось <span class="good-remain-number">2</span> шт.</div>
 
                     <div class="good-icons">
                       <div class="good-favorite">
@@ -261,6 +261,7 @@
                 </div>
               </div>
             </div>
+
             <!-- unavailable -->
             <div class="unavailable-goods">
               <div class="unavailable">
@@ -314,8 +315,12 @@
 
                   <div class="good-options">
                     <div class="good-icons">
-                      <div class="good-favorite"><img src="./icons/Favorite.svg" alt="favorite" /></div>
-                      <div class="good-delete"><img src="./icons/Delete.svg" alt="delete" /></div>
+                      <div class="good-favorite">
+                        <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
+                      </div>
+                      <div class="good-delete">
+                        <img src="./icons/Delete.svg" alt="delete" class="good-delete-image" />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -331,15 +336,19 @@
 
                   <div class="good-text">
                     <div class="good-caption">
-                      Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные,Faber-Castell
+                      Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell
                     </div>
                     <div class="good-characteristics"></div>
                   </div>
 
                   <div class="good-options">
                     <div class="good-icons">
-                      <div class="good-favorite"><img src="./icons/Favorite.svg" alt="favorite" /></div>
-                      <div class="good-delete"><img src="./icons/Delete.svg" alt="delete" /></div>
+                      <div class="good-favorite">
+                        <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
+                      </div>
+                      <div class="good-delete">
+                        <img src="./icons/Delete.svg" alt="delete" class="good-delete-image" />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -475,7 +484,6 @@
                     <div class="input-form-wrapper">
                       <div class="input-form-block">
                         <input type="tel" maxlength="30" class="input-form-receiver" id="tel-input-form" />
-                        <!-- value="+7 988 123 45 67" -->
                         <label for="tel-input-form" class="label-input-form">Телефон</label>
                         <div
                           class="input-form-error hidden"
@@ -505,18 +513,6 @@
                       </div>
                       <span class="tin-purpose">Для таможенного оформления</span>
                     </div>
-
-                    <!-- <input
-                      type="tel"
-                      placeholder="Телефон"
-                      maxlength="30"
-                      class="tel-input-form input-form-receiver"
-                      value="+7 988 123 45 67"
-                    />
-                    <div class="tin-input-form-block">
-                      <input type="number" placeholder="ИНН" maxlength = "10" class="tin-input-form input-form-receiver" />
-                      <span class="tin-purpose">Для таможенного оформления</span>
-                    </div> -->
                   </div>
                 </form>
               </div>
@@ -533,12 +529,12 @@
 
           <div class="aside-option">
             <div class="aside-caption">4 товара</div>
-            <div class="aside-info">2 302 048 сом</div>
+            <div class="aside-info aside-total-price">2 302 048 сом</div>
           </div>
 
           <div class="aside-option">
             <div class="aside-caption">Скидка</div>
-            <div class="aside-info">-200 985 сом</div>
+            <div class="aside-info aside-total-discount">-200 985 сом</div>
           </div>
 
           <div class="aside-option">
@@ -574,7 +570,7 @@
             <div class="aside-caption-section">
               <div class="aside-section-caption">Оплата картой</div>
               <div class="aside-delivery-edit-block">
-                <img src="./icons/Pencil.svg" alt="pencil" />
+                <img src="./icons/Pencil.svg" alt="pencil" class="aside-edit-image" />
               </div>
             </div>
 

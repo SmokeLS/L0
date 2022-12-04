@@ -17,6 +17,8 @@ window.addEventListener('DOMContentLoaded', () => {
     const countMinus = document.querySelectorAll('.good-count-minus');
     const countInputs = document.querySelectorAll('.good-count-input');
 
+    const remains = document.querySelector('.good-remain-number');
+
     favorites.forEach((favorite) => {
       favorite.addEventListener('click', (e) => {
         e.target.classList.toggle('favorite');
@@ -64,7 +66,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const totalCost = findSum();
         const totalCounts = findGoodCounts();
 
-        const good = goodToStr("товар", totalCounts);
+        const good = goodToStr('товар', totalCounts);
 
         expandList.classList.toggle('open');
 
@@ -113,12 +115,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
     countPlus.forEach((button, index) => {
       button.addEventListener('click', (e) => {
+
         if (!e.currentTarget.classList.contains('disabled')) {
           countInputs[index].value++;
         }
-        if (countInputs[index].value >= 999) {
+
+        if (countInputs[index].value >= 999 || remains.textContent <= countInputs[index].value) {
           button.classList.add('disabled');
         }
+
         if (countInputs[index].value <= 998) {
           countMinus[index].classList.remove('disabled');
         }
@@ -132,15 +137,16 @@ window.addEventListener('DOMContentLoaded', () => {
         if (!e.currentTarget.classList.contains('disabled')) {
           countInputs[index].value--;
         }
+
         if (countInputs[index].value <= 1) {
           button.classList.add('disabled');
         }
+
         if (countInputs[index].value >= 2) {
           countPlus[index].classList.remove('disabled');
         }
 
         changeCountsCosts();
-        
       });
     });
 
@@ -212,6 +218,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     emailInput.addEventListener('change', (e) => {
       focused(e);
+
       const errorElem = e.currentTarget.parentNode.querySelector('.input-form-error');
 
       if (!e.currentTarget.value || e.currentTarget.value.match(/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/)) {
@@ -329,7 +336,6 @@ window.addEventListener('DOMContentLoaded', () => {
     return formatedTotalCost;
   }
 
-
   function checkOrderSum() {
     const summaryCheck = document.querySelector('#payment-check');
     const buttonOrder = document.querySelector('.custom-button');
@@ -353,11 +359,9 @@ window.addEventListener('DOMContentLoaded', () => {
     let totalCounts = 0;
 
     countInputs.forEach((item, index) => {
-
       if (chooseCheckbox[index].checked) {
         totalCounts += +item.value;
       }
-
     });
 
     const formatedTotalCounts = totalCounts
@@ -390,16 +394,24 @@ window.addEventListener('DOMContentLoaded', () => {
   function changeCountsCosts() {
     const asideCounts = document.querySelector('.aside-caption');
     const totalPrice = document.querySelector('#total-price');
-    const asideInfo = document.querySelector('.aside-info');
+    const asidePrice = document.querySelector('.aside-total-price');
+    const asideDiscount = document.querySelector('.aside-total-discount');
 
     const totalCost = findSum();
     const totalPrevCost = findPrevSum();
     const totalCounts = findGoodCounts();
-    const good = goodToStr("Товар", totalCounts);
+    const good = goodToStr('Товар', totalCounts);
+
+    const diffDiscount = totalPrevCost.replace(/\s/g, '') - totalCost.replace(/\s/g, '');
+    const formatedDiffDiscount = diffDiscount
+      .toString()
+      .match(/\d{1,3}(?=(\d{3})*$)/g)
+      .join(' ');
 
     totalPrice.textContent = `${totalCost} сом`;
     asideCounts.textContent = `${totalCounts} ${good}`;
-    asideInfo.textContent = `${totalPrevCost} сом`;
+    asidePrice.textContent = `${totalPrevCost} сом`;
+    asideDiscount.textContent = `-${formatedDiffDiscount} сом`;
   }
 
   cart();

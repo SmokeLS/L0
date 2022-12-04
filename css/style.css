@@ -369,7 +369,6 @@ input[type="number"]:focus {
     font-size: 13px;
     line-height: 20px;
     color: #A0A0A4;
-    position: relative;
 }
 
 .good-provider {
@@ -389,8 +388,7 @@ input[type="number"]:focus {
     position: absolute;
     border-radius: 8px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15), 0px 0px 1px rgba(0, 0, 0, 0.3);
-    top: 50px;
-    left: 0;
+    margin-top: 150px;
     visibility: hidden;
     transition: all 0.5s ease-in-out;
     opacity: 0;
@@ -761,7 +759,7 @@ input[type="number"]:focus {
 
 .email-tel-tin-block {
     display: flex;
-    margin-top: 37px;
+    margin-top: 50px;
 }
 
 .tin-input-form-block {
@@ -999,7 +997,7 @@ input[type="number"]:focus {
     .main .available-goods {
         margin-left: 16px;
         margin-right: 16px;
-        margin-top: 0;
+        margin-top: 24px;
         width: calc(100% - 32px)
     }
 
