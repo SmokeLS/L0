@@ -115,12 +115,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
     countPlus.forEach((button, index) => {
       button.addEventListener('click', (e) => {
+        const remainsNumber = button.closest('.good-options').querySelector('.good-remain-number') ?? 999;
 
         if (!e.currentTarget.classList.contains('disabled')) {
           countInputs[index].value++;
         }
 
-        if (countInputs[index].value >= 999 || remains.textContent <= countInputs[index].value) {
+        if (
+          countInputs[index].value >= 999 ||
+          (remainsNumber.textContent <= +countInputs[index].value && remainsNumber !== 999)
+        ) {
           button.classList.add('disabled');
         }
 
@@ -152,8 +156,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
     countInputs.forEach((input, index) => {
       input.addEventListener('input', () => {
-        if (input.value >= 999) {
-          input.value = 999;
+        const remainsNumber = input.closest('.good-options').querySelector('.good-remain-number') ?? 999;
+
+        if (input.value >= 999 || (remainsNumber.textContent <= +countInputs[index].value && remainsNumber !== 999)) {
+          input.value = remainsNumber.textContent ?? remainsNumber;
           countPlus[index].classList.add('disabled');
         } else {
           countPlus[index].classList.remove('disabled');
@@ -235,6 +241,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     telInput.addEventListener('change', (e) => {
       focused(e);
+
       const errorElem = e.currentTarget.parentNode.querySelector('.input-form-error');
 
       if (!e.currentTarget.value || e.currentTarget.value.match(/\+\d \d{3} \d{3} \d{2} \d{2}/)) {
@@ -257,7 +264,9 @@ window.addEventListener('DOMContentLoaded', () => {
       errorElem.classList.add('hidden');
       purposeElem.classList.remove('hidden');
 
-      e.currentTarget.parentNode.parentNode.classList.remove('error-form-input');
+      if (e.currentTarget.closest('.error-form-input')) {
+        e.currentTarget.closest('.error-form-input').classList.remove('error-form-input');
+      }
     });
 
     tinInput.addEventListener('input', function () {
@@ -274,20 +283,16 @@ window.addEventListener('DOMContentLoaded', () => {
           errorElem.textContent = errorElem.dataset.empty;
           errorElem.classList.remove('hidden');
 
-          if (input.parentNode.classList.value !== 'input-form-block') {
-            const purposeElem = document.querySelector('.tin-purpose');
-            purposeElem.classList.add('hidden');
+          const purposeElem = document.querySelector('.tin-purpose');
+          purposeElem.classList.add('hidden');
 
-            input.parentNode.parentNode.classList.add('error-form-input');
-          } else {
-            input.parentNode.classList.add('error-form-input');
-          }
+          input.closest('.input-form-block').classList.add('error-form-input');
         }
       });
 
       const inputArray = [...formInputs];
 
-      const result = inputArray.some((item) => item.parentNode.classList.contains('error-form-input'));
+      const result = inputArray.some((item) => item.closest('.error-form-input'));
       console.log(result);
     });
   }
