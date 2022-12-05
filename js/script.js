@@ -17,31 +17,49 @@ window.addEventListener('DOMContentLoaded', () => {
     const countMinus = document.querySelectorAll('.good-count-minus');
     const countInputs = document.querySelectorAll('.good-count-input');
 
-    const remains = document.querySelector('.good-remain-number');
+    const deliveryDate = document.querySelectorAll('.delivery-date');
 
     favorites.forEach((favorite) => {
       favorite.addEventListener('click', (e) => {
         e.target.classList.toggle('favorite');
+
+        e.target.classList.contains('favorite')
+          ? e.target.closest('.good-icons').classList.add('show')
+          : e.target.closest('.good-icons').classList.remove('show');
       });
     });
 
     function checkboxChange() {
       if (chooseAll.checked) {
-        chooseCheckbox.forEach((checkbox) => {
+        chooseCheckbox.forEach((checkbox, index) => {
           checkbox.checked = true;
+          togglePicture(checkbox.checked, index);
         });
       }
 
       if (!chooseAll.checked) {
-        chooseCheckbox.forEach((checkbox) => {
+        chooseCheckbox.forEach((checkbox, index) => {
           checkbox.checked = false;
+          togglePicture(checkbox.checked, index);
         });
       }
     }
 
     deletes.forEach((item) => {
       item.addEventListener('click', (e) => {
-        e.target.classList.toggle('deleted');
+        if (e.target.closest('.modal-address')) {
+          e.target.closest('.modal-address').remove();
+        }
+
+        if (e.target.closest('.modal-issue')) {
+          e.target.closest('.modal-issue').remove();
+        }
+
+        if (e.target.closest('.good')) {
+          e.target.closest('.good').remove();
+        }
+
+        summary();
       });
     });
 
@@ -49,7 +67,7 @@ window.addEventListener('DOMContentLoaded', () => {
     chooseAll.addEventListener('change', checkOrderSum);
     chooseAll.addEventListener('change', findGoodCounts);
 
-    chooseCheckbox.forEach((checkbox) => {
+    chooseCheckbox.forEach((checkbox, index) => {
       checkbox.addEventListener('change', () => {
         const inputArray = [...chooseCheckbox];
 
@@ -57,6 +75,7 @@ window.addEventListener('DOMContentLoaded', () => {
       });
 
       checkbox.addEventListener('change', summary);
+      checkbox.addEventListener('change', () => togglePicture(checkbox.checked, index));
       checkbox.addEventListener('change', checkOrderSum);
     });
 
@@ -181,6 +200,26 @@ window.addEventListener('DOMContentLoaded', () => {
     changeCountsCosts();
 
     summaryCheck.addEventListener('change', checkOrderSum);
+  }
+
+  function togglePicture(check, index) {
+    const pictures = document.querySelectorAll(`[data-index='${index}']`);
+
+    pictures.forEach((picture) => {
+      if (!check) {
+        picture.classList.add('hidden');
+
+        if (!picture.closest('.delivery-date').querySelector('.delivery-image-block:not(.hidden)')) {
+          picture.closest('.delivery-date').classList.add('hidden');
+        }
+      } else {
+        picture.classList.remove('hidden');
+
+        if (picture.closest('.delivery-date').querySelector('.delivery-image-block')) {
+          picture.closest('.delivery-date').classList.remove('hidden');
+        }
+      }
+    });
   }
 
   function formValidation() {
@@ -429,7 +468,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const chooseCardBtn = document.querySelector('#choose-card');
 
     const addressChooseBtns = document.querySelectorAll('.modal-button');
-    const radioBtns = document.querySelectorAll('.radio-checked');
 
     addressChooseBtns.forEach((button) => {
       button.addEventListener('click', () => {
@@ -501,21 +539,21 @@ window.addEventListener('DOMContentLoaded', () => {
 
         const chooseDeliveryCourierBtn = document.querySelector('.choose-delivery-courier');
 
-        if (chooseDeliveryCourierBtn.classList.contains("chosen-button")) {
+        if (chooseDeliveryCourierBtn.classList.contains('chosen-button')) {
           const deliveryAddress = button.closest('.modal-address').querySelector('.modal-card-courier');
 
-          chosenDeliveryAddresses.forEach(chosenDeliveryAddress => {
+          chosenDeliveryAddresses.forEach((chosenDeliveryAddress) => {
             chosenDeliveryAddress.textContent = deliveryAddress.textContent;
           });
 
-          chosenDeliveryStars.forEach(chosenDeliveryStar => {
-            chosenDeliveryStar.textContent = "";
+          chosenDeliveryStars.forEach((chosenDeliveryStar) => {
+            chosenDeliveryStar.textContent = '';
           });
-          
-          chosenDeliveryRates.forEach(chosenDeliveryRate => {
-            chosenDeliveryRate.textContent = "";
+
+          chosenDeliveryRates.forEach((chosenDeliveryRate) => {
+            chosenDeliveryRate.textContent = '';
           });
-          
+
           modals.forEach((modal) => {
             closeModal(modal);
           });
@@ -527,21 +565,21 @@ window.addEventListener('DOMContentLoaded', () => {
 
         const chooseDeliveryIssueBtn = document.querySelector('.choose-delivery-issue');
 
-        if (chooseDeliveryIssueBtn.classList.contains("chosen-button")) {
+        if (chooseDeliveryIssueBtn.classList.contains('chosen-button')) {
           const deliveryAddress = button.closest('.modal-issue').querySelector('.modal-text-address');
           const deliveryStar = button.closest('.modal-issue').querySelector('.delivery-star');
           const deliveryRate = button.closest('.modal-issue').querySelector('.delivery-rate');
 
-          chosenDeliveryAddresses.forEach(chosenDeliveryAddress => {
+          chosenDeliveryAddresses.forEach((chosenDeliveryAddress) => {
             chosenDeliveryAddress.textContent = deliveryAddress.textContent;
           });
-  
-          chosenDeliveryStars.forEach(chosenDeliveryStar => {
+
+          chosenDeliveryStars.forEach((chosenDeliveryStar) => {
             chosenDeliveryStar.textContent = deliveryStar.textContent;
           });
-          
-          chosenDeliveryRates.forEach(chosenDeliveryRate => {
-            chosenDeliveryRate.textContent = deliveryRate?.textContent ??  "";
+
+          chosenDeliveryRates.forEach((chosenDeliveryRate) => {
+            chosenDeliveryRate.textContent = deliveryRate?.textContent ?? '';
           });
 
           modals.forEach((modal) => {
@@ -551,27 +589,6 @@ window.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     chooseCardBtn.addEventListener('click', () => {
       const checkedInput = document.querySelectorAll('.modal-card input');
 
@@ -584,11 +601,11 @@ window.addEventListener('DOMContentLoaded', () => {
         const paycardIcon = button.closest('.modal-card').querySelector('.paycard-icon');
         const paycardNumber = button.closest('.modal-card').querySelector('.paycard-number');
 
-        chosenPaycardIcons.forEach(chosenPaycardIcon => {
+        chosenPaycardIcons.forEach((chosenPaycardIcon) => {
           chosenPaycardIcon.src = paycardIcon.src;
         });
 
-        chosenPaycardNumbers.forEach(chosenPaycardNumber => {
+        chosenPaycardNumbers.forEach((chosenPaycardNumber) => {
           chosenPaycardNumber.textContent = paycardNumber.textContent;
         });
 
@@ -608,12 +625,6 @@ window.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // radioBtns.forEach(button => {
-    //   button.addEventListener("change", () => {
-    //     button.setAttribute("checked", true);
-    //   });
-    // });
-
     window.addEventListener('keyup', (event) => {
       modals.forEach((modal) => {
         if (event.key == 'Escape' && !modal.classList.contains('hidden')) {
@@ -628,3 +639,45 @@ window.addEventListener('DOMContentLoaded', () => {
   formValidation();
   modal();
 });
+
+// if (notification.dataset.max < input.value) {
+//   const newBlock = document.createElement("div");
+//   newBlock.classList.add("delivery-option");
+//   newBlock.classList.add("delivery-date");
+
+//   newBlock.innerHTML = `<div class="delivery-caption">7—8 февраля</div>
+//                         <div class="delivery-images-block">
+//                           <div class="delivery-image-block">
+//                             <img src="./img/photo-2.png" alt="case" class="delivery-image" />
+//                             <div class="notification" data-max="999">16</div>
+//                           </div>
+//                         </div>`;
+
+//   deliveryBlock.insertAdjacentElement('beforeBegin', newBlock);
+// }
+
+// deliveryDate.forEach(dateBlocks => {
+//   const imageBlocks = dateBlocks.querySelectorAll(`[data-index='${index}']`);
+
+//   imageBlocks.forEach((imageBlock, imageIndex) => {
+//     const notification = imageBlock.querySelector('.notification');
+
+//     if (tempValue + +notification.dataset.max < input.value) {
+//       const newBlock = document.createElement("div");
+//       newBlock.classList.add("delivery-option");
+//       newBlock.classList.add("delivery-date");
+
+//       newBlock.innerHTML = `<div class="delivery-caption">7—8 февраля</div>
+//                             <div class="delivery-images-block" data-index='${index}'>
+//                               <div class="delivery-image-block">
+//                                 <img src="./img/photo-2.png" alt="case" class="delivery-image" />
+//                                 <div class="notification" data-max="222">16</div>
+//                               </div>
+//                             </div>`;
+
+//       deliveryBlock.insertAdjacentElement('beforeBegin', newBlock);
+//       tempValue += +notification.dataset.max;
+//     }
+//   });
+
+// });

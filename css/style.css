@@ -39,6 +39,10 @@ body {
     filter: brightness(0) saturate(100%) invert(15%) sepia(76%) saturate(6984%) hue-rotate(303deg) brightness(92%) contrast(93%);
 }
 
+.good-delete-image:active {
+    filter: invert(44%) sepia(60%) saturate(4414%) hue-rotate(348deg) brightness(98%) contrast(96%);
+}
+
 .good-favorite-image,
 .good-delete-image,
 .good-info,
@@ -473,6 +477,16 @@ input[type="number"]:focus {
     display: flex;
     justify-content: flex-end;
     margin-top: 8px;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+}
+
+.good-icons:hover {
+    opacity: 1;
+}
+
+.good-icons.show {
+    opacity: 1;
 }
 
 .good-delete {
@@ -557,10 +571,6 @@ input[type="number"]:focus {
     color: #A0A0A4;
 }
 
-.deleted {
-    filter: invert(44%) sepia(60%) saturate(4414%) hue-rotate(348deg) brightness(98%) contrast(96%);
-}
-
 .unavailable {
     font-weight: 600;
 }
@@ -611,6 +621,10 @@ input[type="number"]:focus {
 .delivery-caption {
     font-weight: 600;
     width: 22%;
+}
+
+.delivery-option.delivery-date.hidden {
+    display: none;
 }
 
 .delivery-info {
@@ -1314,7 +1328,7 @@ input[type="number"]:focus {
             "a b"
             "a b"
             "c c"
-            "c c";
+            "d d";
     }
 
     .main .unavailable-good .good-options {
