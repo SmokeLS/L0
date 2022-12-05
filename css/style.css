@@ -621,6 +621,7 @@ input[type="number"]:focus {
     display: flex;
     font-size: 13px;
     margin-top: 4px;
+    gap: 8px;
 }
 
 .delivery-star {
@@ -634,11 +635,7 @@ input[type="number"]:focus {
 .delivery-point {
     margin-left: 4px;
     color: #A0A0A4;
-}
-
-.delivery-time {
-    margin-left: 8px;
-}
+}   
 
 .delivery-images-block {
     display: flex;
@@ -972,6 +969,10 @@ input[type="number"]:focus {
     align-items: center;
 }
 
+.modal.hidden {
+    display: none;
+}
+
 .modal-dialog-payment {
     width: 400px;
     margin: 40px auto;
@@ -986,7 +987,9 @@ input[type="number"]:focus {
     border: 1px solid rgba(0, 0, 0, .2);
     border-radius: 16px;
     overflow-y: auto;
-    min-height: 400px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
 }
 
 .modal-dialog-delivery {
@@ -1003,7 +1006,7 @@ input[type="number"]:focus {
     border: 1px solid rgba(0, 0, 0, .2);
     border-radius: 16px;
     overflow-y: auto;
-    min-height: 400px;
+    min-height: 500px;
     display: flex;
     flex-direction: column;
 }
@@ -1052,7 +1055,7 @@ input[type="number"]:focus {
     background: #fff;
 }
 
-.modal-button.choosen-button{
+.modal-button.chosen-button{
     border: 2px solid #CB11AB;
 }
 
