@@ -93,6 +93,16 @@ label:not(.label-input-form),
     position: relative;
 }
 
+.choose-custom-radio {
+    min-width: 16px;
+    min-height: 16px;
+    border-radius: 16px;
+    background: white;
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
 .hidden:checked+.choose-custom-checkbox {
     background: #CB11AB;
     color: white;
@@ -109,6 +119,24 @@ label:not(.label-input-form),
     top: 0;
     left: 0;
     content: url('../icons/Check.svg');
+}
+
+.hidden:checked+.choose-custom-radio {
+    background: #CB11AB;
+    color: white;
+    border: none;
+}
+
+.hidden:checked+.choose-custom-radio::before {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: flex;
+    top: calc(50% - 4px);
+    left: calc(50% - 4px);
+    background: radial-gradient(circle, #fff, #fff);
+    content: "";
 }
 
 .error-form-input::placeholder {
@@ -599,6 +627,15 @@ input[type="number"]:focus {
     color: #FF970D;
 }
 
+.delivery-stars {
+    font-size: 13px;
+}
+
+.delivery-point {
+    margin-left: 4px;
+    color: #A0A0A4;
+}
+
 .delivery-time {
     margin-left: 8px;
 }
@@ -918,6 +955,147 @@ input[type="number"]:focus {
     align-items: center;
 }
 
+/* modal */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    /* display: none; */ 
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-dialog-payment {
+    width: 400px;
+    margin: 40px auto;
+    border-radius: 16px;
+}
+
+.modal-content-payment {
+    position: relative;
+    width: 100%;
+    padding: 16px 24px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 16px;
+    overflow-y: auto;
+    min-height: 400px;
+}
+
+.modal-dialog-delivery {
+    width: 500px;
+    margin: 40px auto;
+    border-radius: 16px;
+}
+
+.modal-content-delivery {
+    position: relative;
+    width: 100%;
+    padding: 16px 24px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 16px;
+    overflow-y: auto;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-close {
+    position: absolute;
+    top: 8px;
+    right: 14px;
+    font-size: 36px;
+    color: #000;
+    font-weight: 400;
+    opacity: .5;
+    border: none;
+    background-color: transparent;
+    cursor: pointer
+}
+
+.modal-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 12px;
+}
+
+.modal-card {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding-top: 16px;
+}
+
+.modal-button {
+    width: 100%;
+    border-radius: 20px;
+    height: 36px;
+    border: 2px solid #CB11AB26;
+    font-weight: 700;
+    font-size: 13px;
+    color: #000;
+    background: #fff;
+}
+
+.modal-button.choosen-button{
+    border: 2px solid #CB11AB;
+}
+
+.modal-my-addresses {
+    font-weight: 700;
+    font-size: 13px;
+    padding-top: 24px;
+}
+
+.modal-addresses {
+    padding-bottom: 40px;
+}
+
+.modal-address, .modal-issue{
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.modal-address.hidden ,.modal-issue.hidden {
+    display: none;
+}
+
+.modal-delete-image {
+    margin-left: auto;
+}
+
+.modal-custom-button {
+    width: 164px;
+    margin-top: auto;
+}
+
+.modal .choose-custom-radio {
+    margin-top: 4px;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s
+}
+
 @media only screen and (min-width: 280px) and (max-width: 1024px) {
 
     /* header  */
@@ -1028,13 +1206,13 @@ input[type="number"]:focus {
 
     .main .good {
         display: grid;
-        grid-template-areas: 
-        "a d"
-        "a b"   
-        "a b"
-        "a b"
-        "c c"
-        "c c";
+        grid-template-areas:
+            "a d"
+            "a b"
+            "a b"
+            "a b"
+            "c c"
+            "c c";
         grid-template-columns: auto 1fr;
         margin-top: 8px;
     }
@@ -1084,7 +1262,7 @@ input[type="number"]:focus {
         display: inline-block;
         margin: 0;
     }
-    
+
     .main .good:has(+.good) {
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         padding-bottom: 16px;
@@ -1127,13 +1305,13 @@ input[type="number"]:focus {
     }
 
     .main .unavailable-good {
-        grid-template-areas: 
-        "a b"
-        "a b"   
-        "a b"
-        "a b"
-        "c c"
-        "c c";
+        grid-template-areas:
+            "a b"
+            "a b"
+            "a b"
+            "a b"
+            "c c"
+            "c c";
     }
 
     .main .unavailable-good .good-options {
@@ -1247,4 +1425,23 @@ input[type="number"]:focus {
         height: auto;
         margin: 0;
     }
+
+    /* modal */
+
+    .modal .modal-dialog-payment,
+    .modal .modal-dialog-delivery {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .modal .modal-content-payment,
+    .modal .modal-content-delivery{
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .modal .modal-custom-button {
+        width: 100%;
+    } 
 }

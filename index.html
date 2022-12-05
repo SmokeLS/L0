@@ -95,7 +95,7 @@
                     </div>
 
                     <div class="good-remains">Осталось <span class="good-remain-number">2</span> шт.</div>
-                    
+
                     <div class="good-icons">
                       <div class="good-favorite">
                         <img src="./icons/Favorite.svg" alt="favorite" class="good-favorite-image" />
@@ -359,7 +359,7 @@
             <div class="card delivery">
               <div class="card-delivery-header card-header">
                 <div class="card-header-text">Способ доставки</div>
-                <input type="button" value="Изменить" class="card-button" />
+                <input type="button" value="Изменить" class="card-button address-button" />
               </div>
 
               <div class="delivery-option">
@@ -425,12 +425,12 @@
             <div class="card payment">
               <div class="card-delivery-header card-header">
                 <div class="card-header-text">Способ оплаты</div>
-                <input type="button" value="Изменить" class="card-button" />
+                <input type="button" value="Изменить" class="card-button paycard-button" />
               </div>
 
               <div class="paycard">
                 <div class="paycard-icon-block">
-                  <img class="paycard-icon" src="./icons/Paycard.svg" alt="paycard" />
+                  <img class="paycard-icon" src="./icons/Paycard-mir.svg" alt="paycard" />
                 </div>
                 <div class="paycard-info">
                   <span class="paycard-number">1234 56•• •••• 1234</span><span class="paycard-date">01/30</span>
@@ -546,7 +546,7 @@
             <div class="aside-caption-section">
               <div class="aside-section-caption">Доставка и пункт выдачи</div>
               <div class="aside-delivery-edit-block">
-                <img src="./icons/Pencil.svg" alt="pencil" class="aside-edit-image" />
+                <img src="./icons/Pencil.svg" alt="pencil" class="aside-edit-image address-button" />
               </div>
             </div>
 
@@ -570,12 +570,14 @@
             <div class="aside-caption-section">
               <div class="aside-section-caption">Оплата картой</div>
               <div class="aside-delivery-edit-block">
-                <img src="./icons/Pencil.svg" alt="pencil" class="aside-edit-image" />
+                <img src="./icons/Pencil.svg" alt="pencil" class="aside-edit-image paycard-button" />
               </div>
             </div>
 
             <div class="paycard aside-paycard">
-              <div class="paycard-icon-block"><img class="paycard-icon" src="./icons/Paycard.svg" alt="paycard" /></div>
+              <div class="paycard-icon-block">
+                <img class="paycard-icon" src="./icons/Paycard-mir.svg" alt="paycard" />
+              </div>
               <div class="paycard-info">
                 <span class="paycard-number">1234 56•• •••• 1234</span>
               </div>
@@ -635,7 +637,154 @@
           <img src="./icons/Profile.svg" class="profile-image" alt="profile" />
         </div>
       </div>
+
+      <!-- modal-payment -->
+      <!-- <div class="modal-payment modal">
+        <div class="modal-dialog-payment">
+          <div class="modal-content-payment">
+            <div class="card-header-text">Способ оплаты</div>
+            <div data-close class="modal-close">&times;</div>
+            
+            <div class="modal-cards">
+              <div class="modal-card">
+                <input type="radio" class="hidden" id="payment-card-1" name="payment-card"/>
+                <label for="payment-card-1" class="choose-custom-radio"></label>
+
+                  <img class="paycard-icon" src="./icons/Paycard-mir.svg" alt="mir" />
+
+                  <span class="paycard-number">1234 56•• •••• 1234</span>
+              </div>
+
+              <div class="modal-card">
+                <input type="radio" class="hidden" id="payment-card-2" name="payment-card"/>
+                <label for="payment-card-2" class="choose-custom-radio"></label>
+
+                <img class="paycard-icon" src="./icons/Paycard-visa.svg" alt="visa" />
+
+                <span class="paycard-number">1234 56•• •••• 1234</span>
+              </div>
+
+              <div class="modal-card">
+                <input type="radio" class="hidden" id="payment-card-3" name="payment-card"/>
+                <label for="payment-card-3" class="choose-custom-radio"></label>
+
+                <img class="paycard-icon" src="./icons/Paycard-mastercard.svg" alt="mastercard" />
+
+                <span class="paycard-number">1234 56•• •••• 1234</span>
+              </div>
+
+              <div class="modal-card">
+                <input type="radio" class="hidden" id="payment-card-4" name="payment-card"/>
+                <label for="payment-card-4" class="choose-custom-radio"></label>
+
+                <img class="paycard-icon" src="./icons/Paycard-maestro.svg" alt="maestro" />
+
+                <span class="paycard-number">1234 56•• •••• 1234</span>
+              </div>
+            </div>
+
+            <input type="button" value="Выбрать" class="custom-button modal-custom-button" id="choose-card" />
+          </div>
+        </div>
+      </div> -->
+
+      <!-- modal-delivery -->
+      <div class="modal-delivery modal">
+        <div class="modal-dialog-delivery">
+          <div class="modal-content-delivery">
+            <div class="card-header-text">Способ доставки</div>
+            <div data-close class="modal-close">&times;</div>
+
+            <div class="modal-addresses">
+              <div class="modal-buttons">
+                <input type="button" value="В пункте выдачи" class="modal-button" id="choose-delivery-issue" />
+                <input
+                  type="button"
+                  value="Курьером"
+                  class="modal-button choosen-button"
+                  id="choose-delivery-courier"
+                />
+              </div>
+
+              <div class="modal-my-addresses">Мои адреса</div>
+
+              <!-- modal address  -->
+              <div class="modal-address hidden">
+                <input type="radio" class="hidden" id="payment-card-2" name="payment-card" />
+                <label for="payment-card-2" class="choose-custom-radio"></label>
+
+                <div class="modal-card-courier">Бишкек, улица Табышалиева, 57</div>
+                <img src="./icons/Delete.svg" alt="delete" class="good-delete-image modal-delete-image" />
+              </div>
+
+              <div class="modal-address hidden">
+                <input type="radio" class="hidden" id="payment-card-3" name="payment-card" />
+                <label for="payment-card-3" class="choose-custom-radio"></label>
+
+                <div class="modal-card-courier">Бишкек, улица Жукеева-Пудовкина, 77/1</div>
+                <img src="./icons/Delete.svg" alt="delete" class="good-delete-image modal-delete-image" />
+              </div>
+
+              <div class="modal-address hidden">
+                <input type="radio" class="hidden" id="payment-card-4" name="payment-card" />
+                <label for="payment-card-4" class="choose-custom-radio"></label>
+
+                <div class="modal-card-courier">Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1</div>
+                <img src="./icons/Delete.svg" alt="delete" class="good-delete-image modal-delete-image" />
+              </div>
+
+              <!-- modal issue  -->
+              <div class="modal-issue">
+                <input type="radio" class="hidden" id="payment-card-4" name="payment-card" />
+                <label for="payment-card-4" class="choose-custom-radio"></label>
+
+                <div class="modal-text-issue">
+                  г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1
+                  <div class="delivery-stars">
+                    <span class="delivery-star">&#9733;</span>
+                    <span class="delivery-point">Пункт выдачи</span>
+                  </div>
+                </div>
+
+                <img src="./icons/Delete.svg" alt="delete" class="good-delete-image modal-delete-image" />
+              </div>
+
+              <div class="modal-issue">
+                <input type="radio" class="hidden" id="payment-card-4" name="payment-card" />
+                <label for="payment-card-4" class="choose-custom-radio"></label>
+
+                <div class="modal-text-issue">
+                  г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1
+                  <div class="delivery-stars">
+                    <span class="delivery-star">&#9733;</span>
+                    <span class="delivery-point">Пункт выдачи</span>
+                  </div>
+                </div>
+
+                <img src="./icons/Delete.svg" alt="delete" class="good-delete-image modal-delete-image" />
+              </div>
+
+              <div class="modal-issue">
+                <input type="radio" class="hidden" id="payment-card-4" name="payment-card" />
+                <label for="payment-card-4" class="choose-custom-radio"></label>
+
+                <div class="modal-text-issue">
+                  г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1
+                  <div class="delivery-stars">
+                    <span class="delivery-star">&#9733;</span>
+                    <span class="delivery-point">Пункт выдачи</span>
+                  </div>
+                </div>
+                <img src="./icons/Delete.svg" alt="delete" class="good-delete-image modal-delete-image" />
+              </div>
+            </div>
+
+            <input type="button" value="Выбрать" class="custom-button modal-custom-button" id="choose-address" />
+          </div>
+        </div>
+      </div>
     </div>
+
     <script src="js/script.js"></script>
   </body>
 </html>
