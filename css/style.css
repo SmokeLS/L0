@@ -649,7 +649,7 @@ input[type="number"]:focus {
 .delivery-point {
     margin-left: 4px;
     color: #A0A0A4;
-}   
+}
 
 .delivery-images-block {
     display: flex;
@@ -973,7 +973,7 @@ input[type="number"]:focus {
     top: 0;
     left: 0;
     z-index: 999;
-    /* display: none; */ 
+    /* display: none; */
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -1069,7 +1069,7 @@ input[type="number"]:focus {
     background: #fff;
 }
 
-.modal-button.chosen-button{
+.modal-button.chosen-button {
     border: 2px solid #CB11AB;
 }
 
@@ -1083,7 +1083,8 @@ input[type="number"]:focus {
     padding-bottom: 40px;
 }
 
-.modal-address, .modal-issue{
+.modal-address,
+.modal-issue {
     display: flex;
     gap: 8px;
     align-items: flex-start;
@@ -1091,7 +1092,8 @@ input[type="number"]:focus {
     padding-bottom: 12px;
 }
 
-.modal-address.hidden ,.modal-issue.hidden {
+.modal-address.hidden,
+.modal-issue.hidden {
     display: none;
 }
 
@@ -1457,7 +1459,7 @@ input[type="number"]:focus {
     }
 
     .modal .modal-content-payment,
-    .modal .modal-content-delivery{
+    .modal .modal-content-delivery {
         width: 100%;
         height: 100vh;
         border-radius: 0;
@@ -1465,5 +1467,5 @@ input[type="number"]:focus {
 
     .modal .modal-custom-button {
         width: 100%;
-    } 
+    }
 }
