@@ -138,6 +138,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
         if (!e.currentTarget.classList.contains('disabled')) {
           countInputs[index].value++;
+
+          changePrice(countInputs[index]);
         }
 
         if (
@@ -159,6 +161,8 @@ window.addEventListener('DOMContentLoaded', () => {
       button.addEventListener('click', (e) => {
         if (!e.currentTarget.classList.contains('disabled')) {
           countInputs[index].value--;
+
+          changePrice(countInputs[index]);
         }
 
         if (countInputs[index].value <= 1) {
@@ -173,24 +177,66 @@ window.addEventListener('DOMContentLoaded', () => {
       });
     });
 
+    function changePrice(input) {
+      const goodCost = input.closest('.good').querySelector('.good-cost');
+      const prevGoodCost = input.closest('.good').querySelector('.prev-good-cost');
+      const discountPercentage = input.closest('.good').querySelectorAll('.discont-percentage-tooltip');
+      const discountPrice = input.closest('.good').querySelectorAll('.discont-price-tooltip');
+
+      goodCost.textContent = +goodCost.dataset.price * +input.value;
+
+      prevGoodCost.textContent = +prevGoodCost.dataset.price * +input.value;
+      
+      discountPercentage.forEach((discount, index) => {
+        discount.textContent = `${(
+          (((prevGoodCost.dataset.price - goodCost.dataset.price) / prevGoodCost.dataset.price) * 100) /
+          2
+        ).toFixed(1)}%`;
+
+        discountPrice[index].textContent = (prevGoodCost.textContent - goodCost.textContent) / 2;
+      });
+
+
+      goodCost.textContent = `${goodCost.textContent
+        .toString()
+        .match(/\d{1,3}(?=(\d{3})*$)/g)
+        .join(' ')} `;
+
+      prevGoodCost.textContent = `${prevGoodCost.textContent
+        .toString()
+        .match(/\d{1,3}(?=(\d{3})*$)/g)
+        .join(' ')} `;
+
+      summary();
+      checkOrderSum();
+    }
+
     countInputs.forEach((input, index) => {
       input.addEventListener('input', () => {
         const remainsNumber = input.closest('.good-options').querySelector('.good-remain-number') ?? 999;
-
         if (input.value >= 999 || (remainsNumber.textContent <= +countInputs[index].value && remainsNumber !== 999)) {
           input.value = remainsNumber.textContent ?? remainsNumber;
+          changePrice(input);
+
           countPlus[index].classList.add('disabled');
         } else {
+          changePrice(input);
+
           countPlus[index].classList.remove('disabled');
         }
 
         if (input.value <= 1) {
           input.value = 1;
+          changePrice(input);
+
           countMinus[index].classList.add('disabled');
         } else {
+          changePrice(input);
+
           countMinus[index].classList.remove('disabled');
         }
       });
+      changePrice(input);
     });
   }
 
@@ -332,7 +378,6 @@ window.addEventListener('DOMContentLoaded', () => {
       const inputArray = [...formInputs];
 
       const result = inputArray.some((item) => item.closest('.error-form-input'));
-      console.log(result);
     });
   }
 

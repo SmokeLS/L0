@@ -542,7 +542,7 @@ input[type="number"]:focus {
 }
 
 .good-previous-tooltip {
-    width: 230px;
+    width: 250px;
     height: 64px;
     padding: 16px;
     position: absolute;
@@ -553,7 +553,7 @@ input[type="number"]:focus {
     z-index: 999;
     visibility: hidden;
     opacity: 0;
-    left: calc(61.5% - 200px);
+    left: calc(61.5% - 220px);
     margin-top: 10px;
     transition: all 0.5s ease-in-out;
 }
@@ -1245,6 +1245,11 @@ input[type="number"]:focus {
 
     .main .good-caption {
         max-width: 100%;
+        display: -webkit-box;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 
     .main .good-size {
