@@ -61,7 +61,8 @@ label:not(.label-input-form),
 .good-caption,
 .aside-price-rejection,
 .delivery-price-rejection,
-.good-previous-price {
+.good-previous-price,
+.burger-menu {
     cursor: pointer;
 }
 

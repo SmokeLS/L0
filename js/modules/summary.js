@@ -89,7 +89,6 @@ function findPrevSum() {
 }
 
 export function findGoodCounts() {
-  const goodsPrice = document.querySelectorAll('.good-cost');
   const chooseCheckbox = document.querySelectorAll('.good .input-checked');
   const countInputs = document.querySelectorAll('.good-count-input');
 

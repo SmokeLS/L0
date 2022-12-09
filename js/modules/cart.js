@@ -18,8 +18,6 @@ export function cart() {
   const countMinus = document.querySelectorAll('.good-count-minus');
   const countInputs = document.querySelectorAll('.good-count-input');
 
-  const deliveryDate = document.querySelectorAll('.delivery-date');
-
   favorites.forEach((favorite) => {
     favorite.addEventListener('click', (e) => {
       e.target.classList.toggle('favorite');
@@ -233,6 +231,7 @@ export function cart() {
         countMinus[index].classList.remove('disabled');
       }
     });
+
     changePrice(input);
   });
 }
