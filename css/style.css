@@ -218,6 +218,7 @@ input[type="number"]:focus {
 
 .search {
     margin-left: 32px;
+    min-width: 594px;
     max-width: 970px;
     width: 100%;
     position: relative;
@@ -251,14 +252,16 @@ input[type="number"]:focus {
 .search-bar::placeholder {
     font-style: normal;
     font-size: 18px;
-    color: #bbb;
+    color: #fff;
+    opacity: .5;
 }
 
 .icons {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    width: 169px;
+    min-width: 169px;
+    max-width: 229px;
     height: 56px;
     margin-left: 19px;
 }
@@ -277,11 +280,11 @@ input[type="number"]:focus {
 }
 
 .profile {
-    margin-left: 4px;
+    margin-left: 14px;
 }
 
-.cart{
-    margin-left: 40px;
+.cart {
+    margin-right: 7px;
 }
 
 .profile-image-block {
