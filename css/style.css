@@ -1180,6 +1180,13 @@ input[type="number"]:focus {
         display: none;
     }
 
+    .header .search {
+        min-width: 24px;
+        max-width: 24px;
+        height: 24px;
+        margin-top: -3px;
+    }
+
     .header .search-bar {
         display: none;
     }
@@ -1202,8 +1209,10 @@ input[type="number"]:focus {
     .header .logo {
         width: 100%;
         margin-left: 0;
-        margin-right: 28px;
-        font-size: 22px;
+        margin-right: 2px;
+        margin-top: -2px;
+        font-size: 18px;
+        letter-spacing: 2px;
         text-align: center;
         font-weight: 600;
     }
@@ -1218,8 +1227,6 @@ input[type="number"]:focus {
 
     .header .search-mobile.search {
         display: block;
-        width: 0;
-        position: relative;
         margin-left: 0;
         position: relative;
     }
