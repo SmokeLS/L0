@@ -122,7 +122,7 @@ label:not(.label-input-form),
     justify-content: center;
     text-align: center;
     top: 0;
-    left: 0;
+    left: 1px;
     content: url('../icons/Check.svg');
 }
 
@@ -332,7 +332,9 @@ input[type="number"]:focus {
 }
 
 .card-page {
-    width: 65.6%;
+    width: 100%;
+    min-width: 640px;
+    margin-right:32px;
 }
 
 .goods,
@@ -346,8 +348,9 @@ input[type="number"]:focus {
 .unavailable {
     display: flex;
     /* align-items: center; */
+    padding-right: 4px;
     width: 100%;
-    padding-bottom: 17px;
+    padding-bottom: 16px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -366,7 +369,6 @@ input[type="number"]:focus {
     height: 12px;
     transform: rotate(45deg);
     margin-top: 12px;
-    margin-right: 0;
     margin-left: auto;
     transition: all 0.3s ease-out;
 }
@@ -376,17 +378,18 @@ input[type="number"]:focus {
     display: flex;
     align-items: flex-start;
     min-height: 105px;
-    margin-top: 24px;
+    margin-top: 22px;
     padding-top: 8px;
 }
 
 .good:first-child,
 .unavailable-good:first-child {
-    margin-top: 0;
+    margin-top: 2px;
 }
 
 .good-checkbox,
 .good-checkbox-mobile {
+    margin-top: 2px;
     align-self: center;
 }
 
@@ -414,11 +417,11 @@ input[type="number"]:focus {
 .good-characteristics {
     display: flex;
     font-size: 13px;
-    margin-top: 10px;
+    margin-top: 7px;
 }
 
 .good-size {
-    margin-left: 16px;
+    margin-left: 17px;
 }
 
 .good-footer {
@@ -463,6 +466,8 @@ input[type="number"]:focus {
 
 .good-options {
     margin-left: auto;
+    margin-right: 5px;
+    margin-top: -1px;
     height: 100%;
 }
 
@@ -473,7 +478,7 @@ input[type="number"]:focus {
     display: flex;
     background: #fff;
     justify-content: space-between;
-    padding: 12px;
+    padding: 16px 10px;
     border-radius: 8px;
 }
 
@@ -617,7 +622,7 @@ input[type="number"]:focus {
 
 .card {
     background: #fff;
-    padding: 18px 22px; /* 16px 24px  */
+    padding: 18px 24px; /* 16px 24px  */
     padding-bottom: 25px; 
     border-radius: 16px;
 }
@@ -852,7 +857,9 @@ input[type="number"]:focus {
 /* aside */
 
 .aside {
-    width: 31.6%;
+    width: 100%;
+    max-width: 429px;
+    min-width: 303px;
     margin-top: 8px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15), 0px 0px 1px rgba(0, 0, 0, 0.3);
 }
@@ -880,7 +887,7 @@ input[type="number"]:focus {
 
 .aside-delivery-edit-block {
     margin-top: 4px;
-    margin-right: 4px;
+    margin-right: 2px;
 }
 
 .aside-delivery-edit-block.aside-section-edit-block {
@@ -996,8 +1003,14 @@ input[type="number"]:focus {
     margin-top: 13px;
 }
 
+.aside-footer-block-checkbox {
+    margin-top: 3px;
+}
+
 .aside-footer-agreement {
     margin-left: -2px;
+    line-height: 16px;
+    font-weight: 500;
 }
 
 .aside-agreement-href {
