@@ -98,6 +98,10 @@ label:not(.label-input-form),
     position: relative;
 }
 
+.aside-payment-check-block .choose-custom-checkbox {
+    background: white;
+}
+
 .choose-custom-radio {
     min-width: 16px;
     min-height: 16px;
@@ -344,6 +348,11 @@ input[type="number"]:focus {
     width: 100%;
 }
 
+.unavailable-goods {
+    margin-top: 38px;
+    font-weight: 600;
+}
+
 .choose,
 .unavailable {
     display: flex;
@@ -356,6 +365,8 @@ input[type="number"]:focus {
 
 .unavailable-header {
     color: #000;
+    margin-top: -2px;
+    padding-bottom: 5px;
 }
 
 .choose-text {
@@ -371,6 +382,10 @@ input[type="number"]:focus {
     margin-top: 12px;
     margin-left: auto;
     transition: all 0.3s ease-out;
+}
+
+.unavailable-triangle {
+    margin-top: 8px;
 }
 
 .good,
@@ -413,12 +428,18 @@ input[type="number"]:focus {
     max-width: 275px;
     margin-top: -1px;
     line-height: 24px;
+    font-weight: 400;
+}
+
+.unavailable-good-caption {
+    max-width: 300px;
 }
 
 .good-characteristics {
     display: flex;
     font-size: 13px;
     margin-top: 7px;
+    font-weight: 400;
 }
 
 .good-size {
@@ -467,7 +488,7 @@ input[type="number"]:focus {
 
 .good-options {
     margin-left: auto;
-    margin-right: 5px;
+    margin-right: 3px;
     margin-top: -2px;
     height: 100%;
 }
@@ -510,6 +531,10 @@ input[type="number"]:focus {
     margin-top: 10px;
     opacity: 0;
     transition: all .5s ease-in-out;
+}
+
+.unavailable-good-icons {
+    margin-top: 3px;
 }
 
 .good-icons:hover {
@@ -642,6 +667,11 @@ input[type="number"]:focus {
     border-radius: 16px;
 }
 
+.delivery {
+    margin-top: 42px;
+    padding: 19px 24px 21px 24px;
+}
+
 .card-header {
     display: flex;
     justify-content: space-between;
@@ -657,16 +687,27 @@ input[type="number"]:focus {
     background: #fff;
     border: none;
     font-weight: 700;
+    padding-right: 0;
+    margin-top: 4px;
 }
 
 .delivery-option {
     display: flex;
-    margin-top: 16px;
+    margin-top: 20px;
+}
+
+.delivery-date {
+    margin-top: 18px;
 }
 
 .delivery-caption {
     font-weight: 600;
-    width: 22%;
+    min-width: 153px;
+    margin-right:32px;
+}
+
+#delivery-date {
+    margin-top: 4px;
 }
 
 .delivery-option.delivery-date.hidden {
@@ -680,8 +721,16 @@ input[type="number"]:focus {
 .delivery-about {
     display: flex;
     font-size: 13px;
-    margin-top: 4px;
+    margin-top: 3px;
     gap: 8px;
+}
+
+.delivery-star-text {
+    font-size: 16px;
+}
+
+.delivery-time {
+    margin-left: 3px;
 }
 
 .delivery-star {
@@ -707,12 +756,19 @@ input[type="number"]:focus {
     position: relative;
 }
 
+.delivery-image-notification {
+    position: absolute;
+    right: -6px;
+}
+
 .delivery-image {
     width: 100%;
+    height: 56px;
+    border-radius: 10px;
 }
 
 .delivery-rejection {
-    margin-top: 28px;
+    margin-top: 16px;
     font-size: 13px;
     display: flex;
     align-items: center;
@@ -745,7 +801,8 @@ input[type="number"]:focus {
     z-index: 999;
 }
 
-.delivery-price-info {
+.delivery-price-info{
+    margin-left: 8px;
     position: relative;
 }
 
@@ -765,7 +822,7 @@ input[type="number"]:focus {
 }
 
 .delivery-rejection-check {
-    margin-right: 5px;
+    margin-top: 2px;
 }
 
 /* paycard */
@@ -929,7 +986,7 @@ input[type="number"]:focus {
 }
 
 .aside-rejection-block {
-    margin-left: 3px;
+    margin-left: 9px;
     line-height: 16px;
     position: relative;
 }
