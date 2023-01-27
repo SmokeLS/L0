@@ -15,7 +15,7 @@ export function changeCountsCosts() {
   const totalCost = findSum();
   const totalPrevCost = findPrevSum();
   const totalCounts = findGoodCounts();
-  const good = goodToStr('Товар', totalCounts);
+  const good = goodToStr('товар', totalCounts);
 
   const diffDiscount = totalPrevCost.replace(/\s/g, '') - totalCost.replace(/\s/g, '');
   const formatedDiffDiscount = diffDiscount
@@ -26,7 +26,7 @@ export function changeCountsCosts() {
   totalPrice.textContent = `${totalCost} сом`;
   asideCounts.textContent = `${totalCounts} ${good}`;
   asidePrice.textContent = `${totalPrevCost} сом`;
-  asideDiscount.textContent = `-${formatedDiffDiscount} сом`;
+  asideDiscount.textContent = `−${formatedDiffDiscount} сом`;
 }
 
 export function checkOrderSum() {

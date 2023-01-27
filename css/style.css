@@ -301,6 +301,7 @@ input[type="number"]:focus {
 }
 
 .card-header-main {
+    margin-top: 20px;
     font-style: normal;
     font-weight: 700;
     font-size: 28px;
@@ -308,20 +309,20 @@ input[type="number"]:focus {
 }
 
 .card-page {
-    width: 64.5%;
+    width: 65.6%;
 }
 
 .goods,
 .unavailable-goods,
 .card {
-    margin-top: 28px;
+    margin-top: 27px;  /* margin-top: 28px; */
     width: 100%;
 }
 
 .choose,
 .unavailable {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     width: 100%;
     padding-bottom: 17px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -593,7 +594,8 @@ input[type="number"]:focus {
 
 .card {
     background: #fff;
-    padding: 16px 24px;
+    padding: 18px 22px;
+    padding-bottom: 24px;
     border-radius: 16px;
 }
 
@@ -727,12 +729,12 @@ input[type="number"]:focus {
 
 .paycard {
     display: flex;
-    align-items: center;
     margin-top: 16px;
 }
 
 .paycard-info {
-    margin-left: 8px;
+    margin-left: 9px;
+    margin-top: 4px;
 }
 
 .paycard-date {
@@ -827,7 +829,7 @@ input[type="number"]:focus {
 /* aside */
 
 .aside {
-    width: 31%;
+    width: 31.6%;
     margin-top: 8px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15), 0px 0px 1px rgba(0, 0, 0, 0.3);
 }
@@ -839,7 +841,7 @@ input[type="number"]:focus {
 }
 
 .aside-option:nth-child(2) {
-    margin-top: 16px;
+    margin-top: 12px;
 }
 
 .aside-caption-section {
@@ -849,15 +851,20 @@ input[type="number"]:focus {
     font-weight: 700;
 }
 
+.aside-delivery-edit-block {
+    margin-top: 4px;
+    margin-right: 4px;
+}
+
 .aside-delivery-address {
     font-size: 13px;
-    margin-top: 8px;
+    margin-top: 5px;
 }
 
 .aside-delivery-date {
     color: #CB11AB;
     font-size: 13px;
-    margin-top: 4px;
+    margin-top: 5px;
 }
 
 .aside-delivery-date-text {
@@ -865,6 +872,8 @@ input[type="number"]:focus {
 }
 
 .aside-rejection-block {
+    margin-left: 3px;
+    line-height: 16px;
     position: relative;
 }
 
@@ -877,13 +886,13 @@ input[type="number"]:focus {
 
 .aside-paycard {
     font-size: 13px;
-    margin-top: 5px;
+    margin-top: 6px;
 }
 
 .aside-payment-block {
     display: flex;
     flex-direction: column;
-    margin-top: 12px;
+    margin-top: 10px;
 }
 
 .aside-payment-check-block {
@@ -902,7 +911,7 @@ input[type="number"]:focus {
 }
 
 .aside-button {
-    margin-top: 24px;
+    margin-top: 23px;
 }
 
 .custom-button {
@@ -947,7 +956,12 @@ input[type="number"]:focus {
 .aside-footer {
     font-size: 13px;
     display: flex;
-    margin-top: 8px;
+    margin-left: -1px;
+    margin-top: 13px;
+}
+
+.aside-footer-agreement {
+    margin-left: -2px;
 }
 
 .aside-agreement-href {

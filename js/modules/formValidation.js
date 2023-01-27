@@ -108,5 +108,7 @@ export function formValidation() {
     const inputArray = [...formInputs];
 
     const result = inputArray.some((item) => item.closest('.error-form-input'));
+
+    console.log(result);
   });
 }
