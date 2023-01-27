@@ -27,14 +27,19 @@
         <div class="search"><input type="text" placeholder="Я ищу..." class="search-bar" /></div>
         <div class="icons">
           <div class="profile">
-            <img src="./icons/Profile.svg" class="profile-image" alt="profile" />
-            <div>Профиль</div>
+            <div class="profile-image-block">
+              <img src="./icons/Profile.svg" class="profile-image" alt="profile" />
+            </div>
+            <div class="profile-image-text">Профиль</div>
           </div>
           <div class="cart">
-            <img src="./icons/Cart.svg" class="cart-image" alt="cart" />
+            <div class="profile-image-block">
+              <img src="./icons/Cart.svg" class="cart-image" alt="cart" />
+            </div>
             <div>
-              Корзина
-              <div class="notification">3</div>
+              <div class="profile-image-text">Корзина
+                <div class="notification">3</div>
+              </div>
             </div>
           </div>
         </div>
@@ -568,8 +573,8 @@
 
           <div class="aside-dilevery-info">
             <div class="aside-caption-section">
-              <div class="aside-section-caption">Доставка и пункт выдачи</div>
-              <div class="aside-delivery-edit-block aside-caption-section-block">
+              <div class="aside-section-caption">Доставка в пункт выдачи</div>
+              <div class="aside-delivery-edit-block">
                 <img src="./icons/Pencil.svg" alt="pencil" class="aside-edit-image address-button" />
               </div>
             </div>
@@ -591,9 +596,9 @@
               </div>
             </div>
 
-            <div class="aside-caption-section">
+            <div class="aside-caption-section aside-card-payment-section">
               <div class="aside-section-caption">Оплата картой</div>
-              <div class="aside-delivery-edit-block">
+              <div class="aside-delivery-edit-block aside-section-edit-block">
                 <img src="./icons/Pencil.svg" alt="pencil" class="aside-edit-image paycard-button" />
               </div>
             </div>
