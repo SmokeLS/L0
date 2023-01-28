@@ -328,7 +328,7 @@ input[type="number"]:focus {
 }
 
 .card-header-main {
-    margin-top: 20px;
+    margin-top: 21px;
     font-style: normal;
     font-weight: 700;
     font-size: 28px;
@@ -350,7 +350,7 @@ input[type="number"]:focus {
 }
 
 .unavailable-goods {
-    margin-top: 38px;
+    margin-top: 39px;
     font-weight: 600;
 }
 
@@ -360,13 +360,12 @@ input[type="number"]:focus {
     /* align-items: center; */
     padding-right: 4px;
     width: 100%;
-    padding-bottom: 16px;
+    padding-bottom: 17px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .unavailable-header {
     color: #000;
-    margin-top: -2px;
     padding-bottom: 5px;
 }
 
@@ -380,7 +379,7 @@ input[type="number"]:focus {
     width: 12px;
     height: 12px;
     transform: rotate(45deg);
-    margin-top: 12px;
+    margin-top: 10px;
     margin-left: auto;
     transition: all 0.3s ease-out;
 }
@@ -394,13 +393,13 @@ input[type="number"]:focus {
     display: flex;
     align-items: flex-start;
     min-height: 105px;
-    margin-top: 22px;
+    margin-top: 23px;
     padding-top: 8px;
 }
 
 .good:first-child,
 .unavailable-good:first-child {
-    margin-top: 2px;
+    margin-top: 3px;
 }
 
 .good-checkbox,
@@ -431,6 +430,10 @@ input[type="number"]:focus {
     line-height: 24px;
     font-weight: 400;
 }
+
+/* .second-caption {
+    margin-top: 0px;
+} */
 
 .unavailable-good-caption {
     max-width: 300px;
@@ -489,7 +492,7 @@ input[type="number"]:focus {
 
 .good-options {
     margin-left: auto;
-    margin-right: 3px;
+    margin-right: 5px;
     margin-top: -2px;
     height: 100%;
 }
@@ -517,6 +520,7 @@ input[type="number"]:focus {
     font-size: 20px;
     display: flex;
     justify-content: center;
+    font-weight: 600;
     align-items: center;
 }
 
@@ -547,11 +551,19 @@ input[type="number"]:focus {
 }
 
 .second-good {
-
+    margin-top: 20px;
 }
 
 .third-good {
-    margin-top: 24px;
+    margin-top: 22px;
+}
+
+.third-unavailable-good {
+    margin-top: 23px;
+}
+
+.third-good-footer {
+    margin-top: 4px;
 }
 
 .good-delete {
@@ -584,7 +596,7 @@ input[type="number"]:focus {
 }
 
 .good-total-price {
-    margin-top: 2px;
+    margin-top: 3px;
     margin-left: 6px;
     font-style: normal;
     font-weight: 700;
@@ -677,8 +689,9 @@ input[type="number"]:focus {
 }
 
 .delivery {
-    margin-top: 40px;
+    margin-top: 38px;
     padding: 19px 24px 21px 24px;
+    
 }
 
 .card-header {
@@ -697,27 +710,27 @@ input[type="number"]:focus {
     background: #fff;
     border: none;
     font-weight: 700;
-    padding-right: 0;
-    margin-top: 4px;
+    padding-right: 2px;
+    margin-top: 7px;
 }
 
 .delivery-option {
     display: flex;
-    margin-top: 20px;
+    margin-top: 21px;
 }
 
 .delivery-date {
     margin-top: 18px;
 }
 
+.delivery-date-class {
+    margin-top: 3px;
+}
+
 .delivery-caption {
     font-weight: 600;
     min-width: 153px;
     margin-right: 32px;
-}
-
-#delivery-date {
-    margin-top: 4px;
 }
 
 .delivery-option.delivery-date.hidden {
@@ -752,10 +765,14 @@ input[type="number"]:focus {
     color: #A0A0A4;
 }
 
+.delivery-price-option {
+    margin-top: 20px;
+}
+
 .delivery-images-block {
     display: flex;
     gap: 8px;
-}
+} 
 
 .delivery-image-block {
     width: 40px;
@@ -835,12 +852,13 @@ input[type="number"]:focus {
 
 .paycard {
     display: flex;
-    margin-top: 16px;
+    align-items: flex-start;
+    margin-top: 18px;
 }
 
 .paycard-info {
-    margin-left: 9px;
-    margin-top: 4px;
+    margin-left: 8px;
+    margin-top: 3px;
 }
 
 .paycard-date {
@@ -852,7 +870,7 @@ input[type="number"]:focus {
 }
 
 .payment-info {
-    margin-top: 8px;
+    margin-top: 6px;
     font-size: 13px;
     color: #9797AF;
 }
@@ -918,7 +936,7 @@ input[type="number"]:focus {
 }
 
 .name-surname-block {
-    margin-top: 38px;
+    margin-top: 39px;
     max-width: 700px;
     display: flex;
 }
@@ -936,10 +954,6 @@ input[type="number"]:focus {
 .tin-purpose {
     font-size: 12px;
     white-space: nowrap;
-}
-
-.receiver {
-    padding-bottom: 24px;  
 }
 
 /* aside */
@@ -1016,8 +1030,11 @@ input[type="number"]:focus {
 
 .aside-paycard {
     font-size: 13px;
-    margin-top: 6px;
+    margin-top: 7px;
+}
 
+.aside-paycard-info {
+    margin-top: 4px;
 }
 
 .aside-payment-block {
@@ -1093,10 +1110,11 @@ input[type="number"]:focus {
 
 .aside-footer-block-checkbox {
     margin-top: 3px;
+    margin-left: 1px;
 }
 
 .aside-footer-agreement {
-    margin-left: 0px;
+    margin-left: -1px;
     line-height: 16px;
     font-weight: 500;
 }
