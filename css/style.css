@@ -344,7 +344,7 @@ input[type="number"]:focus {
 .goods,
 .unavailable-goods,
 .card {
-    margin-top: 27px;
+    margin-top: 28px;
     /* margin-top: 28px; */
     width: 100%;
 }
@@ -546,6 +546,14 @@ input[type="number"]:focus {
     opacity: 1;
 }
 
+.second-good {
+
+}
+
+.third-good {
+    margin-top: 24px;
+}
+
 .good-delete {
     margin-left: 18px;
 }
@@ -669,7 +677,7 @@ input[type="number"]:focus {
 }
 
 .delivery {
-    margin-top: 42px;
+    margin-top: 40px;
     padding: 19px 24px 21px 24px;
 }
 
@@ -681,6 +689,7 @@ input[type="number"]:focus {
 .card-header-text {
     font-size: 24px;
     font-weight: 700;
+    letter-spacing: -0.2px;
 }
 
 .card-button {
@@ -835,7 +844,11 @@ input[type="number"]:focus {
 }
 
 .paycard-date {
-    margin-left: 12px;
+    margin-left: 8px;
+}
+
+.payment {
+    margin-top: 16px;
 }
 
 .payment-info {
@@ -845,6 +858,10 @@ input[type="number"]:focus {
 }
 
 /* receiver */
+
+.receiver {
+    margin-top: 16px;
+}
 
 .receiver-form-block {
     max-width: 100%;
@@ -876,7 +893,7 @@ input[type="number"]:focus {
 
 .input-form-block .input-form-receiver:focus+.label-input-form,
 .input-form-block .input-form-receiver.focused+.label-input-form {
-    top: -100%;
+    top: -80%;
     font-size: 13px;
 }
 
@@ -885,6 +902,7 @@ input[type="number"]:focus {
     outline: none;
     padding-bottom: 5px;
     width: 100%;
+    letter-spacing: 0.6px;
 }
 
 .input-form-wrapper:not(:first-child) {
@@ -900,14 +918,15 @@ input[type="number"]:focus {
 }
 
 .name-surname-block {
-    margin-top: 34px;
-    width: 100%;
+    margin-top: 38px;
+    max-width: 700px;
     display: flex;
 }
 
 .email-tel-tin-block {
     display: flex;
-    margin-top: 50px;
+    max-width: 700px;
+    margin-top: 38px;
 }
 
 .tin-input-form-block {
@@ -920,7 +939,7 @@ input[type="number"]:focus {
 }
 
 .receiver {
-    padding-bottom: 45px;
+    padding-bottom: 24px;  
 }
 
 /* aside */
@@ -1097,6 +1116,10 @@ input[type="number"]:focus {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.footer-company {
+    margin-left: 3px;
 }
 
 /* modal */
