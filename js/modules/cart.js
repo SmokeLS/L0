@@ -5,7 +5,6 @@ export function cart() {
   const deletes = document.querySelectorAll('.good-delete-image');
 
   const chooseAll = document.querySelector('#choose-all');
-  chooseAll.click(); // delete
   const chooseCheckbox = document.querySelectorAll('.good .input-checked');
 
   const buttonsExpand = document.querySelectorAll('.triangle');

@@ -84,7 +84,7 @@ label:not(.label-input-form),
     top: -8px;
     border-radius: 8px;
     right: 2px;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 10px;
     color: #fff;
 }
@@ -338,13 +338,14 @@ input[type="number"]:focus {
 .card-page {
     width: 100%;
     min-width: 640px;
-    margin-right:32px;
+    margin-right: 32px;
 }
 
 .goods,
 .unavailable-goods,
 .card {
-    margin-top: 27px;  /* margin-top: 28px; */
+    margin-top: 27px;
+    /* margin-top: 28px; */
     width: 100%;
 }
 
@@ -662,8 +663,8 @@ input[type="number"]:focus {
 
 .card {
     background: #fff;
-    padding: 18px 24px; /* 16px 24px  */
-    padding-bottom: 25px; 
+    padding: 18px 24px;
+    padding-bottom: 25px;
     border-radius: 16px;
 }
 
@@ -703,7 +704,7 @@ input[type="number"]:focus {
 .delivery-caption {
     font-weight: 600;
     min-width: 153px;
-    margin-right:32px;
+    margin-right: 32px;
 }
 
 #delivery-date {
@@ -712,10 +713,6 @@ input[type="number"]:focus {
 
 .delivery-option.delivery-date.hidden {
     display: none;
-}
-
-.delivery-info {
-    display: flex;
 }
 
 .delivery-about {
@@ -758,7 +755,7 @@ input[type="number"]:focus {
 
 .delivery-image-notification {
     position: absolute;
-    right: -6px;
+    right: -4px;
 }
 
 .delivery-image {
@@ -801,7 +798,7 @@ input[type="number"]:focus {
     z-index: 999;
 }
 
-.delivery-price-info{
+.delivery-price-info {
     margin-left: 8px;
     position: relative;
 }
@@ -998,7 +995,7 @@ input[type="number"]:focus {
     border-radius: 8px;
 }
 
-.aside-paycard{
+.aside-paycard {
     font-size: 13px;
     margin-top: 6px;
 
@@ -1322,10 +1319,6 @@ input[type="number"]:focus {
         top: calc(50% - 9px);
     }
 
-    .main .card-header-main {
-        font-size: 20px;
-    }
-
     /* main */
 
     .main {
@@ -1333,12 +1326,32 @@ input[type="number"]:focus {
         display: block;
     }
 
+    .main .goods {
+        margin-top: 12px;
+    }
+
+    .main .second-good {
+        margin-top: 2px;
+    }
+
+    .main .second-caption {
+        margin-top: 2px;
+    }
+
     .main .unavailable-goods,
     .main .available-goods {
         margin-left: 16px;
         margin-right: 16px;
-        margin-top: 24px;
+        /* margin-top: 24px; */
         width: calc(100% - 32px)
+    }
+
+    .main .unavailable {
+        padding-top: 12px;
+    }
+
+    .main .unavailable-triangle {
+        margin-right: 4px;
     }
 
     .main .good-size-mobile {
@@ -1358,12 +1371,14 @@ input[type="number"]:focus {
 
     .main .card-header-main {
         margin: 0;
+        font-size: 20px;
         padding-left: 16px;
-        padding-top: 16px;
+        padding-top: 10px;
     }
 
     .main .card-page {
         width: 100%;
+        min-width: auto;
     }
 
     .main .good {
@@ -1376,7 +1391,7 @@ input[type="number"]:focus {
             "c c"
             "c c";
         grid-template-columns: auto 1fr;
-        margin-top: 8px;
+        margin-top: 4px;
     }
 
     .main .good-image-block {
@@ -1385,11 +1400,17 @@ input[type="number"]:focus {
 
     .main .good-text {
         grid-area: b;
-        margin-left: 12px;
+        margin-left: 16px;
+        font-size: 14px;
+    }
+
+    .main .good-characteristics {
+        margin-top: 8px;
     }
 
     .main .good-caption {
         max-width: 100%;
+        line-height: 20px;
         display: -webkit-box;
         text-overflow: ellipsis;
         -webkit-line-clamp: 2;
@@ -1408,15 +1429,18 @@ input[type="number"]:focus {
     .main .good-options {
         grid-area: c;
         margin: 0;
+        margin-top: 1px;
+        height: 44px;
+        font-size: 14px;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        gap: 16px;
     }
 
     .main .good-price {
         grid-area: d;
         text-align: left;
-        margin-left: 12px;
+        margin-left: 16px;
         width: auto;
     }
 
@@ -1428,11 +1452,21 @@ input[type="number"]:focus {
     .main .good-previous-price {
         display: inline-block;
         margin: 0;
+        margin-left: 3px;
+        font-size: 14px;
     }
 
     .main .good:has(+.good) {
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         padding-bottom: 16px;
+    }
+
+    .main .good:has(+.unavailable-good) {
+        padding-bottom: 8px;
+    }
+
+    .main .good-currency-price {
+        margin-left: 2px;
     }
 
     .main .good-mobile-footer {
@@ -1462,9 +1496,30 @@ input[type="number"]:focus {
     }
 
     .main .good-count {
-        margin-top: 12px;
-        padding: 4px 10px;
+        margin-top: 10px;
+        height: 32px;
+        padding: 4px 8px;
         width: 80px;
+        align-items: baseline;
+    }
+
+    .main .good-count-minus,
+    .main .good-count-plus {
+        font-size: 20px;
+    }
+
+    .main .good-count-input {
+        width: 38px;
+    }
+
+    .main .good-icons {
+        margin-left: auto;
+        margin-right: 12px;
+        gap: 7px;
+    }
+
+    .main .good-remains {
+        min-width: 88px;
     }
 
     .main .good-previous-tooltip {
@@ -1485,6 +1540,10 @@ input[type="number"]:focus {
         margin-left: auto;
     }
 
+    .main .second-option {
+        margin-top: -4px;
+    }
+
     .main .good-text {
         margin-top: 0;
     }
@@ -1503,13 +1562,33 @@ input[type="number"]:focus {
         padding-bottom: 32px;
     }
 
+    .main .delivery {
+        margin-top: 20px;
+        padding: 20px 16px;
+    }
+
+    .main .address-button {
+        margin-top: 0;
+    }
+
     .main .delivery-option {
         display: block;
+        margin-top: 8px;
         line-height: 20px;
+    }
+
+    .main .delivery-date {
+        margin-top: 16px;
+    }
+
+    .main .delivery-info {
+        margin-top: -2px;
+        line-height: 24px;
     }
 
     .main .delivery-caption {
         width: 100%;
+        line-height: 28px
     }
 
     .main .delivery-images-block {
@@ -1518,6 +1597,20 @@ input[type="number"]:focus {
 
     .main .delivery-price-tooltip {
         right: 0;
+    }
+
+    .main .delivery-about {
+        margin-top: -3px;
+        font-size: 16px;
+    }
+
+    .main .delivery-price-option {
+        margin-top: 11px;
+    }
+
+    .main .delivery-rejection {
+        padding: 5px 8px;
+        line-height: 16px;
     }
 
     .main .name-surname-block,
