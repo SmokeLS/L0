@@ -691,7 +691,7 @@ input[type="number"]:focus {
 .delivery {
     margin-top: 38px;
     padding: 19px 24px 21px 24px;
-    
+
 }
 
 .card-header {
@@ -772,7 +772,7 @@ input[type="number"]:focus {
 .delivery-images-block {
     display: flex;
     gap: 8px;
-} 
+}
 
 .delivery-image-block {
     width: 40px;
@@ -1163,6 +1163,7 @@ input[type="number"]:focus {
 
 .modal-dialog-payment {
     width: 400px;
+    height: 408px;
     margin: 40px auto;
     border-radius: 16px;
 }
@@ -1170,14 +1171,19 @@ input[type="number"]:focus {
 .modal-content-payment {
     position: relative;
     width: 100%;
-    padding: 16px 24px;
+    padding: 18px 22px 24px 22px;
     background-color: #fff;
+    height: 408px;
     border: 1px solid rgba(0, 0, 0, .2);
     border-radius: 16px;
     overflow-y: auto;
-    min-height: 500px;
     display: flex;
     flex-direction: column;
+}
+
+.modal-card-header-text {
+    font-size: 20px;
+    font-weight: 700;
 }
 
 .modal-dialog-delivery {
@@ -1189,20 +1195,25 @@ input[type="number"]:focus {
 .modal-content-delivery {
     position: relative;
     width: 100%;
-    padding: 16px 24px;
+    padding: 18px 22px 24px 22px;
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, .2);
     border-radius: 16px;
     overflow-y: auto;
-    min-height: 500px;
+    height: 408px;
     display: flex;
     flex-direction: column;
 }
 
+.modal-delivery-header {
+    font-size: 20px;
+    font-weight: 700;
+}
+
 .modal-close {
     position: absolute;
-    top: 8px;
-    right: 14px;
+    top: 6px;
+    right: 18px;
     font-size: 36px;
     color: #000;
     font-weight: 400;
@@ -1216,13 +1227,22 @@ input[type="number"]:focus {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    padding-top: 12px;
+    padding-top: 16px;
 }
 
 .modal-card {
     display: flex;
-    gap: 8px;
-    align-items: center;
+    align-items: flex-start;
+}
+
+.paycard-icon {
+    margin-top: -1px;
+    margin-left: 11px;
+}
+
+.paycard-number {
+    margin-top: 2px;
+    margin-left: 4px;
 }
 
 .modal-buttons {
@@ -1250,11 +1270,21 @@ input[type="number"]:focus {
 .modal-my-addresses {
     font-weight: 700;
     font-size: 13px;
-    padding-top: 24px;
+    margin-top: 24px;
 }
 
-.modal-addresses {
-    padding-bottom: 40px;
+.modal-address {
+    margin-top: 4px;
+}
+
+.modal-address + .modal-address {
+    margin-top: -2px;
+}
+
+.modal-card-courier {
+    margin-left: 3px;
+    line-height: 24px;
+    margin-top: -2px;
 }
 
 .modal-address,
@@ -1289,7 +1319,11 @@ input[type="number"]:focus {
     animation-duration: 1.5s
 }
 
-@media only screen and (min-width: 280px) and (max-width: 1023px) {
+@media only screen and (min-width: 280px) and (max-width: 1024px) {
+
+    .big-price {
+        font-size: 16px;
+    }
 
     /* header  */
 
@@ -1368,7 +1402,7 @@ input[type="number"]:focus {
     }
 
     .main .goods {
-        margin-top: 12px;
+        margin-top: 14px;
     }
 
     .main .second-good {
@@ -1383,12 +1417,19 @@ input[type="number"]:focus {
     .main .available-goods {
         margin-left: 16px;
         margin-right: 16px;
-        /* margin-top: 24px; */
         width: calc(100% - 32px)
+    }
+
+    .main .unavailable-goods {
+        margin-top: 36px;
     }
 
     .main .unavailable {
         padding-top: 12px;
+    }
+
+    .main .triangle {
+        margin-right: 3px;
     }
 
     .main .unavailable-triangle {
@@ -1398,11 +1439,11 @@ input[type="number"]:focus {
     .main .good-size-mobile {
         display: block;
         height: 22px;
-        line-height: 22px;
-        border-radius: 8px;
+        line-height: 19px;
+        border-radius: 6px;
         color: #000;
         background: #fff;
-        padding: 0px 4px;
+        padding: 0px 3px;
         z-index: 3;
         font-size: 14px;
         position: absolute;
@@ -1522,7 +1563,7 @@ input[type="number"]:focus {
     .good-checkbox-mobile {
         display: block;
         position: absolute;
-        top: 4px;
+        top: 2px;
         z-index: 3;
         left: 4px;
     }
@@ -1555,7 +1596,7 @@ input[type="number"]:focus {
 
     .main .good-icons {
         margin-left: auto;
-        margin-right: 12px;
+        margin-right: 4px;
         gap: 7px;
     }
 
@@ -1599,13 +1640,18 @@ input[type="number"]:focus {
         padding: 16px;
     }
 
+    .main .card-button {
+        margin-top: 0;
+        padding-right: 0;
+    }
+
     .main .receiver {
         padding-bottom: 32px;
     }
 
     .main .delivery {
         margin-top: 20px;
-        padding: 20px 16px;
+        padding: 18px 16px;
     }
 
     .main .address-button {
@@ -1633,7 +1679,7 @@ input[type="number"]:focus {
     }
 
     .main .delivery-images-block {
-        margin-top: 12px;
+        margin-top: 10px;
     }
 
     .main .delivery-price-tooltip {
@@ -1646,18 +1692,42 @@ input[type="number"]:focus {
     }
 
     .main .delivery-price-option {
-        margin-top: 11px;
+        margin-top: 12px;
     }
 
     .main .delivery-rejection {
-        padding: 5px 8px;
+        padding: 8px 6px 6px 8px;
         line-height: 16px;
     }
 
-    .main .name-surname-block,
-    .main .email-tel-tin-block {
+    .main .payment {
+        margin-top: 12px;
+        padding: 18px 16px;
+    }
+
+    .main .paycard {
+        margin-top: 10px;
+    }
+
+    .main .payment-info {
+        margin-bottom: 6px;
+    }
+
+    .main .receiver {
+        margin-top: 12px;
+        padding: 20px 16px;
+    }
+
+    .main .name-surname-block {
         flex-direction: column;
-        gap: 50px;
+        gap: 48px;
+        margin-top: 24px;
+    }
+
+    .main .email-tel-tin-block {
+        margin-top: 45px;
+        flex-direction: column;
+        gap: 48px;
     }
 
     .name-surname-block .input-form-wrapper,
@@ -1670,8 +1740,16 @@ input[type="number"]:focus {
     }
 
     /* aside  */
+
     .aside {
         width: 100%;
+        min-width: none;
+        max-width: none;
+        border-radius: 24px;
+    }
+
+    .card-aside-header {
+        margin-top: 2px;
     }
 
     .aside-caption-section,
@@ -1688,6 +1766,17 @@ input[type="number"]:focus {
 
     .aside .aside-info-block {
         background: #F0ECF4;
+        margin-top: 20px;
+        padding: 8px 8px 12px 8px;
+    }
+
+    .aside .aside-payment-block {
+        margin-top: 14px;
+    }
+
+    .aside .aside-footer-agreement {
+        margin-left: -2px;
+        padding-bottom: 24px;
     }
 
     /* tabbar (mobile)*/
@@ -1719,12 +1808,18 @@ input[type="number"]:focus {
         margin-left: -10px;
     }
 
-    .cart,
-    .profile,
-    .union,
-    .favorites {
+    .cart-mobile,
+    .profile-mobile,
+    .union-mobile,
+    .favorites-mobile {
         height: auto;
         margin: 0;
+        position: relative;
+    }
+
+    .tabbar-mobile .notification {
+        right: -8px;
+        top: -4px;
     }
 
     /* modal */
@@ -1740,6 +1835,7 @@ input[type="number"]:focus {
         width: 100%;
         height: 100vh;
         border-radius: 0;
+        padding: 16px;
     }
 
     .modal .modal-custom-button {
