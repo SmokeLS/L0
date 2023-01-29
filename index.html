@@ -140,7 +140,7 @@
                 <!-- second-item -->
                 <div class="good second-good">
                   <div class="good-image-block">
-                    <input type="checkbox" class="hidden input-checked" id="choose-second" />
+                    <input type="checkbox" class="hidden input-checked" id="choose-second"/>
                     <label for="choose-second" class="choose-custom-checkbox good-checkbox"></label>
                     <img src="./img/photo-2.png" alt="case" class="good-image" />
                   </div>
@@ -286,7 +286,7 @@
             </div>
 
             <!-- unavailable -->
-            <div class="unavailable-goods">
+            <div class="unavailable-goods hidden">
               <div class="unavailable">
                 <div class="unavailable-header">Отсутствуют · 3 товара</div>
                 <div class="triangle unavailable-triangle" role="button" aria-expanded="true"></div>
@@ -415,17 +415,22 @@
               <div class="delivery-option delivery-date hidden">
                 <div class="delivery-caption delivery-date-class-1">5—6 февраля</div>
                 <div class="delivery-images-block">
+                  
                   <div class="delivery-image-block hidden" data-index="0">
                     <img src="./img/photo-1.png" alt="t-shirt" class="delivery-image" />
+                    <div class="notification delivery-image-notification" data-max="999">0</div>
                   </div>
+                  
                   <div class="delivery-image-block hidden" data-index="1">
                     <img src="./img/photo-2.png" alt="case" class="delivery-image" />
-                    <div class="notification delivery-image-notification">184</div>
+                    <div class="notification delivery-image-notification" data-max="184">184</div>
                   </div>
+
                   <div class="delivery-image-block hidden" data-index="2">
                     <img src="./img/photo-3.png" alt="book" class="delivery-image" />
-                    <div class="notification delivery-image-notification">2</div>
+                    <div class="notification delivery-image-notification" data-max="999">2</div>
                   </div>
+                
                 </div>
               </div>
 
@@ -434,7 +439,7 @@
                 <div class="delivery-images-block">
                   <div class="delivery-image-block hidden" data-index="1">
                     <img src="./img/photo-2.png" alt="case" class="delivery-image" />
-                    <div class="notification delivery-image-notification">16</div>
+                    <div class="notification delivery-image-notification" data-max="999">0</div>
                   </div>
                 </div>
               </div>

@@ -47,7 +47,7 @@ export function cart() {
     }
   }
 
-  deletes.forEach((item) => {
+  deletes.forEach((item, index) => {
     item.addEventListener('click', (e) => {
       if (e.target.closest('.modal-address')) {
         e.target.closest('.modal-address').remove();
@@ -58,6 +58,11 @@ export function cart() {
       }
 
       if (e.target.closest('.good')) {
+        let countValue = e.target.closest(".good-options").querySelector('.good-count-input').value;
+        countValue = 0;
+
+        togglePicture(countValue, index);
+
         e.target.closest('.good').remove();
       }
 
@@ -140,6 +145,7 @@ export function cart() {
   });
 
   countPlus.forEach((button, index) => {
+
     button.addEventListener('click', (e) => {
       const remainsNumber = button.closest('.good-options').querySelector('.good-remain-number') ?? 999;
 
@@ -160,7 +166,21 @@ export function cart() {
         countMinus[index].classList.remove('disabled');
       }
 
+      const countItems = countInputs[index].value;
+      
+      changeDeliveryCounts(countItems, index);
+      
       changeCountsCosts();
+      // pictures.forEach((pictureBlock, index) => {
+      //     let notification = pictureBlock.querySelector('.notification');
+
+      //     if (+notification.dataset.max <= +countItems) {
+      //       notification.textContent = Math.min(countItems, notification.dataset.max);
+      //       countItems -= +notification.dataset.max;
+      //     } else {
+      //       notification.textContent = Math.min(countItems, notification.dataset.max);
+      //     }
+      // });
     });
   });
 
@@ -179,6 +199,10 @@ export function cart() {
       if (countInputs[index].value >= 2) {
         countPlus[index].classList.remove('disabled');
       }
+
+      const countItems = countInputs[index].value;
+      
+      changeDeliveryCounts(countItems, index);
 
       changeCountsCosts();
     });
@@ -249,9 +273,15 @@ export function cart() {
 
         countMinus[index].classList.remove('disabled');
       }
+
+      changeDeliveryCounts(countInputs[index].value, index);
     });
 
     changePrice(input);
+
+    countInputs.forEach((item, index) => {
+      changeDeliveryCounts(item.value, index);
+    });
   });
 }
 
@@ -273,4 +303,36 @@ function togglePicture(check, index) {
       }
     }
   });
+}
+
+function changeDeliveryCounts(countItems, index) {
+  const pictures = document.querySelectorAll(`[data-index='${index}']`);
+
+  for (let i = 0; i < pictures.length; i++) {
+    pictures[i].querySelector('.notification').textContent = 0;
+  }
+  
+  for (let i = 0; i < pictures.length; i++) {
+      let notification = pictures[i].querySelector('.notification');
+
+      if (+notification.dataset.max <= +countItems) {
+        notification.textContent = Math.min(countItems, notification.dataset.max);
+
+        notification.textContent < 2 ? notification.classList.add('hidden') : notification.classList.remove('hidden');
+        notification.textContent < 1 ? 
+          notification.closest(".delivery-date").classList.add("hidden") :
+          notification.closest(".delivery-date").classList.remove("hidden");
+
+        countItems -= +notification.dataset.max;
+      } else {
+        notification.textContent = Math.min(countItems, notification.dataset.max);
+
+        notification.textContent < 2 ? notification.classList.add('hidden') : notification.classList.remove('hidden');
+        notification.textContent < 1 ? 
+          notification.closest(".delivery-date").classList.add("hidden") :
+          notification.closest(".delivery-date").classList.remove("hidden");
+
+        break;
+      }
+  }
 }
