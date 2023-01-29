@@ -8,9 +8,4 @@ window.addEventListener('DOMContentLoaded', () => {
   summary();
   formValidation();
   modal();
-
-  // delete
-  const chooseAll = document.querySelector('#choose-all');
-
-  chooseAll.click();
 });

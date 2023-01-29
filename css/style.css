@@ -683,10 +683,6 @@ input[type="number"]:focus {
     position: relative;
 }
 
-.unavailable-image {
-    filter: grayscale(100%);
-}
-
 .unavailable-goods {
     color: #9797AF;
 }
@@ -1036,7 +1032,8 @@ input[type="number"]:focus {
 .aside-info-block {
     background: #F6F6FA;
     margin-top: 15px;
-    padding: 8px; /* padding: 8px 8px 12px 8px;  */
+    padding: 8px;
+    /* padding: 8px 8px 12px 8px;  */
     border-radius: 8px;
 }
 
@@ -1342,7 +1339,7 @@ input[type="number"]:focus {
     .big-price {
         font-size: 16px;
     }
-    
+
     .choose-custom-checkbox {
         background: #fff;
     }
