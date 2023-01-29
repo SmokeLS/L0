@@ -138,8 +138,8 @@ export function modal() {
       const chosenPaycardIcons = document.querySelectorAll('.chosen-paycard-icon');
       const chosenPaycardNumbers = document.querySelectorAll('.chosen-paycard-number');
 
-      const paycardIcon = button.closest('.modal-card').querySelector('.paycard-icon');
-      const paycardNumber = button.closest('.modal-card').querySelector('.paycard-number');
+      const paycardIcon = button.closest('.modal-card').querySelector('.modal-paycard-icon');
+      const paycardNumber = button.closest('.modal-card').querySelector('.modal-paycard-number');
 
       chosenPaycardIcons.forEach((chosenPaycardIcon) => {
         chosenPaycardIcon.src = paycardIcon.src;

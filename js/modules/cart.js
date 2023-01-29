@@ -31,20 +31,23 @@ export function cart() {
   });
 
   function checkboxChange() {
+    const chooseCheckbox = document.querySelectorAll('.good .input-checked');
 
     if (chooseAll.checked) {
-      chooseCheckbox.forEach((checkbox, index) => {
+      chooseCheckbox.forEach((checkbox) => {
         checkbox.checked = true;
-        togglePicture(checkbox.checked, index);
+        togglePicture(checkbox.checked, checkbox.dataset.number);
       });
     }
 
     if (!chooseAll.checked) {
-      chooseCheckbox.forEach((checkbox, index) => {
+      chooseCheckbox.forEach((checkbox) => {
         checkbox.checked = false;
-        togglePicture(checkbox.checked, index);
+        togglePicture(checkbox.checked, checkbox.dataset.number);
       });
     }
+
+    showInfoDelivery([...chooseCheckbox]);
   }
 
   deletes.forEach((item, index) => {
@@ -58,12 +61,20 @@ export function cart() {
       }
 
       if (e.target.closest('.good')) {
-        let countValue = e.target.closest(".good-options").querySelector('.good-count-input').value;
-        countValue = 0;
-
-        togglePicture(countValue, index);
-
+        e.target.closest('.good-options').querySelector('.good-count-input').value = 0;
+        togglePicture(false, index);
         e.target.closest('.good').remove();
+
+        const goods = document.querySelectorAll(".available-goods .good");
+        const cartNotification = document.querySelector(".cart-notification");
+        const mobilecartNotification = document.querySelector(".mobile-cart-notification");
+
+        if (goods.length > 0) { 
+          cart.textContent = goods.length;
+        } else {
+          cartNotification.remove();
+          mobilecartNotification.remove();
+        }
       }
 
       summary();
@@ -76,7 +87,10 @@ export function cart() {
 
   chooseCheckbox.forEach((checkbox, index) => {
     checkbox.addEventListener('change', () => {
+ 
       const inputArray = [...chooseCheckbox];
+
+      showInfoDelivery(inputArray);
 
       chooseAll.checked = inputArray.every((item) => item.checked);
     });
@@ -100,7 +114,7 @@ export function cart() {
         e.currentTarget.setAttribute('aria-expanded', true);
         e.currentTarget.style.transform = 'rotate(45deg)';
 
-        if (expandList.closest(".unavailable-goods")) {
+        if (expandList.closest('.unavailable-goods')) {
           unavailable.classList.remove('without-border');
         }
 
@@ -110,7 +124,7 @@ export function cart() {
         e.currentTarget.setAttribute('aria-expanded', false);
         e.currentTarget.style.transform = 'rotate(-135deg)';
 
-        if (expandList.closest(".unavailable-goods")) {
+        if (expandList.closest('.unavailable-goods')) {
           unavailable.classList.add('without-border');
         }
 
@@ -145,13 +159,12 @@ export function cart() {
   });
 
   countPlus.forEach((button, index) => {
-
     button.addEventListener('click', (e) => {
       const remainsNumber = button.closest('.good-options').querySelector('.good-remain-number') ?? 999;
 
       if (!e.currentTarget.classList.contains('disabled')) {
         countInputs[index].value++;
-        
+
         changePrice(countInputs[index]);
       }
 
@@ -167,20 +180,10 @@ export function cart() {
       }
 
       const countItems = countInputs[index].value;
-      
-      changeDeliveryCounts(countItems, index);
-      
-      changeCountsCosts();
-      // pictures.forEach((pictureBlock, index) => {
-      //     let notification = pictureBlock.querySelector('.notification');
 
-      //     if (+notification.dataset.max <= +countItems) {
-      //       notification.textContent = Math.min(countItems, notification.dataset.max);
-      //       countItems -= +notification.dataset.max;
-      //     } else {
-      //       notification.textContent = Math.min(countItems, notification.dataset.max);
-      //     }
-      // });
+      changeDeliveryCounts(countItems, index);
+
+      changeCountsCosts();
     });
   });
 
@@ -194,6 +197,7 @@ export function cart() {
 
       if (countInputs[index].value <= 1) {
         button.classList.add('disabled');
+        countPlus[index].classList.remove('disabled');
       }
 
       if (countInputs[index].value >= 2) {
@@ -201,7 +205,7 @@ export function cart() {
       }
 
       const countItems = countInputs[index].value;
-      
+
       changeDeliveryCounts(countItems, index);
 
       changeCountsCosts();
@@ -217,13 +221,13 @@ export function cart() {
     goodCost.textContent = +goodCost.dataset.price * +input.value;
 
     if (+goodCost.textContent > 999) {
-      goodCost.closest(".good-total-price").classList.remove("big-price");
+      goodCost.closest('.good-total-price').classList.remove('big-price');
     }
 
     if (+goodCost.textContent <= 999) {
-      goodCost.closest(".good-total-price").classList.add("big-price");
+      goodCost.closest('.good-total-price').classList.add('big-price');
     }
-    
+
     prevGoodCost.textContent = +prevGoodCost.dataset.price * +input.value;
 
     discountPercentage.forEach((discount, index) => {
@@ -281,58 +285,104 @@ export function cart() {
 
     countInputs.forEach((item, index) => {
       changeDeliveryCounts(item.value, index);
+      togglePicture(false, index);
     });
   });
-}
 
-function togglePicture(check, index) {
-  const pictures = document.querySelectorAll(`[data-index='${index}']`);
+  function showInfoDelivery(inputArray, date) {
+    const deliveryRejections = document.querySelectorAll(".delivery-rejection");
+    const asideDeliveryDate = document.querySelector('.aside-delivery-date');
+    const asidePaymentBlock = document.querySelector(".aside-payment-block");
 
-  pictures.forEach((picture) => {
-    if (!check) {
-      picture.classList.add('hidden');
-
-      if (!picture.closest('.delivery-date').querySelector('.delivery-image-block:not(.hidden)')) {
-        picture.closest('.delivery-date').classList.add('hidden');
-      }
+    const showInfo = inputArray.some((item) => item.checked);
+        
+    if (showInfo) {
+      deliveryRejections.forEach(deliveryRejection => deliveryRejection.classList.remove('hidden'));
+      asideDeliveryDate.classList.remove('hidden');
+      asidePaymentBlock.classList.remove('hidden');
     } else {
-      picture.classList.remove('hidden');
-
-      if (picture.closest('.delivery-date').querySelector('.delivery-image-block')) {
-        picture.closest('.delivery-date').classList.remove('hidden');
-      }
+      deliveryRejections.forEach(deliveryRejection => deliveryRejection.classList.add('hidden'));
+      asideDeliveryDate.classList.add('hidden');
+      asidePaymentBlock.classList.add('hidden');
     }
-  });
-}
-
-function changeDeliveryCounts(countItems, index) {
-  const pictures = document.querySelectorAll(`[data-index='${index}']`);
-
-  for (let i = 0; i < pictures.length; i++) {
-    pictures[i].querySelector('.notification').textContent = 0;
   }
-  
-  for (let i = 0; i < pictures.length; i++) {
-      let notification = pictures[i].querySelector('.notification');
 
+  function togglePicture(check, index) {
+    const pictures = document.querySelectorAll(`[data-index='${index}']`);
+  
+    pictures.forEach((picture) => {
+      if (!check) {
+        picture.classList.add('hidden');
+        
+        if (!picture.closest('.delivery-date').querySelector('.delivery-image-block:not(.hidden)')) {
+          picture.closest('.delivery-date').classList.add('hidden');
+        }
+
+        checkDeliveryDate();
+      } else {
+        picture.classList.remove('hidden');
+  
+        if (picture.closest('.delivery-date').querySelector('.delivery-image-block')) {
+          picture.closest('.delivery-date').classList.remove('hidden');
+        }
+  
+        checkDeliveryDate();
+      }
+    });
+  }
+
+  function checkDeliveryDate() {
+    const deliveryDates = document.querySelectorAll('.delivery-date:not(.hidden)');
+    const asideDeliveryDate = document.querySelector('.aside-delivery-date');
+    let minDate = +Infinity; // dynamic data
+    let maxDate = -Infinity; // delivery aside menu
+
+    deliveryDates.forEach(deliveryDate => {
+      const deliveryCaption = deliveryDate.querySelector('.delivery-caption');
+
+      if (+deliveryCaption.textContent[0] < minDate) {
+        minDate = deliveryCaption.textContent[0];
+      }
+
+      if (+deliveryCaption.textContent[2] > maxDate) {
+        maxDate = deliveryCaption.textContent[2];
+      }
+
+      const newDate = `${minDate}—${maxDate} фев`;
+      
+      asideDeliveryDate.textContent = newDate;
+    });
+  }
+
+  function changeDeliveryCounts(countItems, index) {
+    const pictures = document.querySelectorAll(`[data-index='${index}']`);
+  
+    for (let i = 0; i < pictures.length; i++) {
+      pictures[i].querySelector('.notification').textContent = 0;
+    }
+  
+    for (let i = 0; i < pictures.length; i++) {
+      let notification = pictures[i].querySelector('.notification');
+  
       if (+notification.dataset.max <= +countItems) {
         notification.textContent = Math.min(countItems, notification.dataset.max);
-
+  
         notification.textContent < 2 ? notification.classList.add('hidden') : notification.classList.remove('hidden');
-        notification.textContent < 1 ? 
-          notification.closest(".delivery-date").classList.add("hidden") :
-          notification.closest(".delivery-date").classList.remove("hidden");
-
+        notification.textContent < 1
+          ? notification.closest('.delivery-date').classList.add('hidden')
+          : notification.closest('.delivery-date').classList.remove('hidden');
+  
         countItems -= +notification.dataset.max;
       } else {
         notification.textContent = Math.min(countItems, notification.dataset.max);
-
+  
         notification.textContent < 2 ? notification.classList.add('hidden') : notification.classList.remove('hidden');
-        notification.textContent < 1 ? 
-          notification.closest(".delivery-date").classList.add("hidden") :
-          notification.closest(".delivery-date").classList.remove("hidden");
-
+        notification.textContent < 1
+          ? notification.closest('.delivery-date').classList.add('hidden')
+          : notification.closest('.delivery-date').classList.remove('hidden');
+  
         break;
       }
+    }
   }
 }

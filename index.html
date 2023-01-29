@@ -39,7 +39,7 @@
             <div>
               <div class="profile-image-text">
                 Корзина
-                <div class="notification">3</div>
+                <div class="notification cart-notification">3</div>
               </div>
             </div>
           </div>
@@ -66,7 +66,7 @@
                 <div class="good">
                   <div class="good-image-block">
                     <div class="good-size-mobile">56</div>
-                    <input type="checkbox" class="hidden input-checked" id="choose-first" />
+                    <input type="checkbox" class="hidden input-checked" id="choose-first" data-number="0" />
                     <label for="choose-first" class="choose-custom-checkbox good-checkbox"></label>
                     <img src="./img/photo-1.png" alt="t-shirt" class="good-image" />
                   </div>
@@ -140,7 +140,7 @@
                 <!-- second-item -->
                 <div class="good second-good">
                   <div class="good-image-block">
-                    <input type="checkbox" class="hidden input-checked" id="choose-second"/>
+                    <input type="checkbox" class="hidden input-checked" id="choose-second" data-number="1" />
                     <label for="choose-second" class="choose-custom-checkbox good-checkbox"></label>
                     <img src="./img/photo-2.png" alt="case" class="good-image" />
                   </div>
@@ -214,7 +214,7 @@
                 <!-- third-item -->
                 <div class="good third-good">
                   <div class="good-image-block">
-                    <input type="checkbox" class="hidden input-checked" id="choose-third" />
+                    <input type="checkbox" class="hidden input-checked" id="choose-third" data-number="2" />
                     <label for="choose-third" class="choose-custom-checkbox good-checkbox"></label>
                     <img src="./img/photo-3.png" alt="book" class="good-image" />
                   </div>
@@ -286,7 +286,7 @@
             </div>
 
             <!-- unavailable -->
-            <div class="unavailable-goods hidden">
+            <div class="unavailable-goods">
               <div class="unavailable">
                 <div class="unavailable-header">Отсутствуют · 3 товара</div>
                 <div class="triangle unavailable-triangle" role="button" aria-expanded="true"></div>
@@ -297,7 +297,7 @@
                 <div class="unavailable-good good">
                   <div class="good-image-block unavailable-image-block">
                     <div class="good-size-mobile">56</div>
-                    <img src="./img/photo-1.png" alt="t-shirt" class="good-image unavailable-image" />
+                    <img src="./img/photo-1-gray.png" alt="t-shirt" class="good-image unavailable-image" />
                   </div>
 
                   <div class="good-text">
@@ -325,7 +325,7 @@
                 <!-- second-item -->
                 <div class="unavailable-good good">
                   <div class="good-image-block unavailable-image-block">
-                    <img src="./img/photo-2.png" alt="case" class="good-image unavailable-image" />
+                    <img src="./img/photo-2-gray.png" alt="case" class="good-image unavailable-image" />
                   </div>
 
                   <div class="good-text">
@@ -358,7 +358,7 @@
                     <div class="good-size-mobile">56/54/52...</div>
                     <input type="checkbox" class="hidden" id="unavailable-third" />
                     <label for="unavailable-third" class="choose-custom-checkbox good-checkbox-mobile"></label>
-                    <img src="./img/photo-3.png" alt="book" class="good-image unavailable-image" />
+                    <img src="./img/photo-3-gray.png" alt="book" class="good-image unavailable-image" />
                   </div>
 
                   <div class="good-text">
@@ -415,12 +415,11 @@
               <div class="delivery-option delivery-date hidden">
                 <div class="delivery-caption delivery-date-class-1">5—6 февраля</div>
                 <div class="delivery-images-block">
-                  
                   <div class="delivery-image-block hidden" data-index="0">
                     <img src="./img/photo-1.png" alt="t-shirt" class="delivery-image" />
                     <div class="notification delivery-image-notification" data-max="999">0</div>
                   </div>
-                  
+
                   <div class="delivery-image-block hidden" data-index="1">
                     <img src="./img/photo-2.png" alt="case" class="delivery-image" />
                     <div class="notification delivery-image-notification" data-max="184">184</div>
@@ -430,7 +429,6 @@
                     <img src="./img/photo-3.png" alt="book" class="delivery-image" />
                     <div class="notification delivery-image-notification" data-max="999">2</div>
                   </div>
-                
                 </div>
               </div>
 
@@ -444,7 +442,7 @@
                 </div>
               </div>
 
-              <div class="delivery-rejection">
+              <div class="delivery-rejection hidden">
                 <span class="delivery-rejection-check">
                   <img src="./icons/Accepted-check.svg" alt="check" />
                 </span>
@@ -589,9 +587,9 @@
 
             <div class="aside-delivery-address delivery-address">Бишкек, улица Ахматбека Суюмбаева, 12/1</div>
 
-            <div class="aside-delivery-date"><span class="aside-delivery-date-text">5–8 фев</span></div>
+            <div class="aside-delivery-date hidden"><span class="aside-delivery-date-text">5–8 фев</span></div>
 
-            <div class="delivery-rejection aside-info-block">
+            <div class="delivery-rejection aside-info-block hidden">
               <span class="delivery-rejection-check">
                 <img src="./icons/Accepted-check.svg" alt="check" />
               </span>
@@ -620,7 +618,7 @@
               </div>
             </div>
 
-            <div class="aside-info-block aside-payment-block">
+            <div class="aside-info-block aside-payment-block hidden">
               <div class="aside-payment-check-block">
                 <input type="checkbox" class="hidden" id="payment-check" />
                 <label for="payment-check" class="choose-custom-checkbox"></label>
@@ -664,7 +662,7 @@
         <div class="cart cart-mobile">
           <img src="./icons/Cart.svg" class="cart-image" alt="cart" />
           <div>
-            <div class="notification">3</div>
+            <div class="notification mobile-cart-notification">3</div>
           </div>
         </div>
         <div class="favorites favorites-mobile">
@@ -696,27 +694,27 @@
                 <input type="radio" class="radio-checked hidden" id="payment-card-2" name="payment-card" />
                 <label for="payment-card-2" class="choose-custom-radio"></label>
 
-                <img class="paycard-icon" src="./icons/Paycard-visa.svg" alt="visa" />
+                <img class="modal-paycard-icon" src="./icons/Paycard-visa.svg" alt="visa" />
 
-                <span class="paycard-number">1234 56•• •••• 1234</span>
+                <span class="modal-paycard-number">1234 56•• •••• 1234</span>
               </div>
 
               <div class="modal-card">
                 <input type="radio" class="radio-checked hidden" id="payment-card-3" name="payment-card" />
                 <label for="payment-card-3" class="choose-custom-radio"></label>
 
-                <img class="paycard-icon" src="./icons/Paycard-mastercard.svg" alt="mastercard" />
+                <img class="modal-paycard-icon" src="./icons/Paycard-mastercard.svg" alt="mastercard" />
 
-                <span class="paycard-number">1234 56•• •••• 1234</span>
+                <span class="modal-paycard-number">1234 56•• •••• 1234</span>
               </div>
 
               <div class="modal-card">
                 <input type="radio" class="radio-checked hidden" id="payment-card-4" name="payment-card" />
                 <label for="payment-card-4" class="choose-custom-radio"></label>
 
-                <img class="paycard-icon" src="./icons/Paycard-maestro.svg" alt="maestro" />
+                <img class="modal-paycard-icon" src="./icons/Paycard-maestro.svg" alt="maestro" />
 
-                <span class="paycard-number">1234 56•• •••• 1234</span>
+                <span class="modal-paycard-number">1234 56•• •••• 1234</span>
               </div>
             </div>
 

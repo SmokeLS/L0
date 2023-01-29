@@ -17,10 +17,6 @@ body {
     margin: 0 auto;
 }
 
-.hidden {
-    display: none;
-}
-
 .good-wrapper {
     max-height: 800px;
     overflow: hidden;
@@ -683,10 +679,6 @@ input[type="number"]:focus {
     position: relative;
 }
 
-.unavailable-image {
-    filter: grayscale(100%);
-}
-
 .unavailable-goods {
     color: #9797AF;
 }
@@ -1036,7 +1028,8 @@ input[type="number"]:focus {
 .aside-info-block {
     background: #F6F6FA;
     margin-top: 15px;
-    padding: 8px; /* padding: 8px 8px 12px 8px;  */
+    padding: 8px;
+    /* padding: 8px 8px 12px 8px;  */
     border-radius: 8px;
 }
 
@@ -1335,6 +1328,10 @@ input[type="number"]:focus {
     animation-duration: 1.5s
 }
 
+.hidden {
+    display: none;
+}
+
 @media only screen and (min-width: 280px) and (max-width: 1023px) {
 
     /* general */
@@ -1342,7 +1339,7 @@ input[type="number"]:focus {
     .big-price {
         font-size: 16px;
     }
-    
+
     .choose-custom-checkbox {
         background: #fff;
     }
