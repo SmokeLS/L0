@@ -18,6 +18,8 @@ export function cart() {
   const countMinus = document.querySelectorAll('.good-count-minus');
   const countInputs = document.querySelectorAll('.good-count-input');
 
+  const unavailable = document.querySelector('.unavailable');
+
   favorites.forEach((favorite) => {
     favorite.addEventListener('click', (e) => {
       e.target.classList.toggle('favorite');
@@ -29,6 +31,7 @@ export function cart() {
   });
 
   function checkboxChange() {
+
     if (chooseAll.checked) {
       chooseCheckbox.forEach((checkbox, index) => {
         checkbox.checked = true;
@@ -92,11 +95,19 @@ export function cart() {
         e.currentTarget.setAttribute('aria-expanded', true);
         e.currentTarget.style.transform = 'rotate(45deg)';
 
+        if (expandList.closest(".unavailable-goods")) {
+          unavailable.classList.remove('without-border');
+        }
+
         expandList.setAttribute('aria-hidden', false);
         expandList.style.maxHeight = expandList.scrollHeight + 'px';
       } else {
         e.currentTarget.setAttribute('aria-expanded', false);
         e.currentTarget.style.transform = 'rotate(-135deg)';
+
+        if (expandList.closest(".unavailable-goods")) {
+          unavailable.classList.add('without-border');
+        }
 
         expandList.setAttribute('aria-hidden', true);
         expandList.style.maxHeight = 0;
@@ -134,7 +145,7 @@ export function cart() {
 
       if (!e.currentTarget.classList.contains('disabled')) {
         countInputs[index].value++;
-
+        
         changePrice(countInputs[index]);
       }
 
@@ -181,6 +192,14 @@ export function cart() {
 
     goodCost.textContent = +goodCost.dataset.price * +input.value;
 
+    if (+goodCost.textContent > 999) {
+      goodCost.closest(".good-total-price").classList.remove("big-price");
+    }
+
+    if (+goodCost.textContent <= 999) {
+      goodCost.closest(".good-total-price").classList.add("big-price");
+    }
+    
     prevGoodCost.textContent = +prevGoodCost.dataset.price * +input.value;
 
     discountPercentage.forEach((discount, index) => {
