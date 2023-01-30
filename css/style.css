@@ -708,7 +708,7 @@ input[type="number"]:focus {
 
 .total-price-block {
     display: flex;
-    align-items:baseline;
+    align-items: baseline;
     gap: 6px;
 }
 
@@ -1053,7 +1053,7 @@ input[type="number"]:focus {
 .aside-info-block {
     background: #F6F6FA;
     margin-top: 13px;
-    padding: 8px 8px 12px 8px; 
+    padding: 8px 8px 12px 8px;
     border-radius: 8px;
 }
 
@@ -1353,6 +1353,25 @@ input[type="number"]:focus {
 .hidden {
     display: none;
 }
+
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+    .total-price {
+        letter-spacing: 0;
+    }
+
+    .aside .aside-footer-agreement {
+        padding-right: 10px;
+        padding-bottom: 0px;
+    }
+
+    .aside-footer {
+        margin-top: 14px;
+    }
+
+    .delivery {
+        padding-right: 24px;
+    }
+} 
 
 @media only screen and (min-width: 280px) and (max-width: 1023px) {
 
@@ -1784,8 +1803,8 @@ input[type="number"]:focus {
 
     .aside {
         width: 100%;
-        min-width: none;
-        max-width: none;
+        min-width: inherit;
+        max-width: inherit;
         border-radius: 24px;
     }
 
