@@ -105,10 +105,10 @@ export function formValidation() {
       }
     });
 
-    const inputArray = [...formInputs];
+    // const inputArray = [...formInputs];
 
-    const result = inputArray.some((item) => item.closest('.error-form-input'));
+    // const result = inputArray.some((item) => item.closest('.error-form-input'));
 
-    console.log(result);
+    // console.log(result);
   });
 }

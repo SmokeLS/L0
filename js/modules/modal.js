@@ -4,6 +4,9 @@ export function modal() {
   const addressModalBtns = document.querySelectorAll('.address-button');
   const paycardModalBtns = document.querySelectorAll('.paycard-button');
 
+  const deliveryCaption = document.querySelector('.delivery-caption');
+  const asideSectionCaption = document.querySelector('.aside-section-caption');
+
   const chooseAddressBtn = document.querySelector('#choose-address');
   const chooseCardBtn = document.querySelector('#choose-card');
 
@@ -94,6 +97,9 @@ export function modal() {
           chosenDeliveryRate.textContent = '';
         });
 
+        deliveryCaption.textContent = 'Курьером';
+        asideSectionCaption.textContent = 'Доставка курьером';
+
         modals.forEach((modal) => {
           closeModal(modal);
         });
@@ -121,6 +127,9 @@ export function modal() {
         chosenDeliveryRates.forEach((chosenDeliveryRate) => {
           chosenDeliveryRate.textContent = deliveryRate?.textContent ?? '';
         });
+
+        deliveryCaption.textContent = 'Пункт выдачи';
+        asideSectionCaption.textContent = 'Доставка в пункт выдачи';
 
         modals.forEach((modal) => {
           closeModal(modal);

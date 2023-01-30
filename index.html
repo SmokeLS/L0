@@ -286,7 +286,7 @@
             </div>
 
             <!-- unavailable -->
-            <div class="unavailable-goods hidden">
+            <div class="unavailable-goods">
               <div class="unavailable">
                 <div class="unavailable-header">Отсутствуют · 3 товара</div>
                 <div class="triangle unavailable-triangle" role="button" aria-expanded="true"></div>
@@ -413,7 +413,7 @@
               </div>
 
               <div class="delivery-option delivery-date hidden">
-                <div class="delivery-caption delivery-date-class-1">5—6 февраля</div>
+                <div class="delivery-caption delivery-caption-1">5—6 февраля</div>
                 <div class="delivery-images-block">
                   <div class="delivery-image-block hidden" data-index="0">
                     <img src="./img/photo-1.png" alt="t-shirt" class="delivery-image" />
@@ -432,8 +432,8 @@
                 </div>
               </div>
 
-              <div class="delivery-option delivery-date hidden">
-                <div class="delivery-caption delivery-date-class-2">7—8 февраля</div>
+              <div class="delivery-option delivery-date delivery-date-2 hidden">
+                <div class="delivery-caption">7—8 февраля</div>
                 <div class="delivery-images-block">
                   <div class="delivery-image-block hidden" data-index="1">
                     <img src="./img/photo-2.png" alt="case" class="delivery-image" />
@@ -559,7 +559,10 @@
         <aside class="aside card">
           <div class="card-aside-header card-header">
             <div class="card-header-text">Итого</div>
-            <div class="card-header-text" id="total-price">0 сом</div>
+            <div class="total-price-block">
+              <div class="card-header-text total-price">0</div>
+              <div class="card-header-text-currency">сом</div>
+            </div>
           </div>
 
           <div class="aside-option">
@@ -587,8 +590,8 @@
 
             <div class="aside-delivery-address delivery-address">Бишкек, улица Ахматбека Суюмбаева, 12/1</div>
 
-            <div class="aside-delivery-date hidden"><span class="aside-delivery-date-text">5–8 фев</span></div>
-
+            <div class="aside-delivery-date hidden"><span class="aside-delivery-date-text">5-8 фев</span></div>
+            
             <div class="delivery-rejection aside-info-block hidden">
               <span class="delivery-rejection-check">
                 <img src="./icons/Accepted-check.svg" alt="check" />
@@ -732,7 +735,7 @@
 
             <div class="modal-addresses">
               <div class="modal-buttons">
-                <input type="button" value="В пункте выдачи" class="modal-button choose-delivery-issue" />
+                <input type="button" value="В пункт выдачи" class="modal-button choose-delivery-issue" />
                 <input type="button" value="Курьером" class="modal-button chosen-button choose-delivery-courier" />
               </div>
 

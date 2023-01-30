@@ -9,5 +9,5 @@ window.addEventListener('DOMContentLoaded', () => {
   formValidation();
   modal();
 
-  document.querySelector('#choose-all').click();
+  document.querySelector("#choose-all").click();
 });

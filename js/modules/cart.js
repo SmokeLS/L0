@@ -70,7 +70,8 @@ export function cart() {
         const mobilecartNotification = document.querySelector('.mobile-cart-notification');
 
         if (goods.length > 0) {
-          cart.textContent = goods.length;
+          cartNotification.textContent = goods.length;
+          mobilecartNotification.textContent = goods.length;
         } else {
           cartNotification.remove();
           mobilecartNotification.remove();
@@ -290,7 +291,7 @@ export function cart() {
     });
   });
 
-  function showInfoDelivery(inputArray, date) {
+  function showInfoDelivery(inputArray) {
     const deliveryRejections = document.querySelectorAll('.delivery-rejection');
     const asideDeliveryDate = document.querySelector('.aside-delivery-date');
     const asidePaymentBlock = document.querySelector('.aside-payment-block');
@@ -329,22 +330,23 @@ export function cart() {
           picture.closest('.delivery-date').classList.remove('hidden');
         }
 
+        if (+notification.textContent === 0) {
+          picture.classList.add('hidden');
+  
+          if (!picture.closest('.delivery-date').querySelector('.delivery-image-block:not(.hidden)')) {
+            picture.closest('.delivery-date').classList.add('hidden');
+          }
+        } else {
+          picture.classList.remove('hidden');
+  
+          if (picture.closest('.delivery-date').querySelector('.delivery-image-block')) {
+            picture.closest('.delivery-date').classList.remove('hidden');
+          }
+        }
+
         checkDeliveryDate();
       }
 
-      if (+notification.textContent === 0) {
-        picture.classList.add('hidden');
-
-        if (!picture.closest('.delivery-date').querySelector('.delivery-image-block:not(.hidden)')) {
-          picture.closest('.delivery-date').classList.add('hidden');
-        }
-      } else {
-        picture.classList.remove('hidden');
-
-        if (picture.closest('.delivery-date').querySelector('.delivery-image-block')) {
-          picture.closest('.delivery-date').classList.remove('hidden');
-        }
-      }
     });
   }
 
@@ -365,8 +367,9 @@ export function cart() {
         maxDate = deliveryCaption.textContent[2];
       }
 
-      const newDate = `${minDate}—${maxDate} фев`;
-
+      
+      const newDate = `${minDate}-${maxDate} фев`;
+      
       asideDeliveryDate.textContent = newDate;
     });
   }

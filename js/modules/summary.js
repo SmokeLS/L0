@@ -8,7 +8,7 @@ export function summary() {
 
 export function changeCountsCosts() {
   const asideCounts = document.querySelector('.aside-caption');
-  const totalPrice = document.querySelector('#total-price');
+  const totalPrice = document.querySelector('.total-price');
   const asidePrice = document.querySelector('.aside-total-price');
   const asideDiscount = document.querySelector('.aside-total-discount');
 
@@ -23,7 +23,7 @@ export function changeCountsCosts() {
     .match(/\d{1,3}(?=(\d{3})*$)/g)
     .join(' ');
 
-  totalPrice.textContent = `${totalCost} сом`;
+  totalPrice.textContent = `${totalCost}`;
   asideCounts.textContent = `${totalCounts} ${good}`;
   asidePrice.textContent = `${totalPrevCost} сом`;
   asideDiscount.textContent = `−${formatedDiffDiscount} сом`;
