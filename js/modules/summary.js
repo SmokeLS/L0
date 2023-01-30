@@ -42,13 +42,13 @@ export function checkOrderSum() {
     buttonOrder.value = `Оплатить ${totalCost} сом`;
 
     asidePaymentInfo.forEach(paymentBlock => {
-      paymentBlock.innerHTML = "";
+      paymentBlock.classList.add("hidden");
     });
   } else {
     buttonOrder.value = 'Заказать';
     
     asidePaymentInfo.forEach(paymentBlock => {
-      paymentBlock.innerHTML = "Спишем оплату с карты при получении";
+      paymentBlock.classList.remove("hidden");
     });
   }
 }
