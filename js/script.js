@@ -8,4 +8,6 @@ window.addEventListener('DOMContentLoaded', () => {
   summary();
   formValidation();
   modal();
+
+  document.querySelector('#choose-all').click();
 });
