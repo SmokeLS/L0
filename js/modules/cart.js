@@ -368,7 +368,7 @@ export function cart() {
       }
 
       
-      const newDate = `${minDate}-${maxDate} фев`;
+      const newDate = `${minDate}–${maxDate} фев`;
       
       asideDeliveryDate.textContent = newDate;
     });
