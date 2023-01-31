@@ -231,7 +231,7 @@ export function cart() {
     prevGoodCost.textContent = +prevGoodCost.dataset.price * +input.value;
 
     discountPercentage.forEach((discount, index) => {
-      discount.textContent = `${(
+      discount.textContent = ` ${(
         (((prevGoodCost.dataset.price - goodCost.dataset.price) / prevGoodCost.dataset.price) * 100) /
         2
       ).toFixed(1)}%`;
@@ -244,7 +244,7 @@ export function cart() {
       .match(/\d{1,3}(?=(\d{3})*$)/g)
       .join(' ')} `;
 
-    prevGoodCost.textContent = `${prevGoodCost.textContent
+    prevGoodCost.textContent = ` ${prevGoodCost.textContent
       .toString()
       .match(/\d{1,3}(?=(\d{3})*$)/g)
       .join(' ')} `;
