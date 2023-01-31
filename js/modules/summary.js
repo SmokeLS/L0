@@ -32,7 +32,7 @@ export function changeCountsCosts() {
 export function checkOrderSum() {
   const summaryCheck = document.querySelector('#payment-check');
   const buttonOrder = document.querySelector('.custom-button');
-  const asidePaymentInfo = document.querySelectorAll(".toggled-info");
+  const asidePaymentInfo = document.querySelectorAll('.toggled-info');
 
   const totalCost = findSum();
 
@@ -41,14 +41,14 @@ export function checkOrderSum() {
   if (summaryCheck.checked) {
     buttonOrder.value = `Оплатить ${totalCost} сом`;
 
-    asidePaymentInfo.forEach(paymentBlock => {
-      paymentBlock.classList.add("hidden");
+    asidePaymentInfo.forEach((paymentBlock) => {
+      paymentBlock.classList.add('hidden');
     });
   } else {
     buttonOrder.value = 'Заказать';
-    
-    asidePaymentInfo.forEach(paymentBlock => {
-      paymentBlock.classList.remove("hidden");
+
+    asidePaymentInfo.forEach((paymentBlock) => {
+      paymentBlock.classList.remove('hidden');
     });
   }
 }

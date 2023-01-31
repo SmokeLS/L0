@@ -20,7 +20,7 @@ export function formValidation() {
   nameInput.addEventListener('change', (e) => {
     focused(e);
 
-    const errorElem = e.currentTarget.closest(".input-form-wrapper").querySelector('.input-form-error');
+    const errorElem = e.currentTarget.closest('.input-form-wrapper').querySelector('.input-form-error');
     e.currentTarget.parentNode.classList.remove('error-form-input');
     errorElem.classList.add('hidden');
 
@@ -30,7 +30,7 @@ export function formValidation() {
   surnameInput.addEventListener('change', (e) => {
     focused(e);
 
-    const errorElem = e.currentTarget.closest(".input-form-wrapper").querySelector('.input-form-error');
+    const errorElem = e.currentTarget.closest('.input-form-wrapper').querySelector('.input-form-error');
     e.currentTarget.parentNode.classList.remove('error-form-input');
     errorElem.classList.add('hidden');
 
@@ -40,7 +40,7 @@ export function formValidation() {
   emailInput.addEventListener('change', (e) => {
     focused(e);
 
-    const errorElem = e.currentTarget.closest(".input-form-wrapper").querySelector('.input-form-error');
+    const errorElem = e.currentTarget.closest('.input-form-wrapper').querySelector('.input-form-error');
 
     if (!e.currentTarget.value || e.currentTarget.value.match(/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/)) {
       e.currentTarget.parentNode.classList.remove('error-form-input');
@@ -57,7 +57,7 @@ export function formValidation() {
   telInput.addEventListener('change', (e) => {
     focused(e);
 
-    const errorElem = e.currentTarget.closest(".input-form-wrapper").querySelector('.input-form-error');
+    const errorElem = e.currentTarget.closest('.input-form-wrapper').querySelector('.input-form-error');
 
     if (!e.currentTarget.value || e.currentTarget.value.match(/\+\d \d{3} \d{3} \d{2} \d{2}/)) {
       e.currentTarget.parentNode.classList.remove('error-form-input');
@@ -75,8 +75,8 @@ export function formValidation() {
     focused(e);
 
     const purposeElem = document.querySelector('.tin-purpose');
-    const errorElem = e.currentTarget.closest(".input-form-wrapper").querySelector('.input-form-error');
-    
+    const errorElem = e.currentTarget.closest('.input-form-wrapper').querySelector('.input-form-error');
+
     errorElem.classList.add('hidden');
     purposeElem.classList.remove('hidden');
 
@@ -93,8 +93,8 @@ export function formValidation() {
 
   orderButton.addEventListener('click', () => {
     formInputs.forEach((input) => {
-      if (!input.value && input.closest(".input-form-wrapper").querySelector('.hidden')) {
-        const errorElem = input.closest(".input-form-wrapper").querySelector('.hidden');
+      if (!input.value && input.closest('.input-form-wrapper').querySelector('.hidden')) {
+        const errorElem = input.closest('.input-form-wrapper').querySelector('.hidden');
 
         errorElem.textContent = errorElem.dataset.empty;
         errorElem.classList.remove('hidden');

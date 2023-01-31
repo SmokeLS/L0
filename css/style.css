@@ -676,7 +676,7 @@ input[type="number"]:focus {
     transition: all 0.5s ease-in-out;
 }
 
-.good-tooltip-info +.good-tooltip-info {
+.good-tooltip-info+.good-tooltip-info {
     margin-top: 8px;
 }
 
@@ -867,7 +867,7 @@ input[type="number"]:focus {
     color: #000;
     margin-top: 5px;
     z-index: 999;
-} 
+}
 
 .delivery-price-tooltip {
     margin-right: 14px;
@@ -1038,9 +1038,8 @@ input[type="number"]:focus {
     font-weight: 700;
 }
 
-/* here was 27px */
 .aside-card-payment-section {
-    margin-top: 28px; 
+    margin-top: 28px;
 }
 
 .aside-delivery-edit-block {
@@ -1175,7 +1174,6 @@ input[type="number"]:focus {
 
 .aside-agreement-href {
     color: #000;
-    /* text-decoration-color: rgba(0, 0, 0, 0.1); */
     text-decoration: none;
     border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
@@ -1398,8 +1396,8 @@ input[type="number"]:focus {
         margin-top: 27px;
         padding: 19px 22px 23px 24px;
     }
-    
-} 
+
+}
 
 @media only screen and (min-width: 280px) and (max-width: 1023px) {
 
@@ -1876,7 +1874,7 @@ input[type="number"]:focus {
     .aside .aside-footer-agreement {
         margin-left: -2px;
     }
-    
+
     .aside .aside-button {
         margin-top: 24px;
     }
@@ -1884,6 +1882,7 @@ input[type="number"]:focus {
     .aside .aside-footer {
         margin-top: 14px;
     }
+
     /* tabbar (mobile)*/
 
     .tabbar-mobile {
@@ -1995,7 +1994,7 @@ input[type="number"]:focus {
         line-height: 24px;
     }
 
-    .modal-payment .modal-cards  {
+    .modal-payment .modal-cards {
         padding-top: 18px;
     }
 

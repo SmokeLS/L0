@@ -332,13 +332,13 @@ export function cart() {
 
         if (+notification.textContent === 0) {
           picture.classList.add('hidden');
-  
+
           if (!picture.closest('.delivery-date').querySelector('.delivery-image-block:not(.hidden)')) {
             picture.closest('.delivery-date').classList.add('hidden');
           }
         } else {
           picture.classList.remove('hidden');
-  
+
           if (picture.closest('.delivery-date').querySelector('.delivery-image-block')) {
             picture.closest('.delivery-date').classList.remove('hidden');
           }
@@ -346,7 +346,6 @@ export function cart() {
 
         checkDeliveryDate();
       }
-
     });
   }
 
@@ -367,9 +366,8 @@ export function cart() {
         maxDate = deliveryCaption.textContent[2];
       }
 
-      
       const newDate = `${minDate}–${maxDate} фев`;
-      
+
       asideDeliveryDate.textContent = newDate;
     });
   }
