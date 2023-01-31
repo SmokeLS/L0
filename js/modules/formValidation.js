@@ -105,11 +105,5 @@ export function formValidation() {
         input.closest('.input-form-block').classList.add('error-form-input');
       }
     });
-
-    const inputArray = [...formInputs];
-
-    const result = inputArray.some((item) => item.closest('.error-form-input'));
-
-    console.log(result);
   });
 }

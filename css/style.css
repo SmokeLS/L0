@@ -367,12 +367,12 @@ input[type="number"]:focus {
     display: flex;
     padding-right: 4px;
     width: 100%;
-    padding-bottom: 17px;
+    padding-bottom: 19px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .unavailable {
-    padding-bottom: 16px;
+    padding-bottom: 14px;
 }
 
 .unavailable-header {
@@ -386,6 +386,11 @@ input[type="number"]:focus {
 
 .choose-text {
     margin-left: 11px;
+}
+
+.hidden-choose-text {
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .triangle {
@@ -928,12 +933,12 @@ input[type="number"]:focus {
 
 .receiver {
     margin-top: 16px;
-    padding-bottom: 23px;
+    padding-bottom: 24px;
 }
 
 .receiver-form-block {
     max-width: 100%;
-    margin-top: 24px;
+    margin-top: 38px;
 }
 
 .input-form-wrapper {
@@ -993,7 +998,7 @@ input[type="number"]:focus {
 .email-tel-tin-block {
     display: flex;
     max-width: 700px;
-    margin-top: 38px;
+    margin-top: 40px;
 }
 
 .tin-input-form-block {
@@ -1112,7 +1117,7 @@ input[type="number"]:focus {
 }
 
 .aside-button {
-    margin-top: 26px;
+    margin-top: 24px;
 }
 
 .custom-button {
@@ -1286,7 +1291,7 @@ input[type="number"]:focus {
 
 .modal-paycard-icon {
     margin-top: -1px;
-    margin-left: 11px;
+    margin-left: 9px;
 }
 
 .modal-paycard-number {
@@ -1393,7 +1398,7 @@ input[type="number"]:focus {
     }
     
     .receiver {
-        padding-bottom: 26px;
+        padding-bottom: 23px;
     }
 } 
 
@@ -1445,6 +1450,10 @@ input[type="number"]:focus {
     .header .burger-menu-bar {
         height: 2px;
         width: 22px;
+    }
+
+    .header .burger-menu-bar.third-bar {
+        width: 16px;
     }
 
     .header .logo {
@@ -1972,12 +1981,12 @@ input[type="number"]:focus {
         margin-right: -3px;
     }
 
-    .modal .choose-custom-radio {
-        margin-top: 7px;
-    }
-
     .modal .modal-text-address {
         line-height: 24px;
+    }
+
+    .modal-payment .modal-cards  {
+        padding-top: 18px;
     }
 
     .modal .modal-close {
